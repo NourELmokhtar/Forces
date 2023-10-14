@@ -1,0 +1,12 @@
+C:\Users\OMEN\Documents\GitHub\Forces\Forces\src\Domain\bin\Debug\net6.0\Forces.Domain.deps.json
+C:\Users\OMEN\Documents\GitHub\Forces\Forces\src\Domain\bin\Debug\net6.0\Forces.Domain.dll
+C:\Users\OMEN\Documents\GitHub\Forces\Forces\src\Domain\bin\Debug\net6.0\Forces.Domain.pdb
+C:\Users\OMEN\Documents\GitHub\Forces\Forces\src\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+C:\Users\OMEN\Documents\GitHub\Forces\Forces\src\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OMEN\Documents\GitHub\Forces\Forces\src\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+C:\Users\OMEN\Documents\GitHub\Forces\Forces\src\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+C:\Users\OMEN\Documents\GitHub\Forces\Forces\src\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\OMEN\Documents\GitHub\Forces\Forces\src\Domain\obj\Debug\net6.0\Forces.Domain.dll
+C:\Users\OMEN\Documents\GitHub\Forces\Forces\src\Domain\obj\Debug\net6.0\refint\Forces.Domain.dll
+C:\Users\OMEN\Documents\GitHub\Forces\Forces\src\Domain\obj\Debug\net6.0\Forces.Domain.pdb
+C:\Users\OMEN\Documents\GitHub\Forces\Forces\src\Domain\obj\Debug\net6.0\ref\Forces.Domain.dll
