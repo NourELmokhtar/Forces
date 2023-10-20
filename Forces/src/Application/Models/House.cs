@@ -1,4 +1,5 @@
-﻿using Forces.Domain.Contracts;
+﻿using Forces.Application.Interfaces.Common;
+using Forces.Domain.Contracts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;

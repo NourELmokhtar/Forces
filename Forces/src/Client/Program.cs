@@ -1,8 +1,10 @@
 using Forces.Client.Extensions;
 using Forces.Client.Infrastructure.Managers.Preferences;
 using Forces.Client.Infrastructure.Settings;
+using Forces.Infrastructure.Contexts;
 using Forces.Shared.Constants.Localization;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.JSInterop;
 using System.Globalization;
@@ -21,7 +23,17 @@ namespace Forces.Client
                           .AddClientServices()
                           .AddDevexpress();
             var host = builder.Build();
-            
+            builder.Services.AddDbContext<ForcesDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), sqlServerOptionsAction: sqlOptions =>
+                {
+                    sqlOptions.EnableRetryOnFailure(
+                        maxRetryCount: 5, 
+                        maxRetryDelay: TimeSpan.FromSeconds(30), 
+                        errorNumbersToAdd: null 
+                    );
+                });
+            });
             var storageService = host.Services.GetRequiredService<ClientPreferenceManager>();
             if (storageService != null)
             {

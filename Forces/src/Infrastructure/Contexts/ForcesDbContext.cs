@@ -16,7 +16,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-
+using System.Data;
 namespace Forces.Infrastructure.Contexts
 {
     public class ForcesDbContext : AuditableContext
@@ -71,6 +71,12 @@ namespace Forces.Infrastructure.Contexts
         public DbSet<AirKind> AirKind { get; set; }
         public DbSet<AirType> AirType { get; set; }
         public DbSet<VehicleRequest> VehicleRequest { get; set; }
+        public DbSet<Building> Building { get; set; }
+        public DbSet<House> House { get; set; }
+        public DbSet<Inventory> Inventory { get; set; }
+        public DbSet<Office> Office { get; set; }
+        public DbSet<Person> Person { get; set; }
+        public DbSet<Room> Room { get; set; }
 
 
 

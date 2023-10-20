@@ -1,4 +1,5 @@
-﻿using Forces.Domain.Contracts;
+﻿using Forces.Application.Interfaces.Common;
+using Forces.Domain.Contracts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -21,5 +22,7 @@ namespace Forces.Application.Models
         public virtual Bases Base { get; set; }
 
         public virtual ICollection<SectionStore> Stores { get; set; }
+        public virtual ICollection<Office> Offices { get; set; }
+
     }
 }

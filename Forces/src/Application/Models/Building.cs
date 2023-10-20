@@ -1,4 +1,5 @@
-﻿using Forces.Domain.Contracts;
+﻿using Forces.Application.Interfaces.Common;
+using Forces.Domain.Contracts;
 using Microsoft.Office.Interop.Outlook;
 using System;
 using System.Collections.Generic;

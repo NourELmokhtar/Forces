@@ -1,6 +1,8 @@
-﻿namespace Forces.Application.Models
+﻿using Forces.Domain.Contracts;
+
+namespace Forces.Application.Models
 {
-    public class BaseSection
+    public class BaseSection : AuditableEntity<int>
     {
     }
 }

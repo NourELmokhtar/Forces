@@ -24,6 +24,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Features\AirKind\Queries\GetByAirKindId\" />
+    <Folder Include="Features\Inventory\Commands\Delete\" />
+    <Folder Include="Features\Inventory\Queries\GetAll\" />
+    <Folder Include="Features\Inventory\Queries\GetBySpecifics\" />
     <Folder Include="Features\PersonalItemOperations\Commands\Delete\" />
     <Folder Include="Features\PersonalItemOperations\Queries\GetAll\" />
     <Folder Include="Features\PersonalItemOperations\Queries\Export\" />
