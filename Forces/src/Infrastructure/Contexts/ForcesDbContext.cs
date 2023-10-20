@@ -74,6 +74,7 @@ namespace Forces.Infrastructure.Contexts
         public DbSet<Building> Building { get; set; }
         public DbSet<House> House { get; set; }
         public DbSet<Inventory> Inventory { get; set; }
+        public DbSet<InventoryItem> InventoryItem { get; set; }
         public DbSet<Office> Office { get; set; }
         public DbSet<Person> Person { get; set; }
         public DbSet<Room> Room { get; set; }

@@ -204,6 +204,31 @@ namespace Forces.Infrastructure.Migrations
                     b.ToTable("Bases");
                 });
 
+            modelBuilder.Entity("Forces.Application.Models.BaseSection", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BaseSection");
+                });
+
             modelBuilder.Entity("Forces.Application.Models.BasesSections", b =>
                 {
                     b.Property<int>("Id")
@@ -277,6 +302,42 @@ namespace Forces.Infrastructure.Migrations
                     b.HasIndex("ShilfId");
 
                     b.ToTable("BinRack");
+                });
+
+            modelBuilder.Entity("Forces.Application.Models.Building", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BaseId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BuildingCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BuildingName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BaseId");
+
+                    b.ToTable("Building");
                 });
 
             modelBuilder.Entity("Forces.Application.Models.Chat.ChatHistory<Forces.Infrastructure.Models.Identity.Appuser>", b =>
@@ -406,6 +467,42 @@ namespace Forces.Infrastructure.Migrations
                     b.ToTable("Forces");
                 });
 
+            modelBuilder.Entity("Forces.Application.Models.House", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BaseId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("HouseCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HouseName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BaseId");
+
+                    b.ToTable("House");
+                });
+
             modelBuilder.Entity("Forces.Application.Models.HQDepartment", b =>
                 {
                     b.Property<int>("Id")
@@ -437,6 +534,115 @@ namespace Forces.Infrastructure.Migrations
                     b.HasIndex("ForceID");
 
                     b.ToTable("HQDepartment");
+                });
+
+            modelBuilder.Entity("Forces.Application.Models.Inventory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("BaseSectionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("HouseId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("RoomId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BaseSectionId");
+
+                    b.HasIndex("HouseId");
+
+                    b.HasIndex("RoomId");
+
+                    b.ToTable("Inventory");
+                });
+
+            modelBuilder.Entity("Forces.Application.Models.InventoryItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateOfEnter")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("EndOfServiceDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("FirstUseDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ItemArName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ItemClass")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ItemCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ItemDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ItemName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ItemNsn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("MadeIn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MeasureUnitId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SerialNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("VoteCodesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MeasureUnitId");
+
+                    b.ToTable("InventoryItem");
                 });
 
             modelBuilder.Entity("Forces.Application.Models.Items", b =>
@@ -707,6 +913,75 @@ namespace Forces.Infrastructure.Migrations
                     b.HasIndex("RequestID");
 
                     b.ToTable("MprRequestAttachments", (string)null);
+                });
+
+            modelBuilder.Entity("Forces.Application.Models.Office", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BasesSectionsId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BasesSectionsId");
+
+                    b.ToTable("Office");
+                });
+
+            modelBuilder.Entity("Forces.Application.Models.Person", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NationalNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("RoomId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoomId");
+
+                    b.ToTable("Person");
                 });
 
             modelBuilder.Entity("Forces.Application.Models.PersonalItems", b =>
@@ -1086,6 +1361,39 @@ namespace Forces.Infrastructure.Migrations
                     b.ToTable("Requests");
 
                     b.HasDiscriminator<string>("RequestType").HasValue("Requests<VoteCodes, Appuser, RequestActions>");
+                });
+
+            modelBuilder.Entity("Forces.Application.Models.Room", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BuildingId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RoomNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BuildingId");
+
+                    b.ToTable("Room");
                 });
 
             modelBuilder.Entity("Forces.Application.Models.SectionStore", b =>
@@ -2413,6 +2721,17 @@ namespace Forces.Infrastructure.Migrations
                     b.Navigation("Store");
                 });
 
+            modelBuilder.Entity("Forces.Application.Models.Building", b =>
+                {
+                    b.HasOne("Forces.Application.Models.Bases", "Base")
+                        .WithMany()
+                        .HasForeignKey("BaseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Base");
+                });
+
             modelBuilder.Entity("Forces.Application.Models.Chat.ChatHistory<Forces.Infrastructure.Models.Identity.Appuser>", b =>
                 {
                     b.HasOne("Forces.Infrastructure.Models.Identity.Appuser", "FromUser")
@@ -2439,6 +2758,17 @@ namespace Forces.Infrastructure.Migrations
                     b.Navigation("Force");
                 });
 
+            modelBuilder.Entity("Forces.Application.Models.House", b =>
+                {
+                    b.HasOne("Forces.Application.Models.Bases", "Base")
+                        .WithMany()
+                        .HasForeignKey("BaseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Base");
+                });
+
             modelBuilder.Entity("Forces.Application.Models.HQDepartment", b =>
                 {
                     b.HasOne("Forces.Application.Models.Forces", "Force")
@@ -2448,6 +2778,38 @@ namespace Forces.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Force");
+                });
+
+            modelBuilder.Entity("Forces.Application.Models.Inventory", b =>
+                {
+                    b.HasOne("Forces.Application.Models.BaseSection", "BaseSection")
+                        .WithMany()
+                        .HasForeignKey("BaseSectionId");
+
+                    b.HasOne("Forces.Application.Models.House", "House")
+                        .WithMany()
+                        .HasForeignKey("HouseId");
+
+                    b.HasOne("Forces.Application.Models.Room", "Room")
+                        .WithMany()
+                        .HasForeignKey("RoomId");
+
+                    b.Navigation("BaseSection");
+
+                    b.Navigation("House");
+
+                    b.Navigation("Room");
+                });
+
+            modelBuilder.Entity("Forces.Application.Models.InventoryItem", b =>
+                {
+                    b.HasOne("Forces.Application.Models.MeasureUnits", "MeasureUnit")
+                        .WithMany()
+                        .HasForeignKey("MeasureUnitId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("MeasureUnit");
                 });
 
             modelBuilder.Entity("Forces.Application.Models.Items", b =>
@@ -2491,6 +2853,24 @@ namespace Forces.Infrastructure.Migrations
                     b.Navigation("Action");
 
                     b.Navigation("Request");
+                });
+
+            modelBuilder.Entity("Forces.Application.Models.Office", b =>
+                {
+                    b.HasOne("Forces.Application.Models.BasesSections", "BasesSections")
+                        .WithMany("Offices")
+                        .HasForeignKey("BasesSectionsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("BasesSections");
+                });
+
+            modelBuilder.Entity("Forces.Application.Models.Person", b =>
+                {
+                    b.HasOne("Forces.Application.Models.Room", null)
+                        .WithMany("Persons")
+                        .HasForeignKey("RoomId");
                 });
 
             modelBuilder.Entity("Forces.Application.Models.PersonalItems", b =>
@@ -2591,6 +2971,17 @@ namespace Forces.Infrastructure.Migrations
                     b.Navigation("VoteCode");
 
                     b.Navigation("user");
+                });
+
+            modelBuilder.Entity("Forces.Application.Models.Room", b =>
+                {
+                    b.HasOne("Forces.Application.Models.Building", "Building")
+                        .WithMany("Rooms")
+                        .HasForeignKey("BuildingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Building");
                 });
 
             modelBuilder.Entity("Forces.Application.Models.SectionStore", b =>
@@ -2903,7 +3294,14 @@ namespace Forces.Infrastructure.Migrations
 
             modelBuilder.Entity("Forces.Application.Models.BasesSections", b =>
                 {
+                    b.Navigation("Offices");
+
                     b.Navigation("Stores");
+                });
+
+            modelBuilder.Entity("Forces.Application.Models.Building", b =>
+                {
+                    b.Navigation("Rooms");
                 });
 
             modelBuilder.Entity("Forces.Application.Models.Color", b =>
@@ -2955,6 +3353,11 @@ namespace Forces.Infrastructure.Migrations
                     b.Navigation("Attachments");
 
                     b.Navigation("RequestActions");
+                });
+
+            modelBuilder.Entity("Forces.Application.Models.Room", b =>
+                {
+                    b.Navigation("Persons");
                 });
 
             modelBuilder.Entity("Forces.Application.Models.SectionStore", b =>
