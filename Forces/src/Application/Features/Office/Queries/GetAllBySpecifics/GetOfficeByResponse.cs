@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Forces.Application.Features.Office.Queries.GetAllBySpecifics
 {
-    internal class GetOfficeByResponse
+    public class GetOfficeByResponse
     {
+        public int Id { get; set; }
+        public string ItemName { get; set; }
+        public string ItemArName { get; set; }
+        public string ItemCode { get; set; }
+
     }
 }
