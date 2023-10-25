@@ -10,12 +10,16 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Forces.Application.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Forces.Application.Features.Office.Commands.AddEdit
 {
-    internal class AddEditOfficeCommand : IRequest<IResult<int>>
+    public class AddEditOfficeCommand : IRequest<IResult<int>>
     {
-
+        public int Id { get; set; }
+        public int BasesSectionsId { get; set; }
+        public string Name { get; set; }
     }
     internal class AddEditOfficeCommandHandler : IRequestHandler<AddEditOfficeCommand, IResult<int>>
     {
@@ -33,9 +37,52 @@ namespace Forces.Application.Features.Office.Commands.AddEdit
             _voteCodeService = voteCodeService;
         }
 
-        public Task<IResult<int>> Handle(AddEditOfficeCommand request, CancellationToken cancellationToken)
+        public async Task<IResult<int>> Handle(AddEditOfficeCommand request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            if (request.Id == 0)
+            {
+                var ExistOffice = await _unitOfWork.Repository<Models.Office>().Entities.FirstOrDefaultAsync(x => x.Name == request.Name && x.BasesSectionsId == request.BasesSectionsId);
+                if (ExistOffice != null)
+                {
+                    return await Result<int>.FailAsync(_localizer["This Office Name Is Already Exist!"]);
+                }
+                else
+                {
+                    Models.Office office = new Models.Office()
+                    {
+                        Name = request.Name
+                    };
+                    await _unitOfWork.Repository<Models.Office>().AddAsync(office);
+                    await _unitOfWork.Commit(cancellationToken);
+                    return await Result<int>.SuccessAsync(office.Id, _localizer["Office Added Successfuly!"]);
+                }
+            }
+            else
+            {
+                var ExistOffice = await _unitOfWork.Repository<Models.Office>().Entities.FirstOrDefaultAsync(x => x.Id == request.Id);
+                if (ExistOffice == null)
+                {
+                    return await Result<int>.FailAsync(_localizer["Office Not Found!!"]);
+                }
+                else
+                {
+                    var ExistnameOffice = await _unitOfWork.Repository<Models.Office>().Entities.FirstOrDefaultAsync(x => x.Name == request.Name && x.Id != request.Id);
+                    if (ExistnameOffice != null)
+                    {
+                        return await Result<int>.FailAsync(_localizer["This Office Is Already Exist!"]);
+                    }
+                    else
+                    {
+                        ExistOffice.Name = request.Name;
+                        await _unitOfWork.Repository<Models.Office>().UpdateAsync(ExistOffice);
+                        await _unitOfWork.Commit(cancellationToken);
+                        return await Result<int>.SuccessAsync(ExistOffice.Id, _localizer["Office Updated Successfuly!"]);
+                    }
+                }
+            }
         }
+
+
     }
-}
+    }
+

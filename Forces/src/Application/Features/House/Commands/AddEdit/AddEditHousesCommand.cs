@@ -13,9 +13,12 @@ using System.Threading.Tasks;
 
 namespace Forces.Application.Features.House.Commands.AddEdit
 {
-    internal class AddEditHouseCommand : IRequest<IResult<int>>
+    public class AddEditHouseCommand : IRequest<IResult<int>>
     {
-        
+        public int Id { get; set; }
+        public string HouseName { get; set; }
+        public string HouseCode { get; set; }
+        public int BaseId { get; set; }
     }
 
     internal class AddEditHouseCommandHandler : IRequestHandler<AddEditHouseCommand, IResult<int>>
@@ -40,10 +43,69 @@ namespace Forces.Application.Features.House.Commands.AddEdit
             _voteCodeService = voteCodeService;
         }
 
-        public Task<IResult<int>> Handle(AddEditHouseCommand request, CancellationToken cancellationToken)
+        public async Task<IResult<int>> Handle(AddEditHouseCommand request, CancellationToken cancellationToken)
         {
-            // Implement the logic for adding/editing a house
-            throw new NotImplementedException();
+            if (request.Id == 0)
+            {
+                var House = _mapper.Map<Application.Models.House>(request);
+
+                var IsCodeExist = _unitOfWork.Repository<Application.Models.House>().Entities.
+                    Any(x => x.HouseCode == request.HouseCode && x.BaseId == request.BaseId);
+
+                var IsNameExist = _unitOfWork.Repository<Application.Models.House>().Entities.
+                    Any(x => x.HouseName == request.HouseName && x.BaseId == request.BaseId);
+
+                if (IsCodeExist)
+                {
+                    return await Result<int>.FailAsync(_localizer["House With This Code is Already Exist!"]);
+
+                }
+                if (IsNameExist)
+                {
+                    return await Result<int>.FailAsync(_localizer["House With This Name is Already Exist!"]);
+                }
+                await _unitOfWork.Repository<Application.Models.House>().AddAsync(House);
+                await _unitOfWork.Commit(cancellationToken);
+                return await Result<int>.SuccessAsync(House.Id, _localizer["House Added!"]);
+            }
+            else
+            {
+                var House = await _unitOfWork.Repository<Application.Models.House>().GetByIdAsync(request.Id);
+                if (House != null)
+                {
+                    House.HouseName = request.HouseName ?? House.HouseName;
+                    House.HouseCode = request.HouseCode ?? House.HouseCode;
+                    if (request.BaseId != null)
+                    {
+                        House.BaseId = request.BaseId;
+                    }
+
+                    var Messages = new List<string>();
+                    var IsNameExist = _unitOfWork.Repository<Models.House>().Entities.Any(x => x.HouseName == House.HouseName && x.BaseId != House.BaseId);
+                    var IsCodeExist = _unitOfWork.Repository<Models.House>().Entities.Any(x => x.HouseCode == House.HouseCode && x.BaseId != House.BaseId);
+                    if (IsCodeExist)
+                    {
+                        return await Result<int>.FailAsync(_localizer["House With This Code is Already Exist!"]);
+
+                    }
+                    if (IsNameExist)
+                    {
+                        return await Result<int>.FailAsync(_localizer["House With This Name is Already Exist!"]);
+                    }
+                    else
+                    {
+                        await _unitOfWork.Repository<Models.House>().UpdateAsync(House);
+                        await _unitOfWork.Commit(cancellationToken);
+                        return await Result<int>.SuccessAsync(House.Id, _localizer["House Updated"]);
+                    }
+
+                }
+                else
+                {
+                    return await Result<int>.FailAsync(_localizer["House Not Found!"]);
+                }
+            }
+
         }
     }
 }

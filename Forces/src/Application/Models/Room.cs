@@ -10,7 +10,7 @@ namespace Forces.Application.Models
 {
     public class Room  : AuditableEntity<int>
     {
-        public string RoomNumber { get; set; }
+        public int RoomNumber { get; set; }
         [ForeignKey("BuildingId")]
         public int BuildingId { get; set; }
         public virtual Building Building { get; set; }

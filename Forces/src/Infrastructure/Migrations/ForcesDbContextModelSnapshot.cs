@@ -1386,8 +1386,8 @@ namespace Forces.Infrastructure.Migrations
                     b.Property<DateTime?>("LastModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("RoomNumber")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("RoomNumber")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

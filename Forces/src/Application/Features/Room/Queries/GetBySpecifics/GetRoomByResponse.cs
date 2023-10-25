@@ -8,5 +8,8 @@ namespace Forces.Application.Features.Room.Queries.GetBySpecifics
 {
     internal class GetRoomByResponse
     {
+        public int Id { get; set; }
+        public int RoomNumber { get; set; }
+        public int BuildingId { get; set; }
     }
 }

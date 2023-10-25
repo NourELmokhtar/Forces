@@ -10,11 +10,11 @@ namespace Forces.Application.Features.Building.Queries.GetAll
     public class GetAllBuildingsResponse
     {
         public int Id { get; set; }
-        public string ItemName { get; set; }
-        public string ItemArName { get; set; }
-        public string ItemCode { get; set; }
-        
+        public string BuildingName { get; set; }
+        public string BuildingCode { get; set; }
+        public int BaseId { get; set; }
+
     }
-   
+
 
 }

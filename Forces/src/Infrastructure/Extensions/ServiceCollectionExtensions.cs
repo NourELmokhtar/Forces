@@ -48,6 +48,14 @@ namespace Forces.Infrastructure.Extensions
                 .AddTransient(typeof(INotificationService <,>), typeof(NotificationService <,>))
                 .AddTransient<IDocumentTypeRepository, DocumentTypeRepository>()
                 .AddTransient<IVoteCodeRepository, VoteCodeRepository>()
+                .AddTransient<IRoomRepository, RoomRepository>()
+                .AddTransient<IOfficeRepository, OfficeRepository>()
+                .AddTransient<IInventoryRepository, InventoryRepository>()
+                .AddTransient<IInventoryItemRepository, InventoryItemRepository>()
+                .AddTransient<IHouseRepository, HouseRepository>()
+                .AddTransient<IBuildingRepository, BuildingRepository>()
+                .AddTransient<IPersonRepository, PersonRepository>()
+
                 .AddTransient(typeof(IUnitOfWork<>), typeof(UnitOfWork<>));
         }
 

@@ -15,6 +15,69 @@ namespace Forces.Shared.Constants.Permission
             public const string Export = "Permissions.Products.Export";
             public const string Search = "Permissions.Products.Search";
         }
+        public static class Building
+        {
+            public const string View = "Permissions.Building.View";
+            public const string Create = "Permissions.Building.Create";
+            public const string Edit = "Permissions.Building.Edit";
+            public const string Delete = "Permissions.Building.Delete";
+            public const string Export = "Permissions.Building.Export";
+            public const string Search = "Permissions.Building.Search";
+        }
+        public static class House
+        {
+            public const string View = "Permissions.House.View";
+            public const string Create = "Permissions.House.Create";
+            public const string Edit = "Permissions.House.Edit";
+            public const string Delete = "Permissions.House.Delete";
+            public const string Export = "Permissions.House.Export";
+            public const string Search = "Permissions.House.Search";
+        }
+        public static class Person
+        {
+            public const string View = "Permissions.Person.View";
+            public const string Create = "Permissions.Person.Create";
+            public const string Edit = "Permissions.Person.Edit";
+            public const string Delete = "Permissions.Person.Delete";
+            public const string Export = "Permissions.Person.Export";
+            public const string Search = "Permissions.Person.Search";
+        }
+        public static class Rooms
+        {
+            public const string View = "Permissions.Rooms.View";
+            public const string Create = "Permissions.Rooms.Create";
+            public const string Edit = "Permissions.Rooms.Edit";
+            public const string Delete = "Permissions.Rooms.Delete";
+            public const string Export = "Permissions.Rooms.Export";
+            public const string Search = "Permissions.Rooms.Search";
+        }
+        public static class Office
+        {
+            public const string View = "Permissions.Office.View";
+            public const string Create = "Permissions.Office.Create";
+            public const string Edit = "Permissions.Office.Edit";
+            public const string Delete = "Permissions.Office.Delete";
+            public const string Export = "Permissions.Office.Export";
+            public const string Search = "Permissions.Office.Search";
+        }
+        public static class Inventory
+        {
+            public const string View = "Permissions.Inventory.View";
+            public const string Create = "Permissions.Inventory.Create";
+            public const string Edit = "Permissions.Inventory.Edit";
+            public const string Delete = "Permissions.Inventory.Delete";
+            public const string Export = "Permissions.Inventory.Export";
+            public const string Search = "Permissions.Inventory.Search";
+        }
+        public static class InventoryItems
+        {
+            public const string View = "Permissions.InventoryItems.View";
+            public const string Create = "Permissions.InventoryItems.Create";
+            public const string Edit = "Permissions.InventoryItems.Edit";
+            public const string Delete = "Permissions.InventoryItems.Delete";
+            public const string Export = "Permissions.InventoryItems.Export";
+            public const string Search = "Permissions.InventoryItems.Search";
+        }
 
         public static class Brands
         {

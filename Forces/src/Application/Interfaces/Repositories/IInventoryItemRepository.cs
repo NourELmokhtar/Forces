@@ -14,5 +14,15 @@ namespace Forces.Application.Interfaces.Repositories
         Task<InventoryItem> Add(InventoryItem InventoryItem);
         Task<InventoryItem> Update(InventoryItem InventoryItem);
         Task<InventoryItem> Delete(InventoryItem InventoryItem);
+        Task<bool> IsCodeExist(string ItemCode);
+        Task<bool> IsNsnExist(string ItemNsn);
+        Task<bool> IsNameExist(string ItemName, int MeasureUnitID);
+        Task<bool> IsArNameExist(string ItemName, int MeasureUnitID);
+        Task<List<InventoryItem>> GetByName(string Name);
+        Task<List<InventoryItem>> GetByArName(string ArName);
+        Task<InventoryItem> GetByCode(string Code);
+        Task<InventoryItem> GetByNSN(string NSNCode);
+        Task<List<MeasureUnits>> GetMeasureUnitsByName(string ItemName);
+        Task<List<MeasureUnits>> GetMeasureUnitsByArName(string ItemName);
     }
 }

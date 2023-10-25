@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Forces.Application.Features.Room.Commands.Delete
 {
-    internal class DeleteRoomCommand : IRequest<IResult<int>>
+    public class DeleteRoomCommand : IRequest<IResult<int>>
     {
         [Required]
         public int RoomId { get; set; }
@@ -31,10 +31,19 @@ namespace Forces.Application.Features.Room.Commands.Delete
             _unitOfWork = unitOfWork;
         }
 
-        public Task<IResult<int>> Handle(DeleteRoomCommand request, CancellationToken cancellationToken)
+        public async Task<IResult<int>> Handle(DeleteRoomCommand request, CancellationToken cancellationToken)
         {
-            // Implement the logic for deleting a room
-            throw new NotImplementedException();
+            var Room = await _unitOfWork.Repository<Models.Room>().GetByIdAsync(request.RoomId);
+            if (Room != null)
+            {
+                await _unitOfWork.Repository<Models.Room>().DeleteAsync(Room);
+                await _unitOfWork.Commit(cancellationToken);
+                return await Result<int>.SuccessAsync(Room.Id, _localizer["Room Deleted"]);
+            }
+            else
+            {
+                return await Result<int>.FailAsync(_localizer["Room Not Found!"]);
+            }
         }
     }
 }

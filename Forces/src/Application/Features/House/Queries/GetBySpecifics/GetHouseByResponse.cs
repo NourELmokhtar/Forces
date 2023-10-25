@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Forces.Application.Features.House.Queries.GetBySpecifics
 {
-    internal class GetHouseByResponse
+    public class GetHouseByResponse
     {
+        public int Id { get; set; }
+        public string HouseName { get; set; }
+        public string HouseCode { get; set; }
+        public int BaseId { get; set; }
     }
 }

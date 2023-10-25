@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Forces.Application.Features.House.Commands.Delete
 {
-    internal class DeleteHouseCommand : IRequest<IResult<int>>
+    public class DeleteHouseCommand : IRequest<IResult<int>>
     {
         [Required]
         public int HouseId { get; set; }
@@ -31,9 +31,19 @@ namespace Forces.Application.Features.House.Commands.Delete
             _unitOfWork = unitOfWork;
         }
 
-        public Task<IResult<int>> Handle(DeleteHouseCommand request, CancellationToken cancellationToken)
+        public async Task<IResult<int>> Handle(DeleteHouseCommand request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var House = await _unitOfWork.Repository<Models.House>().GetByIdAsync(request.HouseId);
+            if (House != null)
+            {
+                await _unitOfWork.Repository<Models.House>().DeleteAsync(House);
+                await _unitOfWork.Commit(cancellationToken);
+                return await Result<int>.SuccessAsync(House.Id, _localizer["House Deleted"]);
+            }
+            else
+            {
+                return await Result<int>.FailAsync(_localizer["House Not Found!"]);
+            }
         }
     }
 }

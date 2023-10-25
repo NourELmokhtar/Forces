@@ -30,9 +30,18 @@ namespace Forces.Application.Features.Building.Queries.GetAll
             _voteCodeService = voteCodeService;
         }
 
-        public Task<IResult<List<GetAllBuildingsResponse>>> Handle(GetAllBuildingsQuery request, CancellationToken cancellationToken)
+        public async Task<IResult<List<GetAllBuildingsResponse>>> Handle(GetAllBuildingsQuery request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var BuildingList = await _unitOfWork.Repository<Models.Building>().GetAllAsync();
+            var MappedBuildingList = BuildingList.Select(x => new GetAllBuildingsResponse()
+            {
+                Id = x.Id,
+                BuildingCode = x.BuildingCode,
+                BuildingName = x.BuildingName,
+                BaseId = x.BaseId
+
+            }).ToList();
+            return await Result<List<GetAllBuildingsResponse>>.SuccessAsync(MappedBuildingList);
         }
     }
 }

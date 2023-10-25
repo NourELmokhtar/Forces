@@ -3,9 +3,11 @@ using Forces.Application.Interfaces.Repositories;
 using Forces.Application.Interfaces.Services;
 using Forces.Shared.Wrapper;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -13,9 +15,12 @@ using System.Threading.Tasks;
 
 namespace Forces.Application.Features.Room.Commands.AddEdit
 {
-    internal class AddEditRoomCommand : IRequest<IResult<int>>
+    public class AddEditRoomCommand : IRequest<IResult<int>>
     {
-        }
+        public int Id { get; set; }
+        public int RoomNumber { get; set; }
+        public int BuildingId { get; set; }
+    }
 
     internal class AddEditRoomCommandHandler : IRequestHandler<AddEditRoomCommand, IResult<int>>
     {
@@ -39,10 +44,50 @@ namespace Forces.Application.Features.Room.Commands.AddEdit
             _voteCodeService = voteCodeService;
         }
 
-        public Task<IResult<int>> Handle(AddEditRoomCommand request, CancellationToken cancellationToken)
+        public async Task<IResult<int>> Handle(AddEditRoomCommand request, CancellationToken cancellationToken)
         {
-            // Implement the logic for adding/editing a room
-            throw new NotImplementedException();
+            if (request.Id == 0)
+            {
+                var ExistRoom = await _unitOfWork.Repository<Models.Room>().Entities.FirstOrDefaultAsync(x => x.RoomNumber == request.RoomNumber && x.BuildingId == request.BuildingId);
+                if (ExistRoom != null)
+                {
+                    return await Result<int>.FailAsync(_localizer["This Room Name Is Already Exist!"]);
+                }
+                else
+                {
+                    Models.Room Room = new Models.Room()
+                    {
+                        RoomNumber = request.RoomNumber,
+                        BuildingId = request.BuildingId,
+                    };
+                    await _unitOfWork.Repository<Models.Room>().AddAsync(Room);
+                    await _unitOfWork.Commit(cancellationToken);
+                    return await Result<int>.SuccessAsync(Room.Id, _localizer["Room Added Successfuly!"]);
+                }
+            }
+            else
+            {
+                var ExistRoom = await _unitOfWork.Repository<Models.Room>().Entities.FirstOrDefaultAsync(x => x.Id == request.Id);
+                if (ExistRoom == null)
+                {
+                    return await Result<int>.FailAsync(_localizer["Room Not Found!!"]);
+                }
+                else
+                {
+                    var ExistnameRoom = await _unitOfWork.Repository<Models.Room>().Entities.FirstOrDefaultAsync(x => x.RoomNumber == request.RoomNumber && x.Id != request.Id);
+                    if (ExistnameRoom != null)
+                    {
+                        return await Result<int>.FailAsync(_localizer["This Room Is Already Exist!"]);
+                    }
+                    else
+                    {
+                        ExistRoom.RoomNumber = request.RoomNumber;
+                        await _unitOfWork.Repository<Models.Room>().UpdateAsync(ExistRoom);
+                        await _unitOfWork.Commit(cancellationToken);
+                        return await Result<int>.SuccessAsync(ExistRoom.Id, _localizer["Room Updated Successfuly!"]);
+                    }
+                }
+            }
         }
     }
 }

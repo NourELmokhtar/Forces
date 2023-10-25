@@ -799,6 +799,46 @@
             </summary>
             <returns>Status 200 OK </returns>
         </member>
+        <member name="M:Forces.Server.Controllers.v1.InventoryItem.InventoryItemController.Post(Forces.Application.Features.InventoryInventoryItem.Commands.AddEdit.AddEditInventoryItemCommand)">
+            <summary>
+            Add/Edit a InventoryItem
+            </summary>
+            <param name="command"></param>
+            <returns>Status 200 OK</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Forces.Server.Controllers.v1.InventoryItem.InventoryItemController.Delete(System.Int32)" -->
+        <member name="M:Forces.Server.Controllers.v1.InventoryItem.InventoryItemController.GetBy(Forces.Application.Features.InventoryItem.Queries.GetBySpecifics.GetInventoryItemByQuery)">
+            <summary>
+            Get Inventory Items By Specifics
+            </summary>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:Forces.Server.Controllers.v1.InventoryItem.InventoryItemController.GetAll">
+            <summary>
+            Get All Inventories
+            </summary>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:Forces.Server.Controllers.v1.Inventory.InventoryController.Post(Forces.Application.Features.Inventory.Commands.AddEdit.AddEditInventoryCommand)">
+            <summary>
+            Add/Edit a Inventory
+            </summary>
+            <param name="command"></param>
+            <returns>Status 200 OK</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Forces.Server.Controllers.v1.Inventory.InventoryController.Delete(System.Int32)" -->
+        <member name="M:Forces.Server.Controllers.v1.Inventory.InventoryController.GetBy(Forces.Application.Features.Inventory.Queries.GetBySpecifics.GetInventoryByQuery)">
+            <summary>
+            Get Inventories By Specifics
+            </summary>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:Forces.Server.Controllers.v1.Inventory.InventoryController.GetAll">
+            <summary>
+            Get All Inventories
+            </summary>
+            <returns>Status 200 OK</returns>
+        </member>
         <member name="M:Forces.Server.Controllers.v1.Items.ItemsController.Post(Forces.Application.Features.Items.Commands.AddEdit.AddEditItemCommand)">
             <summary>
             Create/Update a Item With Permission Create Items
@@ -844,6 +884,26 @@
             Delete a Measure Unit With Permission Delete Measure Units
             </summary>
             <param name="id"></param>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:Forces.Server.Controllers.v1.Office.OfficeController.Post(Forces.Application.Features.Office.Commands.AddEdit.AddEditOfficeCommand)">
+            <summary>
+            Add/Edit a Office
+            </summary>
+            <param name="command"></param>
+            <returns>Status 200 OK</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Forces.Server.Controllers.v1.Office.OfficeController.Delete(System.Int32)" -->
+        <member name="M:Forces.Server.Controllers.v1.Office.OfficeController.GetBy(Forces.Application.Features.Office.Queries.GetAllBySpecifics.GetOfficeByQuery)">
+            <summary>
+            Get Offices By Specifics
+            </summary>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:Forces.Server.Controllers.v1.Office.OfficeController.GetAll">
+            <summary>
+            Get All Offices
+            </summary>
             <returns>Status 200 OK</returns>
         </member>
         <member name="M:Forces.Server.Controllers.v1.PersonalItems.PersonalItemsController.Post(Forces.Application.Features.PersonalItems.Commands.AddEdit.AddEditPersonalItemCommand)">
@@ -918,6 +978,26 @@
         <member name="M:Forces.Server.Controllers.v1.RackStore.RackStoreController.GetAll">
             <summary>
             Get All RackStore
+            </summary>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:Forces.Server.Controllers.v1.Room.RoomController.Post(Forces.Application.Features.Room.Commands.AddEdit.AddEditRoomCommand)">
+            <summary>
+            Add/Edit a Room
+            </summary>
+            <param name="command"></param>
+            <returns>Status 200 OK</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Forces.Server.Controllers.v1.Room.RoomController.Delete(System.Int32)" -->
+        <member name="M:Forces.Server.Controllers.v1.Room.RoomController.GetBy(Forces.Application.Features.Room.Queries.GetBySpecifics.GetRoomByQuery)">
+            <summary>
+            Get Rooms By Specifics
+            </summary>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:Forces.Server.Controllers.v1.Room.RoomController.GetAll">
+            <summary>
+            Get All Rooms
             </summary>
             <returns>Status 200 OK</returns>
         </member>

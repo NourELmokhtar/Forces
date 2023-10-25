@@ -1,4 +1,5 @@
-﻿using Forces.Application.Interfaces.Repositories;
+﻿using Forces.Application.Features.Room.Queries.GetAll;
+using Forces.Application.Interfaces.Repositories;
 using Forces.Application.Interfaces.Services;
 using Forces.Application.Responses.Identity;
 using Forces.Shared.Wrapper;
@@ -32,9 +33,17 @@ namespace Forces.Application.Features.Room.Queries.GetAll
             _voteCodeService = voteCodeService;
         }
 
-        public Task<IResult<List<GetAllRoomsResponse>>> Handle(GetAllRoomQuery request, CancellationToken cancellationToken)
+        public async Task<IResult<List<GetAllRoomsResponse>>> Handle(GetAllRoomQuery request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var Rooms = await _unitOfWork.Repository<Models.Room>().GetAllAsync();
+            var MappedRooms = Rooms.Select(x => new GetAllRoomsResponse()
+            {
+                RoomNumber = x.RoomNumber,
+                Id = x.Id,
+                BuildingId= x.BuildingId,
+
+            }).ToList();
+            return await Result<List<GetAllRoomsResponse>>.SuccessAsync(MappedRooms);
         }
     }
 }

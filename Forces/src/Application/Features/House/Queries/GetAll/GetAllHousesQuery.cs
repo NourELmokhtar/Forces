@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace Forces.Application.Features.House.Queries.GetAll
 {
     public class GetAllHouseQuery : IRequest<IResult<List<GetAllHousesResponse>>>
- {
+    {
         public GetAllHouseQuery()
         {
         }
@@ -31,9 +31,18 @@ namespace Forces.Application.Features.House.Queries.GetAll
             _voteCodeService = voteCodeService;
         }
 
-        public Task<IResult<List<GetAllHousesResponse>>> Handle(GetAllHouseQuery request, CancellationToken cancellationToken)
+        public async Task<IResult<List<GetAllHousesResponse>>> Handle(GetAllHouseQuery request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var HouseList = await _unitOfWork.Repository<Models.House>().GetAllAsync();
+            var MappedHouseList = HouseList.Select(x => new GetAllHousesResponse()
+            {
+                Id = x.Id,
+                HouseCode = x.HouseCode,
+                HouseName = x.HouseName,
+                BaseId = x.BaseId
+
+            }).ToList();
+            return await Result<List<GetAllHousesResponse>>.SuccessAsync(MappedHouseList);
         }
     }
 }

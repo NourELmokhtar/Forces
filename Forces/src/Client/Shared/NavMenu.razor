@@ -106,7 +106,7 @@
             <MudNavLink Href="/identity/roles" Icon="@Icons.Material.Outlined.Person">@_localizer["Roles"]</MudNavLink>
         }
     }
-    @if (_canViewBases || _canViewBasesSections || _canViewForces)
+    @if (_canViewBases || _canViewBasesSections || _canViewForces || _canViewInventories)
     {
         <MudListSubheader Class="mt-2 mb-n2">@_localizer["Basic Informations"]</MudListSubheader>
         @if (_canViewForces)
@@ -122,6 +122,10 @@
         @if (_canViewBasesSections)
         {
             <MudNavLink Href="/BasicInformations/BasesSections" Icon="@Icons.Filled.AccountTree">@_localizer["Bases Sections"]</MudNavLink>
+        }
+        @if (_canViewInventories)
+        {
+            <MudNavLink Href="/Inventory/MyInventory" Icon="@Icons.Filled.AccountTree">@_localizer["Inventory"]</MudNavLink>
         }
 
         <MudNavLink Href="/Vehicles" Icon="@Icons.Filled.CarRepair">
@@ -239,6 +243,7 @@
     private bool _canViewForces;
     private bool _canViewBases;
     private bool _canViewBasesSections;
+    private bool _canViewInventories;
     private bool _canViewDepartments;
     private bool _canViewDepo;
     private bool _canViewHQ;
@@ -289,6 +294,7 @@
         _canViewTailers = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Tailer.View)).Succeeded;
         _canViewOperationsReport = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.PersonalItemsOperations.Reports)).Succeeded;
         _canViewPersonalServiceOperations = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.PersonalItemsOperations.Create)).Succeeded;
+        _canViewInventories = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Inventory.View)).Succeeded;
 
     }
 }

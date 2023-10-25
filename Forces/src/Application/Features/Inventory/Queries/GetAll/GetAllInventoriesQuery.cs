@@ -1,10 +1,12 @@
-﻿using Forces.Application.Interfaces.Repositories;
+﻿using Forces.Application.Features.Office.Queries.GetAll;
+using Forces.Application.Interfaces.Repositories;
 using Forces.Application.Interfaces.Services;
 using Forces.Shared.Wrapper;
 using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -31,9 +33,19 @@ namespace Forces.Application.Features.Inventory.Queries.GetAll
             _voteCodeService = voteCodeService;
         }
 
-        public Task<IResult<List<GetAllInventoriesResponse>>> Handle(GetAllInventoryQuery request, CancellationToken cancellationToken)
+        public async Task<IResult<List<GetAllInventoriesResponse>>> Handle(GetAllInventoryQuery request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var Inventory = await _unitOfWork.Repository<Models.Inventory>().GetAllAsync();
+            var MappedInventory = Inventory.Select(x => new GetAllInventoriesResponse()
+            {
+                Name = x.Name,
+                Id = x.Id,
+                BaseSectionId = x.BaseSectionId,
+                HouseId = x.HouseId,
+                RoomId = x.RoomId,
+
+            }).ToList();
+            return await Result<List<GetAllInventoriesResponse>>.SuccessAsync(MappedInventory);
         }
     }
 

@@ -9,8 +9,10 @@ namespace Forces.Application.Features.Inventory.Queries.GetAll
     public class GetAllInventoriesResponse
     {
         public int Id { get; set; }
-        public string ItemName { get; set; }
-        public string ItemDescription { get; set; }
-        public decimal ItemPrice { get; set; }
+        public string Name { get; set; }
+        public int? RoomId { get; set; }
+        public int? HouseId { get; set; }
+        public int? BaseSectionId { get; set; }
+
     }
 }

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Forces.Application.Features.Inventory.Commands.Delete
 {
-    internal class DeleteInventoryCommand : IRequest<IResult<int>>
+    public class DeleteInventoryCommand : IRequest<IResult<int>>
     {
         [Required]
         public int InventoryId { get; set; }
@@ -31,9 +31,19 @@ namespace Forces.Application.Features.Inventory.Commands.Delete
             _unitOfWork = unitOfWork;
         }
 
-        public Task<IResult<int>> Handle(DeleteInventoryCommand request, CancellationToken cancellationToken)
+        public async Task<IResult<int>> Handle(DeleteInventoryCommand request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var Inventory = await _unitOfWork.Repository<Models.Inventory>().GetByIdAsync(request.InventoryId);
+            if (Inventory != null)
+            {
+                await _unitOfWork.Repository<Models.Inventory>().DeleteAsync(Inventory);
+                await _unitOfWork.Commit(cancellationToken);
+                return await Result<int>.SuccessAsync(Inventory.Id, _localizer["Inventory Deleted"]);
+            }
+            else
+            {
+                return await Result<int>.FailAsync(_localizer["Inventory Not Found!"]);
+            }
         }
     }
 }
