@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Infrastructure\\Infrastructure.csproj": {}
+    "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Application\\Application.csproj": {
+    "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Application\\Application.csproj",
         "projectName": "Forces.Application",
-        "projectPath": "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\20106\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Application\\obj\\",
+        "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\OMEN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages"
         ],
         "configFilePaths": [
-          "C:\\Users\\20106\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\OMEN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -35,11 +33,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Domain\\Domain.csproj"
+              "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Shared\\Shared.csproj"
+              "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Shared\\Shared.csproj"
               }
             }
           }
@@ -119,27 +117,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Domain\\Domain.csproj": {
+    "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Domain\\Domain.csproj",
         "projectName": "Forces.Domain",
-        "projectPath": "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\20106\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\OMEN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages"
         ],
         "configFilePaths": [
-          "C:\\Users\\20106\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\OMEN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -181,27 +177,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Forces.Infrastructure",
-        "projectPath": "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\20106\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\OMEN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages"
         ],
         "configFilePaths": [
-          "C:\\Users\\20106\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\OMEN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -216,11 +210,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Application\\Application.csproj"
+              "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Application\\Application.csproj"
               },
-              "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Shared\\Shared.csproj"
+              "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Shared\\Shared.csproj"
               }
             }
           }
@@ -304,27 +298,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Shared\\Shared.csproj": {
+    "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Shared\\Shared.csproj",
+        "projectUniqueName": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Shared\\Shared.csproj",
         "projectName": "Forces.Shared",
-        "projectPath": "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Shared\\Shared.csproj",
-        "packagesPath": "C:\\Users\\20106\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\20106\\Desktop\\Forcse20\\Forces\\src\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\OMEN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages"
         ],
         "configFilePaths": [
-          "C:\\Users\\20106\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\OMEN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -376,7 +368,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

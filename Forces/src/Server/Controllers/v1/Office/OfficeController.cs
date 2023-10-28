@@ -44,7 +44,7 @@ namespace Forces.Server.Controllers.v1.Office
         /// </summary>
         /// <returns>Status 200 OK</returns>
         [Authorize(Policy = Permissions.Office.View)]
-        [HttpGet]
+        [HttpGet("Filter")]
         public async Task<IActionResult> GetBy(GetOfficeByQuery command)
         {
             var Offices = await _mediator.Send(command);

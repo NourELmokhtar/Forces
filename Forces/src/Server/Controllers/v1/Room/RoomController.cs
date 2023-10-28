@@ -44,7 +44,7 @@ namespace Forces.Server.Controllers.v1.Room
         /// </summary>
         /// <returns>Status 200 OK</returns>
         [Authorize(Policy = Permissions.Office.View)]
-        [HttpGet]
+        [HttpGet("Filter")]
         public async Task<IActionResult> GetBy(GetRoomByQuery command)
         {
             var Rooms = await _mediator.Send(command);

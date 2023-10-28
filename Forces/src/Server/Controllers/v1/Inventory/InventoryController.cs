@@ -11,8 +11,7 @@ using System.Threading.Tasks;
 
 namespace Forces.Server.Controllers.v1.Inventory
 {
-    [Route("api/[controller]")]
-    [ApiController]
+ 
     public class InventoryController : BaseApiController<InventoryController>
     {
         /// <summary>
@@ -44,7 +43,7 @@ namespace Forces.Server.Controllers.v1.Inventory
         /// </summary>
         /// <returns>Status 200 OK</returns>
         [Authorize(Policy = Permissions.Inventory.View)]
-        [HttpGet]
+        [HttpGet("Filter")]
         public async Task<IActionResult> GetBy(GetInventoryByQuery command)
         {
             var Inventories = await _mediator.Send(command);

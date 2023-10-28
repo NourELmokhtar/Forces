@@ -44,7 +44,7 @@ namespace Forces.Server.Controllers.v1.InventoryItem
         /// </summary>
         /// <returns>Status 200 OK</returns>
         [Authorize(Policy = Permissions.InventoryItems.View)]
-        [HttpGet]
+        [HttpGet("Filter")]
         public async Task<IActionResult> GetBy(GetInventoryItemByQuery command)
         {
             var Inventories = await _mediator.Send(command);

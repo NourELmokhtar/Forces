@@ -1,13 +1,18 @@
 ﻿@page "/Inventory/MyInventory"
 @inject Microsoft.Extensions.Localization.IStringLocalizer<MyInventoryPage> _localizer
+@attribute [Authorize(Policy = Permissions.Inventory.View)]
+@using Forces.Application.Extensions
 @using Forces.Application.Features.Inventory.Queries.GetAll;
+
+
+
 <style>
     .mud-table-container {
         overflow: auto;
     }
 </style>
 
-<HeroTitle Title="@_localizer["Inventory"]" Description="@_localizer["Manage Inventories."]" />
+<HeroTitle Title="@_localizer["Inventory"]" Description="@_localizer["Manage Inventories"]" />
 @if (!_loaded)
 {
     <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
@@ -54,7 +59,7 @@ else
                 
                 <MudTd DataLabel="Actions" Style="text-align: right">
                  
-                    <MudMenu Label="@_localizer["Actions"]" Variant="Variant.Filled" DisableElevation="true" EndIcon="@Icons.Filled.KeyboardArrowDown" IconColor="Color.Secondary" Direction="Direction.Left" OffsetX="true">
+                    <MudMenu Label="@_localizer["Actions"]" Variant="Variant.Filled" DisableElevation="true" EndIcon="@Icons.Filled.KeyboardArrowDown" >
                         @if (_canEditBase)
                         {
                             <MudMenuItem @onclick="@(() => InvokeModal(@context.Id))">@_localizer["Edit"]</MudMenuItem>

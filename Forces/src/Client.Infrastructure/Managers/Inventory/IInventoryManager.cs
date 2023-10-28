@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Forces.Client.Infrastructure.Managers.Inventory
 {
-    public interface IInventoryManager
+    public interface IInventoryManager :IManager
     {
         Task<IResult<int>> SaveAsync(AddEditInventoryCommand request);
         Task<IResult<List<GetAllInventoriesResponse>>> GetAllAsync();

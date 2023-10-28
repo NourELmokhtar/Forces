@@ -125,7 +125,9 @@
         }
         @if (_canViewInventories)
         {
-            <MudNavLink Href="/Inventory/MyInventory" Icon="@Icons.Filled.AccountTree">@_localizer["Inventory"]</MudNavLink>
+            <MudNavLink Href="/Inventory/MyInventory" Icon="@Icons.Filled.AccountTree">
+                @_localizer["Inventory"]
+                </MudNavLink>
         }
 
         <MudNavLink Href="/Vehicles" Icon="@Icons.Filled.CarRepair">
