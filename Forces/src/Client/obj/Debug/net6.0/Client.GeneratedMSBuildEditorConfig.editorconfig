@@ -120,6 +120,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVwYXJ0bWVudHNcSFFcSFFQYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/20106/Downloads/INV/INV/Forces/Forces/src/Client/Pages/House/AddEditHouseModal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG91c2VcQWRkRWRpdEhvdXNlTW9kYWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/20106/Downloads/INV/INV/Forces/Forces/src/Client/Pages/House/MyHousesPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG91c2VcTXlIb3VzZXNQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/20106/Downloads/INV/INV/Forces/Forces/src/Client/Pages/Identity/Account.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSWRlbnRpdHlcQWNjb3VudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

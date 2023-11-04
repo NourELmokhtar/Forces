@@ -41,7 +41,8 @@ namespace Forces.Application.Features.Person.Queries.GetBySpecifics
             {
                 Id = x.Id,
                 Name = x.Name,
-                NationalNumber = x.NationalNumber
+                NationalNumber = x.NationalNumber,
+                RoomId = x.RoomId
             }).ToList();
             return await Result<List<GetPersonByResponse>>.SuccessAsync(PersonListResponse);
         }

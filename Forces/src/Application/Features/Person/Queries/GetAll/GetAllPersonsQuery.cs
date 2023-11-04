@@ -37,7 +37,7 @@ namespace Forces.Application.Features.Person.Queries.GetAll
         {
 
             var PersonList = await _unitOfWork.Repository<Models.Person>().GetAllAsync();
-            var MappedUnitList = PersonList.Select(x => new GetAllPersonsResponse() { Id = x.Id, Name = x.Name, NationalNumber = x.NationalNumber }).ToList();
+            var MappedUnitList = PersonList.Select(x => new GetAllPersonsResponse() { Id = x.Id, Name = x.Name, NationalNumber = x.NationalNumber , RoomId = x.RoomId }).ToList();
 
             return await Result<List<GetAllPersonsResponse>>.SuccessAsync(MappedUnitList);
 
