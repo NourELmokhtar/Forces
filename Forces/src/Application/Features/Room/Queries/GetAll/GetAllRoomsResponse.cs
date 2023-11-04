@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Forces.Application.Features.Room.Queries.GetAll
 {
-    internal class GetAllRoomsResponse
+    public class GetAllRoomsResponse
     {
         public int Id { get; set; }
         public int RoomNumber { get; set; }

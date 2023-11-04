@@ -16,10 +16,7 @@
           "Microsoft.AspNetCore.Components.Authorization": "6.0.19",
           "Microsoft.AspNetCore.Components.WebAssembly": "6.0.19",
           "MudBlazor": "5.2.4",
-          "Toolbelt.Blazor.HttpClientInterceptor": "9.2.1",
-          "Forces.Application.Reference": "1.0.0.0",
-          "Forces.Domain.Reference": "1.0.0.0",
-          "Forces.Shared.Reference": "1.0.0.0"
+          "Toolbelt.Blazor.HttpClientInterceptor": "9.2.1"
         },
         "runtime": {
           "Forces.Client.Infrastructure.dll": {}
@@ -1459,62 +1456,6 @@
         "runtime": {
           "Forces.Shared.dll": {}
         }
-      },
-      "Forces.Application.Reference/1.0.0.0": {
-        "runtime": {
-          "Forces.Application.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        },
-        "resources": {
-          "ar/Forces.Application.resources.dll": {
-            "locale": "ar"
-          },
-          "de/Forces.Application.resources.dll": {
-            "locale": "de"
-          },
-          "en/Forces.Application.resources.dll": {
-            "locale": "en"
-          },
-          "es/Forces.Application.resources.dll": {
-            "locale": "es"
-          },
-          "fr/Forces.Application.resources.dll": {
-            "locale": "fr"
-          },
-          "id/Forces.Application.resources.dll": {
-            "locale": "id"
-          },
-          "it/Forces.Application.resources.dll": {
-            "locale": "it"
-          },
-          "km/Forces.Application.resources.dll": {
-            "locale": "km"
-          },
-          "ru/Forces.Application.resources.dll": {
-            "locale": "ru"
-          },
-          "sv/Forces.Application.resources.dll": {
-            "locale": "sv"
-          }
-        }
-      },
-      "Forces.Domain.Reference/1.0.0.0": {
-        "runtime": {
-          "Forces.Domain.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "Forces.Shared.Reference/1.0.0.0": {
-        "runtime": {
-          "Forces.Shared.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
       }
     }
   },
@@ -2502,21 +2443,6 @@
     },
     "Forces.Shared/1.0.0": {
       "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Forces.Application.Reference/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Forces.Domain.Reference/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Forces.Shared.Reference/1.0.0.0": {
-      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

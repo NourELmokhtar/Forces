@@ -1,10 +1,12 @@
 ﻿using Forces.Application.Features.Bases.Commands.AddEdit;
 using Forces.Application.Features.Bases.Queries.GetAll;
+using Forces.Application.Features.BaseSections.Queries.GetAll;
 using Forces.Application.Features.Forces.Queries.GetAll;
 using Forces.Application.Features.Inventory.Commands.AddEdit;
 using Forces.Application.Features.Inventory.Queries.GetAll;
 using Forces.Client.Extensions;
 using Forces.Client.Infrastructure.Managers.BasicInformation.Bases;
+using Forces.Client.Infrastructure.Managers.BasicInformation.BaseSections;
 using Forces.Client.Infrastructure.Managers.BasicInformation.Forces;
 using Forces.Client.Infrastructure.Managers.Inventory;
 using Forces.Client.Pages.BasicInformations;
@@ -22,8 +24,10 @@ namespace Forces.Client.Pages.Inventory
     {
         [Inject] private IInventoryManager InventoryManager { get; set; }
         [Inject] private IForceManager ForceManager { get; set; }
+        [Inject] private IBaseSectionManager BaseSectionManager { get; set; }
         [CascadingParameter] private HubConnection HubConnection { get; set; }
         private List<GetAllInventoriesResponse> _InventoriesList = new();
+        private List<GetAllBasesSectionsQueryResponse> _BaseSectionList = new();
         private GetAllInventoriesResponse _Inventory = new();
         private string _searchString = "";
         private bool _dense = true;
@@ -43,7 +47,7 @@ namespace Forces.Client.Pages.Inventory
             _canEditBase = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Inventory.Edit)).Succeeded;
             _canDeleteBase = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Inventory.Delete)).Succeeded;
             _canSearchBase = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Inventory.Search)).Succeeded;
-
+            await GetBasesAsync();
             await GetForcesAsync();
             await GetInventoriesAsync();
 
@@ -66,6 +70,21 @@ namespace Forces.Client.Pages.Inventory
                 foreach (var message in response.Messages)
                 {
                     _snackBar.Add(message, Severity.Error);
+                }
+            }
+        }
+        private async Task GetBasesAsync()
+        {
+            var response = await BaseSectionManager.GetAllAsync();
+            if (response.Succeeded)
+            {
+                _BaseSectionList = response.Data.ToList();
+            }
+            else
+            {
+                foreach (var message in response.Messages)
+                {
+                    _snackBar.Add(message, MudBlazor.Severity.Error);
                 }
             }
         }

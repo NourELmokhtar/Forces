@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
+using Forces.Application.Features.Building.Commands.AddEdit;
 using Forces.Application.Interfaces.Repositories;
 using Forces.Application.Interfaces.Services;
 using Forces.Shared.Wrapper;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
 using System;
 using System.Collections.Generic;
@@ -40,67 +42,50 @@ namespace Forces.Application.Features.Building.Commands.AddEdit
         {
             if (request.Id == 0)
             {
-                var Building = _mapper.Map<Application.Models.Building>(request);
-
-                var IsCodeExist = _unitOfWork.Repository<Application.Models.Building>().Entities.
-                    Any(x => x.BuildingCode == request.BuildingCode && x.BaseId == request.BaseId);
-
-                var IsNameExist = _unitOfWork.Repository<Application.Models.Building>().Entities.
-                    Any(x => x.BuildingName == request.BuildingName && x.BaseId == request.BaseId);
-
-                if (IsCodeExist)
+                var ExistBuilding = await _unitOfWork.Repository<Models.Building>().Entities.FirstOrDefaultAsync(
+                    (x => (x.BuildingName == request.BuildingName && x.BaseId == request.BaseId)));
+                    
+                if (ExistBuilding != null)
                 {
-                    return await Result<int>.FailAsync(_localizer["Building With This Code is Already Exist!"]);
-
-                }
-                if (IsNameExist)
-                {
-                    return await Result<int>.FailAsync(_localizer["Building With This Name is Already Exist!"]);
-                }
-                await _unitOfWork.Repository<Application.Models.Building>().AddAsync(Building);
-                await _unitOfWork.Commit(cancellationToken);
-                return await Result<int>.SuccessAsync(Building.Id, _localizer["Building Added!"]);
-            }
-            else
-            {
-                var Building = await _unitOfWork.Repository<Application.Models.Building>().GetByIdAsync(request.Id);
-                if (Building != null)
-                {
-                    Building.BuildingName = request.BuildingName ?? Building.BuildingName;
-                    Building.BuildingCode = request.BuildingCode ?? Building.BuildingCode;
-                    if (request.BaseId != null)
-                    {
-                        Building.BaseId = request.BaseId;
-                    }
-
-                    var Messages = new List<string>();
-                    var IsNameExist = _unitOfWork.Repository<Models.Building>().Entities.Any(x => x.BuildingName == Building.BuildingName && x.BaseId != Building.BaseId);
-                    var IsCodeExist = _unitOfWork.Repository<Models.Building>().Entities.Any(x => x.BuildingCode == Building.BuildingCode && x.BaseId != Building.BaseId);
-                    if (IsCodeExist)
-                    {
-                        return await Result<int>.FailAsync(_localizer["Building With This Code is Already Exist!"]);
-
-                    }
-                    if (IsNameExist)
-                    {
-                        return await Result<int>.FailAsync(_localizer["Building With This Name is Already Exist!"]);
-                    }
-                    else
-                    {
-                        await _unitOfWork.Repository<Models.Building>().UpdateAsync(Building);
-                        await _unitOfWork.Commit(cancellationToken);
-                        return await Result<int>.SuccessAsync(Building.Id, _localizer["Building Updated"]);
-                    }
-
-
-
+                    return await Result<int>.FailAsync(_localizer["This Building Name Is Already Exist!"]);
                 }
                 else
                 {
-                    return await Result<int>.FailAsync(_localizer["Building Not Found!"]);
+                    Models.Building Building = new Models.Building()
+                    {
+                        Id = request.Id,
+                        BuildingName = request.BuildingName,
+                        BaseId = request.BaseId,
+                        BuildingCode = request.BuildingCode,
+                    };
+                    await _unitOfWork.Repository<Models.Building>().AddAsync(Building);
+                    await _unitOfWork.Commit(cancellationToken);
+                    return await Result<int>.SuccessAsync(Building.Id, _localizer["Building Added Successfuly!"]);
                 }
             }
-
+            else
+            {
+                var ExistBuilding = await _unitOfWork.Repository<Models.Building>().Entities.FirstOrDefaultAsync(x => x.Id == request.Id);
+                if (ExistBuilding == null)
+                {
+                    return await Result<int>.FailAsync(_localizer["Building Not Found!!"]);
+                }
+                else
+                {
+                    var ExistnameOffice = await _unitOfWork.Repository<Models.Building>().Entities.FirstOrDefaultAsync(x => x.BuildingName == request.BuildingName && x.Id != request.Id);
+                    if (ExistnameOffice != null)
+                    {
+                        return await Result<int>.FailAsync(_localizer["This Building Is Already Exist!"]);
+                    }
+                    else
+                    {
+                        ExistBuilding.BuildingName = request.BuildingName;
+                        await _unitOfWork.Repository<Models.Building>().UpdateAsync(ExistBuilding);
+                        await _unitOfWork.Commit(cancellationToken);
+                        return await Result<int>.SuccessAsync(ExistBuilding.Id, _localizer["Building Updated Successfuly!"]);
+                    }
+                }
+            }
         }
     }
 }

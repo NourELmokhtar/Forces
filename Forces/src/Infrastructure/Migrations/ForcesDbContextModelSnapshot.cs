@@ -204,31 +204,6 @@ namespace Forces.Infrastructure.Migrations
                     b.ToTable("Bases");
                 });
 
-            modelBuilder.Entity("Forces.Application.Models.BaseSection", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("LastModifiedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("LastModifiedOn")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("BaseSection");
-                });
-
             modelBuilder.Entity("Forces.Application.Models.BasesSections", b =>
                 {
                     b.Property<int>("Id")
@@ -974,7 +949,7 @@ namespace Forces.Infrastructure.Migrations
                     b.Property<string>("NationalNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("RoomId")
+                    b.Property<int>("RoomId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -2782,7 +2757,7 @@ namespace Forces.Infrastructure.Migrations
 
             modelBuilder.Entity("Forces.Application.Models.Inventory", b =>
                 {
-                    b.HasOne("Forces.Application.Models.BaseSection", "BaseSection")
+                    b.HasOne("Forces.Application.Models.BasesSections", "BaseSection")
                         .WithMany()
                         .HasForeignKey("BaseSectionId");
 
@@ -2868,9 +2843,13 @@ namespace Forces.Infrastructure.Migrations
 
             modelBuilder.Entity("Forces.Application.Models.Person", b =>
                 {
-                    b.HasOne("Forces.Application.Models.Room", null)
+                    b.HasOne("Forces.Application.Models.Room", "Room")
                         .WithMany("Persons")
-                        .HasForeignKey("RoomId");
+                        .HasForeignKey("RoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Room");
                 });
 
             modelBuilder.Entity("Forces.Application.Models.PersonalItems", b =>

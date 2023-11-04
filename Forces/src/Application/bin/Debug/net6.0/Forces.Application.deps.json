@@ -21,9 +21,7 @@
           "Microsoft.EntityFrameworkCore.Proxies": "6.0.19",
           "Microsoft.Office.Interop.Outlook": "15.0.4797.1004",
           "Newtonsoft.Json": "13.0.3",
-          "System.Linq.Dynamic.Core": "1.2.10",
-          "Forces.Domain.Reference": "1.0.0.0",
-          "Forces.Shared.Reference": "1.0.0.0"
+          "System.Linq.Dynamic.Core": "1.2.10"
         },
         "runtime": {
           "Forces.Application.dll": {}
@@ -1167,22 +1165,6 @@
         "runtime": {
           "Forces.Shared.dll": {}
         }
-      },
-      "Forces.Domain.Reference/1.0.0.0": {
-        "runtime": {
-          "Forces.Domain.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "Forces.Shared.Reference/1.0.0.0": {
-        "runtime": {
-          "Forces.Shared.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
       }
     }
   },
@@ -1997,16 +1979,6 @@
     },
     "Forces.Shared/1.0.0": {
       "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Forces.Domain.Reference/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Forces.Shared.Reference/1.0.0.0": {
-      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

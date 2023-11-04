@@ -11,5 +11,6 @@ namespace Forces.Application.Features.Person.Queries.GetAll
         public int Id { get; set; }
         public string Name { get; set; }
         public string NationalNumber { get; set; }
+        public int RoomId { get; set; }
     }
 }

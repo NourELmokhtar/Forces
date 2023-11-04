@@ -20,7 +20,7 @@ namespace Forces.Server.Controllers.v1.Room
         /// </summary>
         /// <param name="command"></param>
         /// <returns>Status 200 OK</returns>
-        [Authorize(Policy = Permissions.Office.Create)]
+        [Authorize(Policy = Permissions.Rooms.Create)]
         [HttpPost]
         public async Task<IActionResult> Post(AddEditRoomCommand command)
         {
@@ -33,7 +33,7 @@ namespace Forces.Server.Controllers.v1.Room
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Status 200 OK response</returns>
-       [Authorize(Policy = Permissions.Office.Delete)]
+       [Authorize(Policy = Permissions.Rooms.Delete)]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
@@ -43,7 +43,7 @@ namespace Forces.Server.Controllers.v1.Room
         /// Get Rooms By Specifics
         /// </summary>
         /// <returns>Status 200 OK</returns>
-        [Authorize(Policy = Permissions.Office.View)]
+        [Authorize(Policy = Permissions.Rooms.View)]
         [HttpGet("Filter")]
         public async Task<IActionResult> GetBy(GetRoomByQuery command)
         {
@@ -55,7 +55,7 @@ namespace Forces.Server.Controllers.v1.Room
         /// Get All Rooms
         /// </summary>
         /// <returns>Status 200 OK</returns>
-        [Authorize(Policy = Permissions.Office.View)]
+        [Authorize(Policy = Permissions.Rooms.View)]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {

@@ -707,6 +707,26 @@
             </summary>
             <returns>Status 200 OK</returns>
         </member>
+        <member name="M:Forces.Server.Controllers.v1.Building.BuildingController.Post(Forces.Application.Features.Building.Commands.AddEdit.AddEditBuildingCommand)">
+            <summary>
+            Add/Edit a Building
+            </summary>
+            <param name="command"></param>
+            <returns>Status 200 OK</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Forces.Server.Controllers.v1.Building.BuildingController.Delete(System.Int32)" -->
+        <member name="M:Forces.Server.Controllers.v1.Building.BuildingController.GetBy(Forces.Application.Features.Building.Queries.GetBySpecifics.GetBuildingsByQuery)">
+            <summary>
+            Get Buildings By Specifics
+            </summary>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:Forces.Server.Controllers.v1.Building.BuildingController.GetAll">
+            <summary>
+            Get All Buildings
+            </summary>
+            <returns>Status 200 OK</returns>
+        </member>
         <member name="M:Forces.Server.Controllers.v1.Catalog.BrandsController.GetAll">
             <summary>
             Get All Brands
@@ -798,6 +818,26 @@
             Get Dashboard Data
             </summary>
             <returns>Status 200 OK </returns>
+        </member>
+        <member name="M:Forces.Server.Controllers.v1.House.HouseController.Post(Forces.Application.Features.House.Commands.AddEdit.AddEditHouseCommand)">
+            <summary>
+            Add/Edit a House
+            </summary>
+            <param name="command"></param>
+            <returns>Status 200 OK</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Forces.Server.Controllers.v1.House.HouseController.Delete(System.Int32)" -->
+        <member name="M:Forces.Server.Controllers.v1.House.HouseController.GetBy(Forces.Application.Features.House.Queries.GetBySpecifics.GetHouseByQuery)">
+            <summary>
+            Get Houses By Specifics
+            </summary>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:Forces.Server.Controllers.v1.House.HouseController.GetAll">
+            <summary>
+            Get All Houses
+            </summary>
+            <returns>Status 200 OK</returns>
         </member>
         <member name="M:Forces.Server.Controllers.v1.InventoryItem.InventoryItemController.Post(Forces.Application.Features.InventoryInventoryItem.Commands.AddEdit.AddEditInventoryItemCommand)">
             <summary>

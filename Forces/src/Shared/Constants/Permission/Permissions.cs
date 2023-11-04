@@ -24,6 +24,15 @@ namespace Forces.Shared.Constants.Permission
             public const string Export = "Permissions.Building.Export";
             public const string Search = "Permissions.Building.Search";
         }
+        public static class Room
+        {
+            public const string View = "Permissions.Room.View";
+            public const string Create = "Permissions.Room.Create";
+            public const string Edit = "Permissions.Room.Edit";
+            public const string Delete = "Permissions.Room.Delete";
+            public const string Export = "Permissions.Room.Export";
+            public const string Search = "Permissions.Room.Search";
+        }
         public static class House
         {
             public const string View = "Permissions.House.View";

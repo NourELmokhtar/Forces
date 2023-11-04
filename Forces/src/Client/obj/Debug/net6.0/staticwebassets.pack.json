@@ -1,255 +1,255 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\OMEN\\.nuget\\packages\\chartjs.blazor.fork\\2.0.2\\contentFiles\\any\\netstandard2.1\\wwwroot\\ChartJsBlazorInterop.js",
+      "Id": "C:\\Users\\20106\\.nuget\\packages\\chartjs.blazor.fork\\2.0.2\\contentFiles\\any\\netstandard2.1\\wwwroot\\ChartJsBlazorInterop.js",
       "PackagePath": "staticwebassets\\ChartJsBlazorInterop.js"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\blazor.webassembly.js",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\obj\\Debug\\net6.0\\build-gz\\v+T6z+WX.gz",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\obj\\Debug\\net6.0\\build-gz\\xczHd20J.gz",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Forces.Client.styles.css",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Forces.Client.styles.css",
       "PackagePath": "staticwebassets\\Forces.Client.styles.css"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\Fonts\\Cairo-Black.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\Fonts\\Cairo-Black.ttf",
       "PackagePath": "staticwebassets\\css\\Fonts\\Cairo-Black.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\Fonts\\Cairo-Bold.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\Fonts\\Cairo-Bold.ttf",
       "PackagePath": "staticwebassets\\css\\Fonts\\Cairo-Bold.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\Fonts\\Cairo-ExtraBold.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\Fonts\\Cairo-ExtraBold.ttf",
       "PackagePath": "staticwebassets\\css\\Fonts\\Cairo-ExtraBold.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\Fonts\\Cairo-ExtraLight.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\Fonts\\Cairo-ExtraLight.ttf",
       "PackagePath": "staticwebassets\\css\\Fonts\\Cairo-ExtraLight.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\Fonts\\Cairo-Light.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\Fonts\\Cairo-Light.ttf",
       "PackagePath": "staticwebassets\\css\\Fonts\\Cairo-Light.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\Fonts\\Cairo-Medium.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\Fonts\\Cairo-Medium.ttf",
       "PackagePath": "staticwebassets\\css\\Fonts\\Cairo-Medium.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\Fonts\\Cairo-Regular.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\Fonts\\Cairo-Regular.ttf",
       "PackagePath": "staticwebassets\\css\\Fonts\\Cairo-Regular.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\Fonts\\Cairo-SemiBold.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\Fonts\\Cairo-SemiBold.ttf",
       "PackagePath": "staticwebassets\\css\\Fonts\\Cairo-SemiBold.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\Fonts\\Cairo-VariableFont_wght.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\Fonts\\Cairo-VariableFont_wght.ttf",
       "PackagePath": "staticwebassets\\css\\Fonts\\Cairo-VariableFont_wght.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\loader.css",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\css\\loader.css",
       "PackagePath": "staticwebassets\\css\\loader.css"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Arial.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Arial.ttf",
       "PackagePath": "staticwebassets\\fonts\\Arial.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo-Black.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo-Black.ttf",
       "PackagePath": "staticwebassets\\fonts\\Cairo-Black.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo-Bold.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo-Bold.ttf",
       "PackagePath": "staticwebassets\\fonts\\Cairo-Bold.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo-ExtraBold.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo-ExtraBold.ttf",
       "PackagePath": "staticwebassets\\fonts\\Cairo-ExtraBold.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo-ExtraLight.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo-ExtraLight.ttf",
       "PackagePath": "staticwebassets\\fonts\\Cairo-ExtraLight.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo-Light.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo-Light.ttf",
       "PackagePath": "staticwebassets\\fonts\\Cairo-Light.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo-Medium.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo-Medium.ttf",
       "PackagePath": "staticwebassets\\fonts\\Cairo-Medium.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo-Regular.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo-Regular.ttf",
       "PackagePath": "staticwebassets\\fonts\\Cairo-Regular.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo-SemiBold.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo-SemiBold.ttf",
       "PackagePath": "staticwebassets\\fonts\\Cairo-SemiBold.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo-VariableFont_slnt,wght.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo-VariableFont_slnt,wght.ttf",
       "PackagePath": "staticwebassets\\fonts\\Cairo-VariableFont_slnt,wght.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Cairo.ttf",
       "PackagePath": "staticwebassets\\fonts\\Cairo.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\SEGOEUI.TTF",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\SEGOEUI.TTF",
       "PackagePath": "staticwebassets\\fonts\\SEGOEUI.TTF"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\SEGOEUIB.TTF",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\SEGOEUIB.TTF",
       "PackagePath": "staticwebassets\\fonts\\SEGOEUIB.TTF"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Traditional-Arabic.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\Traditional-Arabic.ttf",
       "PackagePath": "staticwebassets\\fonts\\Traditional-Arabic.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\segoeuii.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\segoeuii.ttf",
       "PackagePath": "staticwebassets\\fonts\\segoeuii.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\segoeuil.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\segoeuil.ttf",
       "PackagePath": "staticwebassets\\fonts\\segoeuil.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\segoeuisl.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\segoeuisl.ttf",
       "PackagePath": "staticwebassets\\fonts\\segoeuisl.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\segoeuiz.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\segoeuiz.ttf",
       "PackagePath": "staticwebassets\\fonts\\segoeuiz.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\seguili.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\seguili.ttf",
       "PackagePath": "staticwebassets\\fonts\\seguili.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\seguisb.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\seguisb.ttf",
       "PackagePath": "staticwebassets\\fonts\\seguisb.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\seguisbi.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\seguisbi.ttf",
       "PackagePath": "staticwebassets\\fonts\\seguisbi.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\seguisli.ttf",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\fonts\\seguisli.ttf",
       "PackagePath": "staticwebassets\\fonts\\seguisli.ttf"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\00.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\00.png",
       "PackagePath": "staticwebassets\\images\\Ranks\\00.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\011.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\011.png",
       "PackagePath": "staticwebassets\\images\\Ranks\\011.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O1.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O1.png",
       "PackagePath": "staticwebassets\\images\\Ranks\\O1.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O10.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O10.png",
       "PackagePath": "staticwebassets\\images\\Ranks\\O10.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O2.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O2.png",
       "PackagePath": "staticwebassets\\images\\Ranks\\O2.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O3.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O3.png",
       "PackagePath": "staticwebassets\\images\\Ranks\\O3.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O4.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O4.png",
       "PackagePath": "staticwebassets\\images\\Ranks\\O4.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O5.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O5.png",
       "PackagePath": "staticwebassets\\images\\Ranks\\O5.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O6.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O6.png",
       "PackagePath": "staticwebassets\\images\\Ranks\\O6.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O7.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O7.png",
       "PackagePath": "staticwebassets\\images\\Ranks\\O7.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O8.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O8.png",
       "PackagePath": "staticwebassets\\images\\Ranks\\O8.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O9.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\O9.png",
       "PackagePath": "staticwebassets\\images\\Ranks\\O9.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\S1.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\S1.png",
       "PackagePath": "staticwebassets\\images\\Ranks\\S1.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\S2.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\S2.png",
       "PackagePath": "staticwebassets\\images\\Ranks\\S2.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\S3.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\S3.png",
       "PackagePath": "staticwebassets\\images\\Ranks\\S3.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\S4.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\S4.png",
       "PackagePath": "staticwebassets\\images\\Ranks\\S4.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\S5.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\S5.png",
       "PackagePath": "staticwebassets\\images\\Ranks\\S5.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\S6.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\S6.png",
       "PackagePath": "staticwebassets\\images\\Ranks\\S6.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\S7.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\Ranks\\S7.png",
       "PackagePath": "staticwebassets\\images\\Ranks\\S7.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\check.png",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\images\\check.png",
       "PackagePath": "staticwebassets\\images\\check.png"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\index.html",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\js\\Chart.min.js",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\js\\Chart.min.js",
       "PackagePath": "staticwebassets\\js\\Chart.min.js"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\js\\file.js",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\js\\file.js",
       "PackagePath": "staticwebassets\\js\\file.js"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\js\\scroll.js",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\js\\scroll.js",
       "PackagePath": "staticwebassets\\js\\scroll.js"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\js\\sounds.js",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\js\\sounds.js",
       "PackagePath": "staticwebassets\\js\\sounds.js"
     },
     {
-      "Id": "C:\\Users\\OMEN\\Documents\\GitHub\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\media\\notification.mp3",
+      "Id": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Client\\wwwroot\\media\\notification.mp3",
       "PackagePath": "staticwebassets\\media\\notification.mp3"
     },
     {

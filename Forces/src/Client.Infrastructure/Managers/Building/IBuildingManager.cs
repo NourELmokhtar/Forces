@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Forces.Client.Infrastructure.Managers.Building
 {
-    public interface IBuildingManager
+    public interface IBuildingManager : IManager
     {
         Task<IResult<int>> SaveAsync(AddEditBuildingCommand command);
         Task<IResult<int>> DeleteAsync(int Id);

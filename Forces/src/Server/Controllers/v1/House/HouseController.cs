@@ -2,6 +2,10 @@
 using Forces.Application.Features.House.Commands.Delete;
 using Forces.Application.Features.House.Queries.GetAll;
 using Forces.Application.Features.House.Queries.GetBySpecifics;
+using Forces.Application.Features.House.Commands.AddEdit;
+using Forces.Application.Features.House.Commands.Delete;
+using Forces.Application.Features.House.Queries.GetAll;
+using Forces.Application.Features.House.Queries.GetBySpecifics;
 using Forces.Shared.Constants.Permission;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -15,6 +19,11 @@ namespace Forces.Server.Controllers.v1.House
     [ApiController]
     public class HouseController : BaseApiController<HouseController>
     {
+        /// <summary>
+        /// Add/Edit a House
+        /// </summary>
+        /// <param name="command"></param>
+        /// <returns>Status 200 OK</returns>
         [Authorize(Policy = Permissions.House.Create)]
         [HttpPost]
         public async Task<IActionResult> Post(AddEditHouseCommand command)
@@ -22,26 +31,41 @@ namespace Forces.Server.Controllers.v1.House
             return Ok(await _mediator.Send(command));
         }
 
-        [HttpGet]
 
-        public async Task<IActionResult> GetALl()
-        {
-            var Persons = await _mediator.Send(new GetAllHouseQuery());
-            return Ok(Persons);
-        }
-
-        [HttpGet("Get")]
-        public async Task<IActionResult> GetByCondition(GetHouseByQuery command)
-        {
-            var Persons = await _mediator.Send(command);
-            return Ok(Persons);
-        }
-
-        [Authorize(Policy = Permissions.Person.Delete)]
+        // <summary>
+        /// Delete an House
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Status 200 OK response</returns>
+        [Authorize(Policy = Permissions.House.Delete)]
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(DeleteHouseCommand command)
+        public async Task<IActionResult> Delete(int id)
         {
-            return Ok(await _mediator.Send(command));
+            return Ok(await _mediator.Send(new DeleteHouseCommand { HouseId = id }));
+        }
+        /// <summary>
+        /// Get Houses By Specifics
+        /// </summary>
+        /// <returns>Status 200 OK</returns>
+        [Authorize(Policy = Permissions.House.View)]
+        [HttpGet("Filter")]
+        public async Task<IActionResult> GetBy(GetHouseByQuery command)
+        {
+            var Houses = await _mediator.Send(command);
+            return Ok(Houses);
+        }
+
+        /// <summary>
+        /// Get All Houses
+        /// </summary>
+        /// <returns>Status 200 OK</returns>
+        [Authorize(Policy = Permissions.House.View)]
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var Houses = await _mediator.Send(new GetAllHouseQuery());
+            return Ok(Houses);
         }
     }
+
 }

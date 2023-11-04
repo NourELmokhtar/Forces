@@ -12,6 +12,8 @@ using Forces.Application.Serialization.JsonConverters;
 using Forces.Application.Serialization.Options;
 using Forces.Application.Serialization.Serializers;
 using Forces.Application.Serialization.Settings;
+using Forces.Client.Infrastructure.Managers.Building;
+using Forces.Client.Infrastructure.Managers.House;
 using Forces.Infrastructure;
 using Forces.Infrastructure.Contexts;
 using Forces.Infrastructure.Models.Identity;

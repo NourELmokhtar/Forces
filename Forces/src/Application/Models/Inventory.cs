@@ -16,6 +16,6 @@ namespace Forces.Application.Models
         public string Name { get; set; }
         public virtual Room? Room { get; set; }
         public virtual House? House { get; set; }
-        public virtual BaseSection? BaseSection { get; set; }
+        public virtual BasesSections? BaseSection { get; set; }
     }
 }

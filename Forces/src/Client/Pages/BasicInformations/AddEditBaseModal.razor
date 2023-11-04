@@ -1,4 +1,6 @@
 ﻿@inject Microsoft.Extensions.Localization.IStringLocalizer<AddEditBaseModal> _localizer
+@attribute [Authorize(Policy = Permissions.Inventory.Create)]
+
 
 <EditForm Model="@AddEditBaseModel" OnValidSubmit="SaveAsync">
     <FluentValidationValidator @ref="_fluentValidationValidator" />

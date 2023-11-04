@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Forces.Client.Infrastructure.Managers.House
 {
-    public interface IHouseManager
+    public interface IHouseManager : IManager
     {
         Task<IResult<int>> SaveAsync(AddEditHouseCommand request);
         Task<IResult<List<GetAllHousesResponse>>> GetAllAsync();

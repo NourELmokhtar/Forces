@@ -31,7 +31,7 @@ namespace Forces.Client.Infrastructure.Managers.BasicInformation.BaseSections
 
         public async Task<IResult<List<GetAllBasesSectionsQueryResponse>>> GetAllAsync()
         {
-            var response = await _httpClient.GetAsync(Routes.BaseSectionEndpoints.GetAll);
+            var response = await _httpClient.GetAsync(Routes.BaseSectionEndpoints.GetAllSections);
             return await response.ToResult<List<GetAllBasesSectionsQueryResponse>>();
         }
 

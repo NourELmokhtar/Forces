@@ -65,7 +65,7 @@ namespace Forces.Application.Features.Inventory.Commands.AddEdit
                     };
                     await _unitOfWork.Repository<Models.Inventory>().AddAsync(Inventory);
                     await _unitOfWork.Commit(cancellationToken);
-                    return await Result<int>.SuccessAsync(Inventory.Id, _localizer["Office Added Successfuly!"]);
+                    return await Result<int>.SuccessAsync(Inventory.Id, _localizer["Inventory Added Successfuly!"]);
                 }
             }
             else
@@ -73,14 +73,14 @@ namespace Forces.Application.Features.Inventory.Commands.AddEdit
                 var ExistInventory = await _unitOfWork.Repository<Models.Inventory>().Entities.FirstOrDefaultAsync(x => x.Id == request.Id);
                 if (ExistInventory == null)
                 {
-                    return await Result<int>.FailAsync(_localizer["Office Not Found!!"]);
+                    return await Result<int>.FailAsync(_localizer["Inventory Not Found!!"]);
                 }
                 else
                 {
                     var ExistnameOffice = await _unitOfWork.Repository<Models.Inventory>().Entities.FirstOrDefaultAsync(x => x.Name == request.Name && x.Id != request.Id);
                     if (ExistnameOffice != null)
                     {
-                        return await Result<int>.FailAsync(_localizer["This Office Is Already Exist!"]);
+                        return await Result<int>.FailAsync(_localizer["This Inventory Is Already Exist!"]);
                     }
                     else
                     {

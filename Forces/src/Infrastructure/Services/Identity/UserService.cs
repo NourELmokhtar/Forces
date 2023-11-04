@@ -402,10 +402,10 @@ namespace Forces.Infrastructure.Services.Identity
         public async Task<IResult<UserType>> GetCurrentUserTypeAsync(string userId)
         {
             var user = await _userManager.FindByIdAsync(userId);
-            if (user.UserType != null || user.UserType.HasValue)
+            /*if (user.UserType != null || user.UserType.HasValue)
             {
                 return await Result<UserType>.SuccessAsync(user.UserType.Value);
-            }
+            }*/
             return await Result<UserType>.SuccessAsync(UserType.SuperAdmin);
         }
 
