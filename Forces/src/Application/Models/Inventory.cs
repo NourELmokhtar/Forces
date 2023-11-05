@@ -17,5 +17,6 @@ namespace Forces.Application.Models
         public virtual Room? Room { get; set; }
         public virtual House? House { get; set; }
         public virtual BasesSections? BaseSection { get; set; }
+        public virtual List<InventoryItem>? InventoryItems { get; set; }
     }
 }

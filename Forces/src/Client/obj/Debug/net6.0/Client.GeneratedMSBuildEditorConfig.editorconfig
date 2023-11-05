@@ -176,6 +176,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSWRlbnRpdHlcVXNlcnMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/20106/Downloads/INV/INV/Forces/Forces/src/Client/Pages/InventoryItem/AddEditInventoryItemModal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW52ZW50b3J5SXRlbVxBZGRFZGl0SW52ZW50b3J5SXRlbU1vZGFsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/20106/Downloads/INV/INV/Forces/Forces/src/Client/Pages/InventoryItem/MyInventoryItemPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW52ZW50b3J5SXRlbVxNeUludmVudG9yeUl0ZW1QYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/20106/Downloads/INV/INV/Forces/Forces/src/Client/Pages/Inventory/AddEditInventoryModal.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW52ZW50b3J5XEFkZEVkaXRJbnZlbnRvcnlNb2RhbC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -246,6 +254,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/20106/Downloads/INV/INV/Forces/Forces/src/Client/Pages/MprRequestPages/MprPages/MprPageMain.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXByUmVxdWVzdFBhZ2VzXE1wclBhZ2VzXE1wclBhZ2VNYWluLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/20106/Downloads/INV/INV/Forces/Forces/src/Client/Pages/Office/AddEditOfficeModal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT2ZmaWNlXEFkZEVkaXRPZmZpY2VNb2RhbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/20106/Downloads/INV/INV/Forces/Forces/src/Client/Pages/Office/MyOfficePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT2ZmaWNlXE15T2ZmaWNlUGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/20106/Downloads/INV/INV/Forces/Forces/src/Client/Pages/PersonalItemsOperations/Components/AllOperations.razor]

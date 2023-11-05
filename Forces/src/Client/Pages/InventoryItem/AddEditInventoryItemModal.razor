@@ -1,0 +1,76 @@
+﻿@inject Microsoft.Extensions.Localization.IStringLocalizer<AddEditInventoryItemModal> _localizer
+@inject IJSRuntime JSRuntime
+
+@code {
+
+    private async Task LogToConsole()
+    {
+        await JSRuntime.InvokeVoidAsync("console.log", converterForBases(selectedBase));
+        await JSRuntime.InvokeVoidAsync("console.log", selectedBase);
+        await JSRuntime.InvokeVoidAsync("console.log", AddEditInventoryItemModel.InventoryId);
+    }
+}
+<EditForm Model="@AddEditInventoryItemModel" OnValidSubmit="SaveAsync">
+    <FluentValidationValidator @ref="_fluentValidationValidator" />
+    <MudDialog>
+        <TitleContent>
+            @{
+                if (AddEditInventoryItemModel.Id == 0)
+                {
+                    <MudText Typo="Typo.h6">
+                        <MudIcon Icon="@Icons.Material.Filled.Add" Class="mr-3 mb-n1" />
+                        @_localizer["Add InventoryItem"]
+                    </MudText>
+                }
+                else
+                {
+                    <MudText Typo="Typo.h6">
+                        <MudIcon Icon="@Icons.Material.Filled.Update" Class="mr-3 mb-n1" />
+                        @_localizer["Update InventoryItem"]
+                    </MudText>
+                }
+            }
+        </TitleContent>
+        <DialogContent>
+            <MudGrid>
+                <MudItem xs="12" md="6">
+                    <MudTextField Required="true" Immediate="true" T="string" For="@(() => AddEditInventoryItemModel.ItemName)" @bind-Value="AddEditInventoryItemModel.ItemName" Label="@_localizer["InventoryItem Name"]" />
+                </MudItem>
+                <MudItem xs="12" md="6">
+                    <MudTextField Required="true" Immediate="true" T="string" For="@(() => AddEditInventoryItemModel.ItemCode)" @bind-Value="AddEditInventoryItemModel.ItemCode" Label="@_localizer["InventoryItem Code"]" />
+                </MudItem>
+                <MudItem xs="12" md="6">
+
+                </MudItem>
+
+            </MudGrid>
+            <MudGrid>
+                <MudItem xs="12" md="6">
+                    <MudSelect Label="Select Base" @bind-Value="selectedBase">
+                        @if (_BaseList != null)
+                        {
+                            @foreach (var item in _BaseList)
+                            {
+                                <MudSelectItem Value="@item.BaseName">@item.BaseName</MudSelectItem>
+                            }
+                        }
+                    </MudSelect>
+
+                </MudItem>
+
+            </MudGrid>
+        </DialogContent>
+        <DialogActions>
+            <MudButton DisableElevation Variant="Variant.Filled" OnClick="Cancel">@_localizer["Cancel"]</MudButton>
+            @if (AddEditInventoryItemModel.Id != 0)
+            {
+                <MudButton DisableElevation Variant="Variant.Filled" ButtonType="ButtonType.Submit" Disabled="@(!Validated)" Color="Color.Secondary">@_localizer["Update"]</MudButton>
+            }
+            else
+            {
+                <MudButton DisableElevation Variant="Variant.Filled" ButtonType="ButtonType.Submit" Disabled="@(!Validated)" Color="Color.Success">@_localizer["Save"]</MudButton>
+            }
+        </DialogActions>
+    </MudDialog>
+</EditForm>
+<MudButton DisableElevation Variant="Variant.Filled" OnClick="LogToConsole">Log to Console</MudButton>

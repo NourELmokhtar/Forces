@@ -19,15 +19,14 @@ namespace Forces.Application.Models
         public int MeasureUnitId { get; set; }
         [ForeignKey("MeasureUnitId")]
         public virtual MeasureUnits MeasureUnit { get; set; }
-        public int VoteCodesId { get; set; }
         public ItemClass ItemClass { get; set; }
-
-        public string MadeIn { get; set; }
-
         public DateTime? DateOfEnter { get; set; }
         public DateTime? FirstUseDate { get; set; }
         public DateTime? EndOfServiceDate { get; set; }
         public string SerialNumber { get; set; }
+        [ForeignKey("Inventory")]
+        public int? InventoryId { get; set; }
+        public virtual Inventory? Inventory { get; set; }
 
     }
 }

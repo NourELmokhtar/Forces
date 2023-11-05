@@ -577,6 +577,9 @@ namespace Forces.Infrastructure.Migrations
                     b.Property<DateTime?>("FirstUseDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("InventoryId")
+                        .HasColumnType("int");
+
                     b.Property<string>("ItemArName")
                         .HasColumnType("nvarchar(max)");
 
@@ -601,19 +604,15 @@ namespace Forces.Infrastructure.Migrations
                     b.Property<DateTime?>("LastModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("MadeIn")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("MeasureUnitId")
                         .HasColumnType("int");
 
                     b.Property<string>("SerialNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("VoteCodesId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("InventoryId");
 
                     b.HasIndex("MeasureUnitId");
 
@@ -2778,11 +2777,17 @@ namespace Forces.Infrastructure.Migrations
 
             modelBuilder.Entity("Forces.Application.Models.InventoryItem", b =>
                 {
+                    b.HasOne("Forces.Application.Models.Inventory", "Inventory")
+                        .WithMany("InventoryItems")
+                        .HasForeignKey("InventoryId");
+
                     b.HasOne("Forces.Application.Models.MeasureUnits", "MeasureUnit")
                         .WithMany()
                         .HasForeignKey("MeasureUnitId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Inventory");
 
                     b.Navigation("MeasureUnit");
                 });
@@ -3291,6 +3296,11 @@ namespace Forces.Infrastructure.Migrations
             modelBuilder.Entity("Forces.Application.Models.Forces", b =>
                 {
                     b.Navigation("Bases");
+                });
+
+            modelBuilder.Entity("Forces.Application.Models.Inventory", b =>
+                {
+                    b.Navigation("InventoryItems");
                 });
 
             modelBuilder.Entity("Forces.Application.Models.MeasureUnits", b =>

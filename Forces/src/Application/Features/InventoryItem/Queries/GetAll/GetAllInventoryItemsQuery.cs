@@ -36,7 +36,7 @@ namespace Forces.Application.Features.InventoryItem.Queries.GetAll
             var ItemsList = await _unitOfWork.Repository<Models.InventoryItem>().Entities.Include(x => x.MeasureUnit).ToListAsync();
             var vCodes = await _voteCodeService.GetAllCodes();
             var MappedItems = (from item in ItemsList
-                               join voteCode in vCodes.Data on item.VoteCodesId equals voteCode.Id
+                               
                                select new GetAllInventoryItemsResponse()
                                {
                                    ItemArName = item.ItemArName,
@@ -47,16 +47,13 @@ namespace Forces.Application.Features.InventoryItem.Queries.GetAll
                                    ItemNsn = item.ItemNsn,
                                    MeasureUnitId = item.MeasureUnitId,
                                    MeasureName = item.MeasureUnit.Name,
-                                   VoteCodesId = item.VoteCodesId,
-                                   VoteCode = voteCode.VoteCode,
                                    ItemClass = item.ItemClass,
                                    SerialNumber = item.SerialNumber
                                    ,
                                    DateOfEnter = item.DateOfEnter
                                    ,
                                    EndOfServiceDate = item.EndOfServiceDate
-                                   ,
-                                   MadeIn = item.MadeIn
+                                   
                                    ,
                                    FirstUseDate = item.FirstUseDate
                                }

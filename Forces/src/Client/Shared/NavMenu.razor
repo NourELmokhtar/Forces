@@ -123,10 +123,22 @@
         {
             <MudNavLink Href="/BasicInformations/BasesSections" Icon="@Icons.Filled.AccountTree">@_localizer["Bases Sections"]</MudNavLink>
         }
+        @if (_canViewOffices)
+        {
+            <MudNavLink Href="/Office/MyOffice" Icon="@Icons.Filled.LocalPostOffice">
+                @_localizer["Offices"]
+            </MudNavLink>
+        }
         @if (_canViewInventories)
         {
             <MudNavLink Href="/Inventory/MyInventory" Icon="@Icons.Filled.Inventory">
                 @_localizer["Inventory"]
+                </MudNavLink>
+        }
+        @if (_canViewInventoryItems)
+        {
+            <MudNavLink Href="/InventoryItem/MyInventoryItem" Icon="@Icons.Filled.Inventory">
+                @_localizer["Inventory Items"]
                 </MudNavLink>
         }
         @if (_canViewHouses)
@@ -135,16 +147,16 @@
                 @_localizer["Houses"]
             </MudNavLink>
         }
-        @if (_canViewBuildings)
-        {
-            <MudNavLink Href="/Building/MyBuilding" Icon="@Icons.Filled.House">
-                @_localizer["Buildings"]
-            </MudNavLink>
-        }
         @if (_canViewPersons)
         {
             <MudNavLink Href="/Person/MyPerson" Icon="@Icons.Filled.People">
                 @_localizer["Residents"]
+            </MudNavLink>
+        }
+        @if (_canViewBuildings)
+        {
+            <MudNavLink Href="/Building/MyBuilding" Icon="@Icons.Filled.House">
+                @_localizer["Buildings"]
             </MudNavLink>
         }
         @if (_canViewRooms)
@@ -290,6 +302,8 @@
     private bool _canViewBuildings;
     private bool _canViewHouses;
     private bool _canViewRooms;
+    private bool _canViewOffices;
+    private bool _canViewInventoryItems;
 
 
     protected override async Task OnParametersSetAsync()
@@ -329,6 +343,8 @@
         _canViewBuildings = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Building.View)).Succeeded;
         _canViewHouses = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.House.View)).Succeeded;
         _canViewRooms = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Rooms.View)).Succeeded;
+        _canViewOffices = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Office.View)).Succeeded;
+        _canViewInventoryItems = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.InventoryItems.View)).Succeeded;
 
     }
 }

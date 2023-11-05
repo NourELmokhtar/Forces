@@ -39,6 +39,7 @@ namespace Forces.Application.Features.InventoryInventoryItem.Commands.AddEdit
         public DateTime? FirstUseDate { get; set; }
         public DateTime? EndOfServiceDate { get; set; }
         public string SerialNumber { get; set; }
+        public int InventoryId { get; set; }
     }
     internal class AddEditInventoryItemCommandHandler : IRequestHandler<AddEditInventoryItemCommand, IResult<int>>
     {
@@ -65,26 +66,6 @@ namespace Forces.Application.Features.InventoryInventoryItem.Commands.AddEdit
             }
             if (request.Id == 0)
             {
-
-                if (await _InventoryItemsRepository.IsCodeExist(request.ItemCode))
-                {
-                    var item = await _InventoryItemsRepository.GetByCode(request.ItemCode);
-                    var vCode = await _voteCodeService.GetCodeBy(item.VoteCodesId);
-                    if (vCode.ForceId == ForceOfVoteCode.ForceId)
-                    {
-                        return await Result<int>.FailAsync(_localizer["Item Code: {0} is Already Exist!", request.ItemCode]);
-                    }
-                }
-                if (await _InventoryItemsRepository.IsNsnExist(request.ItemNsn))
-                {
-                    var item = await _InventoryItemsRepository.GetByNSN(request.ItemNsn);
-                    var vCode = await _voteCodeService.GetCodeBy(item.VoteCodesId);
-                    if (vCode.ForceId == ForceOfVoteCode.ForceId)
-                    {
-                        return await Result<int>.FailAsync(_localizer["Item NSN: {0} is Already Exist!", request.ItemNsn]);
-                    }
-
-                }
                 var Item = _mapper.Map<Models.Items>(request);
                 await _unitOfWork.Repository<Application.Models.Items>().AddAsync(Item);
                 await _unitOfWork.Commit(cancellationToken);
@@ -97,31 +78,9 @@ namespace Forces.Application.Features.InventoryInventoryItem.Commands.AddEdit
                 if (dbItem != null)
                 {
 
-                    if (Item.ItemCode != dbItem.ItemCode)
-                    {
-                        if (await _InventoryItemsRepository.IsCodeExist(Item.ItemCode))
-                        {
-                            var item = await _InventoryItemsRepository.GetByCode(request.ItemCode);
-                            var vCode = await _voteCodeService.GetCodeBy(item.VoteCodesId);
-                            if (vCode.ForceId == ForceOfVoteCode.ForceId)
-                            {
-                                return await Result<int>.FailAsync(_localizer["Item Code: {0} is Already Exist!", request.ItemCode]);
-                            }
-                        }
-                    }
-                    if (Item.ItemNsn != dbItem.ItemNsn)
-                    {
-                        if (await _InventoryItemsRepository.IsNsnExist(Item.ItemNsn))
-                        {
-                            var item = await _InventoryItemsRepository.GetByNSN(request.ItemNsn);
-                            var vCode = await _voteCodeService.GetCodeBy(item.VoteCodesId);
-                            if (vCode.ForceId == ForceOfVoteCode.ForceId)
-                            {
-                                return await Result<int>.FailAsync(_localizer["Item NSN: {0} is Already Exist!", request.ItemNsn]);
-                            }
-
-                        }
-                    }
+                    
+                    
+                    
                     await _unitOfWork.Repository<Models.Items>().UpdateAsync(Item);
                     await _unitOfWork.Commit(cancellationToken);
                     return await Result<int>.SuccessAsync(Item.Id, _localizer["Item Updated!"]);

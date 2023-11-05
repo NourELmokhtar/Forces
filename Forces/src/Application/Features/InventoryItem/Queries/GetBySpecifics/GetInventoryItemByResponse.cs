@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Forces.Application.Features.InventoryItem.Queries.GetBySpecifics
 {
-    internal class GetInventoryItemByResponse
+    public class GetInventoryItemByResponse
     {
         public int Id { get; set; }
         public string ItemName { get; set; }
