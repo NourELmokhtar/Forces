@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Domain\\Domain.csproj": {}
+    "D:\\ForcesNew\\Forces\\src\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Domain\\Domain.csproj": {
+    "D:\\ForcesNew\\Forces\\src\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\ForcesNew\\Forces\\src\\Domain\\Domain.csproj",
         "projectName": "Forces.Domain",
-        "projectPath": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\20106\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\20106\\Downloads\\INV\\INV\\Forces\\Forces\\src\\Domain\\obj\\",
+        "projectPath": "D:\\ForcesNew\\Forces\\src\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\noure\\.nuget\\packages\\",
+        "outputPath": "D:\\ForcesNew\\Forces\\src\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages"
         ],
         "configFilePaths": [
-          "C:\\Users\\20106\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\noure\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -62,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -21,6 +21,10 @@ namespace Forces.Application.Features.Person.Commands.AddEdit
         public string Name { get; set; }
         public string NationalNumber { get; set; }
         public int RoomId { get; set; }
+        public string Phone { get; set; }
+        public string OfficePhone { get; set; }
+        public string Section { get; set; }
+
     }
     internal class AddEditPersonCommandHandler : IRequestHandler<AddEditPersonCommand, IResult<int>>
     {
@@ -60,6 +64,9 @@ namespace Forces.Application.Features.Person.Commands.AddEdit
                         Name = request.Name,
                         RoomId = request.RoomId,
                         NationalNumber = request.NationalNumber,
+                        Phone = request.Phone,
+                        OfficePhone = request.OfficePhone,
+                        Section = request.Section
                     };
                     await _unitOfWork.Repository<Models.Person>().AddAsync(Person);
                     await _unitOfWork.Commit(cancellationToken);

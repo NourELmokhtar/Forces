@@ -23,6 +23,13 @@ using Forces.Client.Infrastructure.Managers.BasicInformation.Bases;
 using Forces.Application.Features.Bases.Queries.GetAll;
 using Forces.Client.Pages.Inventory;
 using Forces.Application.Features.InventoryInventoryItem.Commands.AddEdit;
+using Forces.Application.Features.Inventory.Queries.GetAll;
+using Forces.Client.Infrastructure.Managers.Inventory;
+using Forces.Application.Features.MeasureUnits.Queries.GetAll;
+using Forces.Client.Infrastructure.Managers.Items.MeasureUnits;
+using Forces.Client.Pages.Items;
+using Forces.Application.Responses.VoteCodes;
+using Forces.Client.Infrastructure.Managers.VoteCodes;
 
 namespace Forces.Client.Pages.InventoryItem
 {
@@ -33,15 +40,24 @@ namespace Forces.Client.Pages.InventoryItem
 
         }
         [Inject] private IInventoryItemManager InventoryItemManager { get; set; }
-        [Inject] private IBaseManager BaseManager { get; set; }
-        private List<GetAllBasesResponse> _BaseList = new();
+        [Inject] private IInventoryManager InventoryManager { get; set; }
+        private List<GetAllInventoriesResponse> _InventoryList = new();
+
+        private List<GetAllMeasureUnitsResponse> _UnitsList = new();
+        [Inject] private IMeasureUnitsManager UnitsManager { get; set; }
+
 
         private List<GetAllForcesResponse> _ForceList = new();
         [Parameter] public AddEditInventoryItemCommand AddEditInventoryItemModel { get; set; } = new();
         [CascadingParameter] private MudDialogInstance MudDialog { get; set; }
         [CascadingParameter] private HubConnection HubConnection { get; set; }
         [Inject] private IForceManager ForceManager { get; set; }
-        private string selectedBase;
+        private List<VoteCodeResponse> votecodeList = new();
+        [Inject] IDialogService DialogService { get; set; }
+        [Inject] private IVoteCodesManager _VoteCodeMnager { get; set; }
+
+
+        private string SelectedInventory;
 
         private bool _canCreateBaseSection;
         private bool _canEditBaseSection;
@@ -71,12 +87,54 @@ namespace Forces.Client.Pages.InventoryItem
             }
 
         }
-        private async Task GetBasesAsync()
+        private async Task GetInventoriesAsync()
         {
-            var response = await BaseManager.GetAllAsync();
+            var response = await InventoryManager.GetAllAsync();
             if (response.Succeeded)
             {
-                _BaseList = response.Data.ToList();
+                _InventoryList = response.Data.ToList();
+            }
+            else
+            {
+                foreach (var message in response.Messages)
+                {
+                    _snackBar.Add(message, MudBlazor.Severity.Error);
+                }
+            }
+        }
+
+        private string VoteCodestr(int Id)
+        {
+            var code = votecodeList.FirstOrDefault(x => x.Id == Id);
+            if (code == null)
+            {
+                return "";
+            }
+            return code.VoteCode;
+        }
+
+        private async Task GetVoteCodesAsync()
+        {
+            var response = await _VoteCodeMnager.GetAllAsync();
+            if (response.Succeeded)
+            {
+                votecodeList = response.Data.ToList();
+            }
+            else
+            {
+                foreach (var message in response.Messages)
+                {
+                    _snackBar.Add(message, MudBlazor.Severity.Error);
+                }
+            }
+        }
+
+        private async Task GetUnitsAsync()
+        {
+            var response = await UnitsManager.GetAllAsync();
+            if (response.Succeeded)
+            {
+                _UnitsList = response.Data.ToList();
             }
             else
             {
@@ -89,7 +147,7 @@ namespace Forces.Client.Pages.InventoryItem
 
         private async Task SaveAsync()
         {
-            AddEditInventoryItemModel.InventoryId = (int)converterForBases(selectedBase);
+            AddEditInventoryItemModel.InventoryId = (int)converterForInventories(SelectedInventory);
             var response = await InventoryItemManager.SaveAsync(AddEditInventoryItemModel);
             if (response.Succeeded)
             {
@@ -125,17 +183,18 @@ namespace Forces.Client.Pages.InventoryItem
         {
             return p => $"{_ForceList.FirstOrDefault(x => x.Id == p).ForceName} | {_ForceList.FirstOrDefault(x => x.Id == p).ForceCode}";
         }
-        private int? converterForBases(string ss)
+        private int? converterForInventories(string ss)
         {
-            return _BaseList.FirstOrDefault(s => s.BaseName == ss).Id;
+            return _InventoryList.FirstOrDefault(s => s.Name == ss).Id;
         }
 
 
         private async Task LoadDataAsync()
         {
-            await GetBasesAsync();
+            await GetInventoriesAsync();
             await GetForcesAsync();
-
+            await GetUnitsAsync();
+            await GetVoteCodesAsync();
             await Task.CompletedTask;
         }
     }

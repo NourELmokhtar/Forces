@@ -48,13 +48,10 @@ namespace Forces.Application.Features.InventoryItem.Queries.GetAll
                                    MeasureUnitId = item.MeasureUnitId,
                                    MeasureName = item.MeasureUnit.Name,
                                    ItemClass = item.ItemClass,
-                                   SerialNumber = item.SerialNumber
-                                   ,
-                                   DateOfEnter = item.DateOfEnter
-                                   ,
-                                   EndOfServiceDate = item.EndOfServiceDate
-                                   
-                                   ,
+                                   SerialNumber = item.SerialNumber,
+                                   DateOfEnter = item.DateOfEnter,
+                                   EndOfServiceDate = item.EndOfServiceDate,
+                                   InventoryId = (int)item.InventoryId,
                                    FirstUseDate = item.FirstUseDate
                                }
                          ).ToList();

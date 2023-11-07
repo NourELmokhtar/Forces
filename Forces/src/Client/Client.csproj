@@ -54,7 +54,7 @@
 	  <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="6.0.19" />
     <PackageReference Include="Microsoft.Extensions.Localization" Version="6.0.19" />
-    <PackageReference Include="SkiaSharp.HarfBuzz" Version="2.88.3" />
+    <PackageReference Include="SkiaSharp.HarfBuzz" Version="2.88.6" />
     <PackageReference Include="SkiaSharp.NativeAssets.WebAssembly" Version="2.88.3" />
     <PackageReference Include="SkiaSharp.Views.Blazor" Version="2.88.3" />
      

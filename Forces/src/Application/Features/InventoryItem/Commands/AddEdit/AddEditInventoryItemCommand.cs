@@ -30,10 +30,7 @@ namespace Forces.Application.Features.InventoryInventoryItem.Commands.AddEdit
         [Required]
         public int MeasureUnitId { get; set; }
         [Required]
-        public int? VoteCodesId { get; set; }
-        public string VoteCode { get; set; }
         public ItemClass ItemClass { get; set; } = ItemClass.A;
-        public string MadeIn { get; set; }
 
         public DateTime? DateOfEnter { get; set; }
         public DateTime? FirstUseDate { get; set; }
@@ -59,35 +56,65 @@ namespace Forces.Application.Features.InventoryInventoryItem.Commands.AddEdit
 
         public async Task<IResult<int>> Handle(AddEditInventoryItemCommand request, CancellationToken cancellationToken)
         {
-            var ForceOfVoteCode = await _voteCodeService.GetCodeBy(request.VoteCodesId.Value);
             if (string.IsNullOrEmpty(request.SerialNumber) && request.ItemClass != ItemClass.C)
             {
                 return await Result<int>.FailAsync(_localizer["Item Serail Number Is Required"]);
             }
             if (request.Id == 0)
             {
-                var Item = _mapper.Map<Models.Items>(request);
-                await _unitOfWork.Repository<Application.Models.Items>().AddAsync(Item);
+                Models.InventoryItem InventoryItem = new Models.InventoryItem
+                {
+                    DateOfEnter = request.DateOfEnter,
+                    EndOfServiceDate = request.EndOfServiceDate,
+                    ItemArName = request.ItemArName,
+                    FirstUseDate = request.FirstUseDate,
+                    InventoryId = request.InventoryId,
+                    ItemCode = request.ItemCode,
+                    ItemDescription = request.ItemDescription,
+                    ItemName = request.ItemName,
+                    ItemNsn = request.ItemNsn,
+                    MeasureUnitId = request.MeasureUnitId,
+                    SerialNumber = request.SerialNumber,
+                    ItemClass = request.ItemClass,
+
+                };
+                await _unitOfWork.Repository<Application.Models.InventoryItem>().AddAsync(InventoryItem);
                 await _unitOfWork.Commit(cancellationToken);
-                return await Result<int>.SuccessAsync(Item.Id, _localizer["Item Added!"]);
+                return await Result<int>.SuccessAsync(InventoryItem.Id, _localizer["InventoryItem Added!"]);
             }
             else
             {
-                var Item = _mapper.Map<Models.Items>(request);
-                var dbItem = await _unitOfWork.Repository<Models.Items>().GetByIdAsync(Item.Id);
+                Models.InventoryItem InventoryItem = new Models.InventoryItem
+                {
+                    Id = request.Id,
+                    DateOfEnter = request.DateOfEnter,
+                    EndOfServiceDate = request.EndOfServiceDate,
+                    ItemArName = request.ItemArName,
+                    FirstUseDate = request.FirstUseDate,
+                    InventoryId = request.InventoryId,
+                    ItemCode = request.ItemCode,
+                    ItemDescription = request.ItemDescription,
+                    ItemName = request.ItemName,
+                    ItemNsn = request.ItemNsn,
+                    MeasureUnitId = request.MeasureUnitId,
+                    SerialNumber = request.SerialNumber,
+                    ItemClass = request.ItemClass,
+
+                };
+
+
+                var dbItem = await _unitOfWork.Repository<Models.InventoryItem>().GetByIdAsync(InventoryItem.Id);
                 if (dbItem != null)
                 {
 
                     
-                    
-                    
-                    await _unitOfWork.Repository<Models.Items>().UpdateAsync(Item);
+                    await _unitOfWork.Repository<Models.InventoryItem>().UpdateAsync(InventoryItem);
                     await _unitOfWork.Commit(cancellationToken);
-                    return await Result<int>.SuccessAsync(Item.Id, _localizer["Item Updated!"]);
+                    return await Result<int>.SuccessAsync(InventoryItem.Id, _localizer["InventoryItem Updated!"]);
                 }
                 else
                 {
-                    return await Result<int>.FailAsync(_localizer["Item Not Found!"]);
+                    return await Result<int>.FailAsync(_localizer["InventoryItem Not Found!"]);
                 }
             }
         }

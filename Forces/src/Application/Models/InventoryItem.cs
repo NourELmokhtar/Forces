@@ -19,6 +19,7 @@ namespace Forces.Application.Models
         public int MeasureUnitId { get; set; }
         [ForeignKey("MeasureUnitId")]
         public virtual MeasureUnits MeasureUnit { get; set; }
+
         public ItemClass ItemClass { get; set; }
         public DateTime? DateOfEnter { get; set; }
         public DateTime? FirstUseDate { get; set; }

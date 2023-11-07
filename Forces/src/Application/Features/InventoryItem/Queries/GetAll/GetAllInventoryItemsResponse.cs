@@ -17,11 +17,8 @@ namespace Forces.Application.Features.InventoryItem.Queries.GetAll
         public string ItemNsn { get; set; }
         public int MeasureUnitId { get; set; }
         public string MeasureName { get; set; }
-        public int? VoteCodesId { get; set; }
-        public string VoteCode { get; set; }
         public ItemClass ItemClass { get; set; }
-        public string MadeIn { get; set; }
-
+        public int InventoryId { get; set; }
         public DateTime? DateOfEnter { get; set; }
         public DateTime? FirstUseDate { get; set; }
         public DateTime? EndOfServiceDate { get; set; }

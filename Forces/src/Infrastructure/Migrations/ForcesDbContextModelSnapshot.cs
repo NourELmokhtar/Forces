@@ -948,8 +948,17 @@ namespace Forces.Infrastructure.Migrations
                     b.Property<string>("NationalNumber")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("OfficePhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("RoomId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Section")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

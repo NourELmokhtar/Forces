@@ -11,6 +11,7 @@ using Forces.Client.Infrastructure.Managers.BasicInformation.BaseSections;
 using Forces.Client.Infrastructure.Managers.BasicInformation.Forces;
 using Forces.Client.Infrastructure.Managers.Building;
 using Forces.Client.Infrastructure.Managers.Person;
+using Forces.Client.Infrastructure.Managers.Room;
 using Forces.Client.Pages.BasicInformations;
 using Forces.Shared.Constants.Application;
 using Forces.Shared.Constants.Permission;
@@ -27,6 +28,8 @@ namespace Forces.Client.Pages.Person
         [Inject] private IPersonManager PersonManager { get; set; }
         [Inject] private IForceManager ForceManager { get; set; }
         [Inject] private IBuildingManager BuildingManager { get; set; }
+        [Inject] private IRoomManager RoomManager { get; set; }
+
         [CascadingParameter] private HubConnection HubConnection { get; set; }
         private List<GetAllPersonsResponse> _PersonsList = new();
         private List<GetAllBuildingsResponse> _BuildingList = new();
@@ -130,7 +133,10 @@ namespace Forces.Client.Pages.Person
                         Id = _Person.Id,
                         Name = _Person.Name,
                         NationalNumber = _Person.NationalNumber,
-                        RoomId = _Person.RoomId
+                        RoomId = _Person.RoomId,
+                        OfficePhone = _Person.OfficePhone,
+                        Phone = _Person.Phone,
+                        Section = _Person.Section,
                     });
                 }
             }
