@@ -46,6 +46,17 @@ else
         <HeaderContent>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoryItemsResponse, object>(x => x.Id)">@_localizer["Id"]</MudTableSortLabel></MudTh>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoryItemsResponse, object>(x => x.ItemName)">@_localizer["Name"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoryItemsResponse, object>(x => x.ItemArName)">@_localizer["Ar Name"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoryItemsResponse, object>(x => x.ItemCode)">@_localizer["Code"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoryItemsResponse, object>(x => x.ItemNsn)">@_localizer["NSN"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoryItemsResponse, object>(x => x.ItemDescription)">@_localizer["Description"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoryItemsResponse, object>(x => x.MeasureName)">@_localizer["Unit"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoryItemsResponse, object>(x => x.ItemClass)">@_localizer["Class"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoryItemsResponse, object>(x => x.SerialNumber)">@_localizer["Serial Number"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoryItemsResponse, object>(x => x.DateOfEnter)">@_localizer["Date of Enter"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoryItemsResponse, object>(x => x.FirstUseDate)">@_localizer["First Use Date"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoryItemsResponse, object>(x => x.EndOfServiceDate)">@_localizer["End of Service Date"]</MudTableSortLabel></MudTh>
+
             <MudTh Style="text-align:right">@_localizer["Actions"]</MudTh>
         </HeaderContent>
         <GroupHeaderTemplate>
@@ -56,6 +67,39 @@ else
                 <MudTd DataLabel="Name">
                     <MudHighlighter Text="@context.ItemName" HighlightedText="@_searchString" />
                 </MudTd>
+                <MudTd DataLabel="Ar Name">
+                    <MudHighlighter Text="@context.ItemArName" HighlightedText="@_searchString" />
+                </MudTd>
+                <MudTd DataLabel="Code">
+                    <MudHighlighter Text="@context.ItemCode" HighlightedText="@_searchString" />
+                </MudTd>
+                <MudTd DataLabel="NSN">
+                    <MudHighlighter Text="@context.ItemNsn" HighlightedText="@_searchString" />
+                </MudTd>
+                <MudTd DataLabel="Description">
+                    <MudHighlighter Text="@context.ItemDescription" HighlightedText="@_searchString" />
+                </MudTd>
+                <MudTd DataLabel="Unit">
+                    <MudHighlighter Text="@context.MeasureName" HighlightedText="@_searchString" />
+                </MudTd>
+                <MudTd DataLabel="Class">
+                    <MudHighlighter Text="@context.ItemClass.ToDescriptionString()" HighlightedText="@_searchString" />
+                </MudTd>
+                
+                <MudTd DataLabel="Serial Number">
+                    <MudHighlighter Text="@context.SerialNumber" HighlightedText="@_searchString" />
+                </MudTd>
+
+                <MudTd DataLabel="Date of Enter">
+                    <MudHighlighter Text="@context.DateOfEnter.ToString()" HighlightedText="@_searchString" />
+                </MudTd>
+                <MudTd DataLabel="End Of Service Date">
+                    <MudHighlighter Text="@context.EndOfServiceDate.ToString()" HighlightedText="@_searchString" />
+                </MudTd>
+                <MudTd DataLabel="First Use Date">
+                    <MudHighlighter Text="@context.FirstUseDate.ToString()" HighlightedText="@_searchString" />
+                </MudTd>
+
 
                 <MudTd DataLabel="Actions" Style="text-align: right">
 
