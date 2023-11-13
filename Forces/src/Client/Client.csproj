@@ -10,6 +10,7 @@
 	  <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
+    <Content Remove="Pages\InventryItemBridge\AddSerialNumber.razor" />
     <Content Remove="Shared\Components\BlazorHeroLogo.razor" />
   </ItemGroup>
 	<ItemGroup>
@@ -63,9 +64,11 @@
     <UpToDateCheckInput Remove="Shared\Components\BlazorHeroLogo.razor" />
   </ItemGroup>
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\InventryItemBridge\AddSerialNumber.razor" />
     <_ContentIncludedByDefault Remove="Shared\Components\BlazorHeroLogo.razor" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Pages\InventryItemBridge\AddSerialNumber.razor" />
     <None Include="Shared\Components\BlazorHeroLogo.razor" />
   </ItemGroup>
   <ItemGroup>
@@ -81,5 +84,8 @@
     <Compile Update="Reports\Rpt_MPRRequest.cs">
       <SubType>XtraReport</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\InventryItemBridge\AddSerialNumber.razor" />
   </ItemGroup>
 </Project>

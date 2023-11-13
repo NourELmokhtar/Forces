@@ -39,7 +39,7 @@ namespace Forces.Application.Features.House.Queries.GetAll
                 Id = x.Id,
                 HouseCode = x.HouseCode,
                 HouseName = x.HouseName,
-                BaseId = x.BaseId
+                BaseName = _unitOfWork.Repository<Models.Bases>().GetAllAsync().Result.Where(y => y.Id == x.BaseId).FirstOrDefault().BaseName,
 
             }).ToList();
             return await Result<List<GetAllHousesResponse>>.SuccessAsync(MappedHouseList);

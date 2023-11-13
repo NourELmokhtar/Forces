@@ -87,6 +87,15 @@ namespace Forces.Shared.Constants.Permission
             public const string Export = "Permissions.InventoryItems.Export";
             public const string Search = "Permissions.InventoryItems.Search";
         }
+        public static class InventoryItemsBridge
+        {
+            public const string View = "Permissions.InventoryItemsBridge.View";
+            public const string Create = "Permissions.InventoryItemsBridge.Create";
+            public const string Edit = "Permissions.InventoryItemsBridge.Edit";
+            public const string Delete = "Permissions.InventoryItemsBridge.Delete";
+            public const string Export = "Permissions.InventoryItemsBridge.Export";
+            public const string Search = "Permissions.InventoryItemsBridge.Search";
+        }
 
         public static class Brands
         {

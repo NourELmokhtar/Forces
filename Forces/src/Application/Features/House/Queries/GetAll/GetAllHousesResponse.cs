@@ -11,6 +11,6 @@ namespace Forces.Application.Features.House.Queries.GetAll
         public int Id { get; set; }
         public string HouseName { get; set; }
         public string HouseCode { get; set; }
-        public int BaseId { get; set; }
+        public string BaseName { get; set; }
     }
 }

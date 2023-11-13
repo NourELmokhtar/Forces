@@ -28,9 +28,9 @@ else
                 }
                 <MudButton DisableElevation Variant="Variant.Filled" OnClick="GetRoomsAsync" StartIcon="@Icons.Material.Filled.Refresh" IconColor="Color.Surface" Color="Color.Secondary">@_localizer["Reload"]</MudButton>
 
-            </div>
-            <MudSpacer />
-            @if (_canSearchBase)
+             </div>
+             <MudSpacer />
+             @if (_canSearchBase)
             {
                 <MudTextField @bind-Value="_searchString" Immediate="true" Placeholder="@_localizer["Search for Rooms"]" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0 mb-3"></MudTextField>
             }
@@ -46,7 +46,7 @@ else
         <HeaderContent>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllRoomsResponse, object>(x => x.Id)">@_localizer["Id"]</MudTableSortLabel></MudTh>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllRoomsResponse, object>(x => x.RoomNumber)">@_localizer["Room Number"]</MudTableSortLabel></MudTh>
-            <MudTh><MudTableSortLabel SortBy="new Func<GetAllRoomsResponse, object>(x => x.BuildingId)">@_localizer["Building Id"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllRoomsResponse, object>(x => x.BuildingName)">@_localizer["Building Name"]</MudTableSortLabel></MudTh>
             <MudTh Style="text-align:right">@_localizer["Actions"]</MudTh>
         </HeaderContent>
         <GroupHeaderTemplate>
@@ -57,7 +57,7 @@ else
                 <MudTd DataLabel="Room Number">
                     <MudHighlighter Text="@context.RoomNumber.ToString()" HighlightedText="@_searchString" />
                 </MudTd>
-                <MudTd DataLabel="Building Id">@context.BuildingId</MudTd>
+                <MudTd DataLabel="Building Id">@context.BuildingName</MudTd>
                 <MudTd DataLabel="Actions" Style="text-align: right">
 
                     <MudMenu Label="@_localizer["Actions"]" Variant="Variant.Filled" DisableElevation="true" EndIcon="@Icons.Filled.KeyboardArrowDown">
@@ -73,11 +73,11 @@ else
 
 
                 <MudButton Variant="Variant.Filled"
-                       DisableElevation="true"
-                       StartIcon="@Icons.Material.Filled.DoNotTouch"
-                       IconColor="Color.Secondary"
-                       Size="Size.Small"
-                       Color="Color.Surface">
+                           DisableElevation="true"
+                           StartIcon="@Icons.Material.Filled.DoNotTouch"
+                           IconColor="Color.Secondary"
+                           Size="Size.Small"
+                           Color="Color.Surface">
                     @_localizer["No Allowed Actions"]
                 </MudButton>
 

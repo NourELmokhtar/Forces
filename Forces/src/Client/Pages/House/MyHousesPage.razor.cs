@@ -4,6 +4,7 @@ using Forces.Application.Features.BaseSections.Queries.GetAll;
 using Forces.Application.Features.Forces.Queries.GetAll;
 using Forces.Application.Features.House.Commands.AddEdit;
 using Forces.Application.Features.House.Queries.GetAll;
+using Forces.Application.Interfaces.Repositories;
 using Forces.Client.Extensions;
 using Forces.Client.Infrastructure.Managers.BasicInformation.Bases;
 using Forces.Client.Infrastructure.Managers.BasicInformation.BaseSections;
@@ -26,6 +27,7 @@ namespace Forces.Client.Pages.House
         [Inject] private IForceManager ForceManager { get; set; }
         [Inject] private IBaseSectionManager BaseSectionManager { get; set; }
         [CascadingParameter] private HubConnection HubConnection { get; set; }
+        private readonly IUnitOfWork<int> _unitOfWork;
         private List<GetAllHousesResponse> _HousesList = new();
         private List<GetAllBasesSectionsQueryResponse> _BaseSectionList = new();
         private GetAllHousesResponse _House = new();
@@ -128,7 +130,7 @@ namespace Forces.Client.Pages.House
                         Id = _House.Id,
                         HouseName = _House.HouseName,
                         HouseCode = _House.HouseCode,
-                        BaseId = _House.BaseId
+                        BaseId = _unitOfWork.Repository<Application.Models.Bases>().GetAllAsync().Result.Where(y => y.BaseName == _House.BaseName).FirstOrDefault().Id,
                     });
                 }
             }

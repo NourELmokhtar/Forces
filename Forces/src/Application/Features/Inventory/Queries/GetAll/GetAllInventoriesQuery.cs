@@ -40,9 +40,21 @@ namespace Forces.Application.Features.Inventory.Queries.GetAll
             {
                 Name = x.Name,
                 Id = x.Id,
-                BaseSectionId = x.BaseSectionId,
-                HouseId = x.HouseId,
-                RoomId = x.RoomId,
+                BaseSectionName = x.BaseSectionId != null
+                ? _unitOfWork.Repository<Models.BasesSections>().GetAllAsync().Result
+                    .Where(y => y.Id == x.BaseSectionId)
+                    .FirstOrDefault()?.SectionName
+                : null,
+                HouseName = x.HouseId != null
+                ? _unitOfWork.Repository<Models.House>().GetAllAsync().Result
+                    .Where(y => y.Id == x.HouseId)
+                    .FirstOrDefault()?.HouseName
+                : null,
+                RoomName = x.RoomId != null
+                ? _unitOfWork.Repository<Models.Room>().GetAllAsync().Result
+                    .Where(y => y.Id == x.RoomId)
+                    .FirstOrDefault()?.RoomNumber
+                : null,
 
             }).ToList();
             return await Result<List<GetAllInventoriesResponse>>.SuccessAsync(MappedInventory);

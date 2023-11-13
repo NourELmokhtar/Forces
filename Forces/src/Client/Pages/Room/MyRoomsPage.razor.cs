@@ -1,10 +1,12 @@
-﻿using Forces.Application.Features.Bases.Commands.AddEdit;
+﻿using DevExpress.XtraRichEdit.Model;
+using Forces.Application.Features.Bases.Commands.AddEdit;
 using Forces.Application.Features.Bases.Queries.GetAll;
 using Forces.Application.Features.BaseSections.Queries.GetAll;
 using Forces.Application.Features.Building.Queries.GetAll;
 using Forces.Application.Features.Forces.Queries.GetAll;
 using Forces.Application.Features.Room.Commands.AddEdit;
 using Forces.Application.Features.Room.Queries.GetAll;
+using Forces.Application.Interfaces.Repositories;
 using Forces.Client.Extensions;
 using Forces.Client.Infrastructure.Managers.BasicInformation.Bases;
 using Forces.Client.Infrastructure.Managers.BasicInformation.BaseSections;
@@ -28,6 +30,8 @@ namespace Forces.Client.Pages.Room
         [Inject] private IForceManager ForceManager { get; set; }
         [Inject] private IBuildingManager BuildingManager { get; set; }
         [CascadingParameter] private HubConnection HubConnection { get; set; }
+        private readonly IUnitOfWork<int> _unitOfWork;
+
         private List<GetAllRoomsResponse> _RoomsList = new();
         private List<GetAllBuildingsResponse> _BuildingList = new();
         private GetAllRoomsResponse _Room = new();
@@ -129,7 +133,8 @@ namespace Forces.Client.Pages.Room
                     {
                         Id = _Room.Id,
                         RoomNumber = _Room.RoomNumber,
-                        BuildingId = _Room.BuildingId
+                        BuildingId = _unitOfWork.Repository<Application.Models.Building>().GetAllAsync().Result.Where(y => y.BuildingName == _Room.BuildingName).FirstOrDefault().Id,
+
                     });
                 }
             }

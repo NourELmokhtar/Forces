@@ -28,9 +28,9 @@ else
                 }
                 <MudButton DisableElevation Variant="Variant.Filled" OnClick="GetInventoriesAsync" StartIcon="@Icons.Material.Filled.Refresh" IconColor="Color.Surface" Color="Color.Secondary">@_localizer["Reload"]</MudButton>
 
-            </div>
-            <MudSpacer />
-            @if (_canSearchBase)
+             </div>
+             <MudSpacer />
+             @if (_canSearchBase)
             {
                 <MudTextField @bind-Value="_searchString" Immediate="true" Placeholder="@_localizer["Search for Inventories"]" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0 mb-3"></MudTextField>
             }
@@ -46,6 +46,10 @@ else
         <HeaderContent>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoriesResponse, object>(x => x.Id)">@_localizer["Id"]</MudTableSortLabel></MudTh>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoriesResponse, object>(x => x.Name)">@_localizer["Name"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoriesResponse, object>(x => x.BaseSectionName)">@_localizer["BaseSection Name"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoriesResponse, object>(x => x.HouseName)">@_localizer["House Name"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoriesResponse, object>(x => x.RoomName)">@_localizer["Room Number"]</MudTableSortLabel></MudTh>
+
             <MudTh Style="text-align:right">@_localizer["Actions"]</MudTh>
         </HeaderContent>
         <GroupHeaderTemplate>
@@ -56,30 +60,48 @@ else
                 <MudTd DataLabel="Name">
                     <MudHighlighter Text="@context.Name" HighlightedText="@_searchString" />
                 </MudTd>
-                
-                <MudTd DataLabel="Actions" Style="text-align: right">
-                 
-                    <MudMenu Label="@_localizer["Actions"]" Variant="Variant.Filled" DisableElevation="true" EndIcon="@Icons.Filled.KeyboardArrowDown" >
-                        @if (_canEditBase)
-                        {
-                            <MudMenuItem @onclick="@(() => InvokeModal(@context.Id))">@_localizer["Edit"]</MudMenuItem>
-                        }
-                        @if (_canDeleteBase)
-                        {
-                            <MudMenuItem @onclick="@(() => Delete(@context.Id))">@_localizer["Delete"]</MudMenuItem>
-                        }
-                    </MudMenu>
-                
-               
-                    <MudButton Variant="Variant.Filled"
-                       DisableElevation="true"
-                       StartIcon="@Icons.Material.Filled.DoNotTouch"
-                       IconColor="Color.Secondary"
-                       Size="Size.Small"
-                       Color="Color.Surface">
-                        @_localizer["No Allowed Actions"]
-                    </MudButton>
-                
+                @if (@context.BaseSectionName != "")
+            {
+                <MudTd DataLabel="BaseSectionName">
+                    <MudHighlighter Text="@context.BaseSectionName" HighlightedText="@_searchString" />
+                </MudTd>
+
+            }
+            @if (@context.HouseName != "")
+            {
+                <MudTd DataLabel="HouseName">
+                    <MudHighlighter Text="@context.HouseName" HighlightedText="@_searchString" />
+                </MudTd>
+            }
+            @if (@context.RoomName != 0 || context != null)
+            {
+                <MudTd DataLabel="RoomName">
+                    <MudHighlighter Text="@context.RoomName.ToString()" HighlightedText="@_searchString" />
+                </MudTd>
+            }
+            <MudTd DataLabel="Actions" Style="text-align: right">
+
+                <MudMenu Label="@_localizer["Actions"]" Variant="Variant.Filled" DisableElevation="true" EndIcon="@Icons.Filled.KeyboardArrowDown">
+                    @if (_canEditBase)
+                    {
+                        <MudMenuItem @onclick="@(() => InvokeModal(@context.Id))">@_localizer["Edit"]</MudMenuItem>
+                    }
+                    @if (_canDeleteBase)
+                    {
+                        <MudMenuItem @onclick="@(() => Delete(@context.Id))">@_localizer["Delete"]</MudMenuItem>
+                    }
+                </MudMenu>
+
+
+                <MudButton Variant="Variant.Filled"
+                           DisableElevation="true"
+                           StartIcon="@Icons.Material.Filled.DoNotTouch"
+                           IconColor="Color.Secondary"
+                           Size="Size.Small"
+                           Color="Color.Surface">
+                    @_localizer["No Allowed Actions"]
+                </MudButton>
+
             </MudTd>
         </RowTemplate>
         <FooterContent>

@@ -192,6 +192,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW52ZW50b3J5XE15SW52ZW50b3J5UGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ForcesNew/Forces/src/Client/Pages/InventryItemBridge/AddEditInventoryItemBridgeModal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW52ZW50cnlJdGVtQnJpZGdlXEFkZEVkaXRJbnZlbnRvcnlJdGVtQnJpZGdlTW9kYWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ForcesNew/Forces/src/Client/Pages/InventryItemBridge/MyInventoryItemBridge.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW52ZW50cnlJdGVtQnJpZGdlXE15SW52ZW50b3J5SXRlbUJyaWRnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ForcesNew/Forces/src/Client/Pages/Items/AddEditItemModal.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSXRlbXNcQWRkRWRpdEl0ZW1Nb2RhbC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

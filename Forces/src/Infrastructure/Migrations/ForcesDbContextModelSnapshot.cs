@@ -619,6 +619,47 @@ namespace Forces.Infrastructure.Migrations
                     b.ToTable("InventoryItem");
                 });
 
+            modelBuilder.Entity("Forces.Application.Models.InventoryItemBridge", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateOfEnter")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("InventoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("InventoryItemId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SerialNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InventoryId");
+
+                    b.HasIndex("InventoryItemId");
+
+                    b.ToTable("InventoryItemBridge");
+                });
+
             modelBuilder.Entity("Forces.Application.Models.Items", b =>
                 {
                     b.Property<int>("Id")
@@ -2799,6 +2840,25 @@ namespace Forces.Infrastructure.Migrations
                     b.Navigation("Inventory");
 
                     b.Navigation("MeasureUnit");
+                });
+
+            modelBuilder.Entity("Forces.Application.Models.InventoryItemBridge", b =>
+                {
+                    b.HasOne("Forces.Application.Models.Inventory", "Inventory")
+                        .WithMany()
+                        .HasForeignKey("InventoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Forces.Application.Models.InventoryItem", "InventoryItem")
+                        .WithMany()
+                        .HasForeignKey("InventoryItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Inventory");
+
+                    b.Navigation("InventoryItem");
                 });
 
             modelBuilder.Entity("Forces.Application.Models.Items", b =>

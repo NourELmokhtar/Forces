@@ -130,7 +130,7 @@ namespace Forces.Client.Pages.InventoryItem
                         ItemCode = _InventoryItem.ItemCode,
                         DateOfEnter = _InventoryItem?.DateOfEnter,
                         EndOfServiceDate = _InventoryItem.EndOfServiceDate,
-                        ItemArName =_InventoryItem.ItemArName,
+                        ItemArName =_InventoryItem.ItemArName,  
                         ItemClass = _InventoryItem.ItemClass,
                         ItemNsn = _InventoryItem.ItemNsn,
                         MeasureUnitId = _InventoryItem.MeasureUnitId,

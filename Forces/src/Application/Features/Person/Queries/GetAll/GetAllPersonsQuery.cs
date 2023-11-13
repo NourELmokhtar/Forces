@@ -37,15 +37,20 @@ namespace Forces.Application.Features.Person.Queries.GetAll
         {
 
             var PersonList = await _unitOfWork.Repository<Models.Person>().GetAllAsync();
-            var MappedUnitList = PersonList.Select(x => new GetAllPersonsResponse() 
-            { 
+            var MappedUnitList = PersonList.Select(x => new GetAllPersonsResponse()
+            {
                 Id = x.Id,
                 Name = x.Name,
-                NationalNumber = x.NationalNumber ,
+                NationalNumber = x.NationalNumber,
                 RoomId = x.RoomId,
                 OfficePhone = x.OfficePhone,
-                Phone=x.Phone,
+                Phone = x.Phone,
                 Section = x.Section,
+                RoomNumber = _unitOfWork.Repository<Models.Room>().GetAllAsync().Result.Where(y => y.Id == x.RoomId).FirstOrDefault().RoomNumber,
+                BuildingName = _unitOfWork.Repository<Models.Building>().GetAllAsync().Result.Where(y => y.Id == (
+                _unitOfWork.Repository<Models.Room>().GetAllAsync().Result.Where(y => y.Id == x.RoomId).FirstOrDefault().BuildingId)).FirstOrDefault().BuildingName,
+                BaseName = _unitOfWork.Repository<Models.Bases>().GetAllAsync().Result.Where(k => k.Id == _unitOfWork.Repository<Models.Building>().GetAllAsync().Result.Where(r => r.Id == (
+                _unitOfWork.Repository<Models.Room>().GetAllAsync().Result.Where(y => y.Id == x.RoomId).FirstOrDefault().BuildingId)).FirstOrDefault().BaseId).FirstOrDefault().BaseName
 
 
             }).ToList();

@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.SignalR.Client;
 using MudBlazor;
 using System.Security.Claims;
+using Forces.Application.Interfaces.Repositories;
 
 namespace Forces.Client.Pages.Building
 {
@@ -26,6 +27,7 @@ namespace Forces.Client.Pages.Building
         [Inject] private IForceManager ForceManager { get; set; }
         [Inject] private IBaseSectionManager BaseSectionManager { get; set; }
         [CascadingParameter] private HubConnection HubConnection { get; set; }
+        private readonly IUnitOfWork<int> _unitOfWork;
         private List<GetAllBuildingsResponse> _BuildingsList = new();
         private List<GetAllBasesSectionsQueryResponse> _BaseSectionList = new();
         private GetAllBuildingsResponse _Building = new();
@@ -128,7 +130,8 @@ namespace Forces.Client.Pages.Building
                         Id = _Building.Id,
                         BuildingName = _Building.BuildingName,
                         BuildingCode = _Building.BuildingCode,
-                        BaseId = _Building.BaseId
+                        BaseId = _unitOfWork.Repository<Application.Models.Bases>().GetAllAsync().Result.Where(y => y.BaseName == _Building.BaseName).FirstOrDefault().Id,
+
                     });
                 }
             }

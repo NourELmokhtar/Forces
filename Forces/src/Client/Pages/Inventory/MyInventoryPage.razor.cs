@@ -4,6 +4,7 @@ using Forces.Application.Features.BaseSections.Queries.GetAll;
 using Forces.Application.Features.Forces.Queries.GetAll;
 using Forces.Application.Features.Inventory.Commands.AddEdit;
 using Forces.Application.Features.Inventory.Queries.GetAll;
+using Forces.Application.Interfaces.Repositories;
 using Forces.Client.Extensions;
 using Forces.Client.Infrastructure.Managers.BasicInformation.Bases;
 using Forces.Client.Infrastructure.Managers.BasicInformation.BaseSections;
@@ -26,6 +27,7 @@ namespace Forces.Client.Pages.Inventory
         [Inject] private IForceManager ForceManager { get; set; }
         [Inject] private IBaseSectionManager BaseSectionManager { get; set; }
         [CascadingParameter] private HubConnection HubConnection { get; set; }
+        private readonly IUnitOfWork<int> _unitOfWork;
         private List<GetAllInventoriesResponse> _InventoriesList = new();
         private List<GetAllBasesSectionsQueryResponse> _BaseSectionList = new();
         private GetAllInventoriesResponse _Inventory = new();
@@ -127,10 +129,10 @@ namespace Forces.Client.Pages.Inventory
                     {
                         Id = _Inventory.Id,
                         Name = _Inventory.Name,
-                        BaseSectionId = _Inventory.BaseSectionId,
-                        HouseId = _Inventory.HouseId,
-                        RoomId = _Inventory.RoomId,
-                    });
+                        BaseSectionId = _unitOfWork.Repository<Application.Models.BasesSections>().GetAllAsync().Result.Where(y => y.SectionName == _Inventory.BaseSectionName).FirstOrDefault().Id,
+                        HouseId = _unitOfWork.Repository<Application.Models.House>().GetAllAsync().Result.Where(y => y.HouseName == _Inventory.HouseName).FirstOrDefault().Id,
+                        RoomId = _unitOfWork.Repository<Application.Models.Room>().GetAllAsync().Result.Where(y => y.RoomNumber == _Inventory.RoomName).FirstOrDefault().Id,
+                    }); ;
                 }
             }
             var options = new DialogOptions { CloseButton = true, MaxWidth = MaxWidth.Small, FullWidth = true, DisableBackdropClick = true };
@@ -182,7 +184,7 @@ namespace Forces.Client.Pages.Inventory
             {
                 return true;
             }
-            
+
             if (Base.Name.Contains(_searchString, StringComparison.OrdinalIgnoreCase) == true)
             {
                 return true;

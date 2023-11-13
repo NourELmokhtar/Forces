@@ -10,9 +10,9 @@ namespace Forces.Application.Features.Inventory.Queries.GetAll
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int? RoomId { get; set; }
-        public int? HouseId { get; set; }
-        public int? BaseSectionId { get; set; }
+        public int? RoomName { get; set; }
+        public string? HouseName { get; set; }
+        public string? BaseSectionName { get; set; }
 
     }
 }

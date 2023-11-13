@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Forces.Application.Features.Room.Queries.GetAll
 {
     public class GetAllRoomQuery : IRequest<IResult<List<GetAllRoomsResponse>>>
-{
+    {
         public GetAllRoomQuery()
         {
         }
@@ -40,7 +40,9 @@ namespace Forces.Application.Features.Room.Queries.GetAll
             {
                 RoomNumber = x.RoomNumber,
                 Id = x.Id,
-                BuildingId= x.BuildingId,
+                BuildingName = _unitOfWork.Repository<Models.Building>().GetAllAsync().Result.Where(y => y.Id == x.BuildingId).FirstOrDefault().BuildingName,
+                BuildingId = x.BuildingId,
+
 
             }).ToList();
             return await Result<List<GetAllRoomsResponse>>.SuccessAsync(MappedRooms);
