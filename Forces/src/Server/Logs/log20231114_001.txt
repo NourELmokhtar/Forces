@@ -1,0 +1,65 @@
+2023-11-14 22:08:06.261 +02:00 [ERR] Failed executing DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [InventoryItemBridge] ADD CONSTRAINT [FK_InventoryItemBridge_Items_ItemId] FOREIGN KEY ([ItemId]) REFERENCES [Items] ([Id]) ON DELETE CASCADE;
+2023-11-14 22:11:16.283 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-11-14 22:11:16.446 +02:00 [INF] Now listening on: https://localhost:5001
+2023-11-14 22:11:16.455 +02:00 [INF] Now listening on: http://localhost:5000
+2023-11-14 22:11:16.462 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-14 22:11:16.464 +02:00 [INF] Hosting environment: Development
+2023-11-14 22:11:16.466 +02:00 [INF] Content root path: D:\ForcesNew\Forces\src\Server
+2023-11-14 22:15:55.879 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-11-14 22:15:56.249 +02:00 [INF] Now listening on: https://localhost:5001
+2023-11-14 22:15:56.257 +02:00 [INF] Now listening on: http://localhost:5000
+2023-11-14 22:15:56.264 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-14 22:15:56.266 +02:00 [INF] Hosting environment: Development
+2023-11-14 22:15:56.267 +02:00 [INF] Content root path: D:\ForcesNew\Forces\src\Server
+2023-11-14 22:20:38.245 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-11-14 22:20:38.582 +02:00 [INF] Now listening on: https://localhost:5001
+2023-11-14 22:20:38.596 +02:00 [INF] Now listening on: http://localhost:5000
+2023-11-14 22:20:38.610 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-14 22:20:38.615 +02:00 [INF] Hosting environment: Development
+2023-11-14 22:20:38.620 +02:00 [INF] Content root path: D:\ForcesNew\Forces\src\Server
+2023-11-14 22:25:36.584 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-11-14 22:25:36.908 +02:00 [INF] Now listening on: https://localhost:5001
+2023-11-14 22:25:36.921 +02:00 [INF] Now listening on: http://localhost:5000
+2023-11-14 22:25:36.932 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-14 22:25:36.936 +02:00 [INF] Hosting environment: Development
+2023-11-14 22:25:36.940 +02:00 [INF] Content root path: D:\ForcesNew\Forces\src\Server
+2023-11-14 22:41:09.518 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-11-14 22:41:09.719 +02:00 [INF] Now listening on: https://localhost:5001
+2023-11-14 22:41:09.727 +02:00 [INF] Now listening on: http://localhost:5000
+2023-11-14 22:41:09.736 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-14 22:41:09.738 +02:00 [INF] Hosting environment: Development
+2023-11-14 22:41:09.741 +02:00 [INF] Content root path: D:\ForcesNew\Forces\src\Server
+2023-11-14 22:49:54.911 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-11-14 22:49:55.117 +02:00 [INF] Now listening on: https://localhost:5001
+2023-11-14 22:49:55.125 +02:00 [INF] Now listening on: http://localhost:5000
+2023-11-14 22:49:55.130 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-14 22:49:55.132 +02:00 [INF] Hosting environment: Development
+2023-11-14 22:49:55.133 +02:00 [INF] Content root path: D:\ForcesNew\Forces\src\Server
+2023-11-14 22:58:04.745 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-11-14 22:58:04.894 +02:00 [INF] Now listening on: https://localhost:5001
+2023-11-14 22:58:04.900 +02:00 [INF] Now listening on: http://localhost:5000
+2023-11-14 22:58:04.904 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-14 22:58:04.905 +02:00 [INF] Hosting environment: Development
+2023-11-14 22:58:04.905 +02:00 [INF] Content root path: D:\ForcesNew\Forces\src\Server
+2023-11-14 23:01:55.133 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-11-14 23:01:55.277 +02:00 [INF] Now listening on: https://localhost:5001
+2023-11-14 23:01:55.282 +02:00 [INF] Now listening on: http://localhost:5000
+2023-11-14 23:01:55.284 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-14 23:01:55.285 +02:00 [INF] Hosting environment: Development
+2023-11-14 23:01:55.292 +02:00 [INF] Content root path: D:\ForcesNew\Forces\src\Server
+2023-11-14 23:07:19.550 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-11-14 23:07:19.651 +02:00 [INF] Now listening on: https://localhost:5001
+2023-11-14 23:07:19.656 +02:00 [INF] Now listening on: http://localhost:5000
+2023-11-14 23:07:19.658 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-14 23:07:19.660 +02:00 [INF] Hosting environment: Development
+2023-11-14 23:07:19.661 +02:00 [INF] Content root path: D:\ForcesNew\Forces\src\Server

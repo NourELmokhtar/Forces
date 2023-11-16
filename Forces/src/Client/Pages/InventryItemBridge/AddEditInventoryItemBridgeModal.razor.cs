@@ -1,8 +1,10 @@
 ﻿using Blazored.FluentValidation;
+using Forces.Application.Enums;
 using Forces.Application.Features.Forces.Queries.GetAll;
 using Forces.Application.Features.Inventory.Queries.GetAll;
 using Forces.Application.Features.InventoryItem.Queries.GetAll;
 using Forces.Application.Features.InventoryItemBridge.Commands.AddEdit;
+using Forces.Application.Features.Items.Queries.GetAll;
 using Forces.Application.Features.MeasureUnits.Queries.GetAll;
 using Forces.Application.Responses.VoteCodes;
 using Forces.Client.Extensions;
@@ -10,6 +12,7 @@ using Forces.Client.Infrastructure.Managers.BasicInformation.Forces;
 using Forces.Client.Infrastructure.Managers.Inventory;
 using Forces.Client.Infrastructure.Managers.InventoryItem;
 using Forces.Client.Infrastructure.Managers.InventoryItemBridge;
+using Forces.Client.Infrastructure.Managers.Items;
 using Forces.Client.Infrastructure.Managers.Items.MeasureUnits;
 using Forces.Client.Infrastructure.Managers.VoteCodes;
 using Forces.Shared.Constants.Application;
@@ -33,10 +36,10 @@ namespace Forces.Client.Pages.InventryItemBridge
 
         public AddEditInventoryItemBridgeModal() { }
         [Inject] private IInventoryItemBridgeManager InventoryItemBridgeManager { get; set; }
-        [Inject] private IInventoryItemManager InventoryItemManager { get; set; }
+        [Inject] private IItemsManager ItemsManager { get; set; }
         [Inject] private IInventoryManager InventoryManager { get; set; }
         private List<GetAllInventoriesResponse> _InventoryList = new();
-        private List<GetAllInventoryItemsResponse> _InventoryItemsList = new();
+        private List<GetAllItemsResponse> _ItemsList = new();
         private List<string>  _InventoryItemNames { get; set; }
 
         private List<GetAllMeasureUnitsResponse> _UnitsList = new();
@@ -46,7 +49,7 @@ namespace Forces.Client.Pages.InventryItemBridge
         public AddInventoryModel AddInventoryModel = new AddInventoryModel();
 
         [Parameter] public AddEditInventoryItemBridgeCommand AddEditInventoryItemBridgeModel { get; set; } = new();
-        public int Count { get; set; }
+        public int count { get; set; }
         [CascadingParameter] private MudDialogInstance MudDialog { get; set; }
         [CascadingParameter] private HubConnection HubConnection { get; set; }
         [Inject] private IForceManager ForceManager { get; set; }
@@ -56,6 +59,8 @@ namespace Forces.Client.Pages.InventryItemBridge
 
 
         private string SelectedInventory;
+        private string SelectedItem;
+
 
         private bool _canCreateInventoryItemBridge;
         private bool _canEditInventoryItemBridge;
@@ -72,12 +77,39 @@ namespace Forces.Client.Pages.InventryItemBridge
 
 
         List<string> selectedItems = new List<string>();
+        public int InventoryId { get; set; }
+        public int ItemId { get; set; }
+
 
         void ItemClicked(GetAllInventoryItemsResponse allInventoryItemsResponse) 
         {
             
         }
-        
+
+
+        private void InvokNewDialoge(int count , GetAllItemsResponse Item)
+        {
+            InventoryId = (int)converterForInventories(SelectedInventory);
+            ItemId = (int)converterForItems(Item.ItemName);
+            if (Item.ItemClass != ItemClass.C)
+            {
+
+            var parameters = new DialogParameters();
+            parameters.Add(nameof(InventorySerials.count), count);
+            parameters.Add(nameof(InventorySerials.InventoryId), InventoryId);
+            parameters.Add(nameof(InventorySerials.ItemId), ItemId);
+            var options = new DialogOptions { CloseButton = true, FullScreen = true ,MaxWidth = MaxWidth.Large, FullWidth = true, DisableBackdropClick = true };
+
+            var dialog = _dialogService.Show<InventorySerials>(count == 0 ? _localizer["Create"] : _localizer["Edit"], parameters, options);
+            }
+            else
+            {
+                for(int i = 0; i < count; i++)
+                {
+                    SaveAsync();
+                }
+            }
+        }
 
         private async Task GetInventoriesAsync()
         {
@@ -97,10 +129,10 @@ namespace Forces.Client.Pages.InventryItemBridge
         
         private async Task GetInventoruItemsAsync()
         {
-            var response = await InventoryItemManager.GetAllAsync();
+            var response = await ItemsManager.GetAllAsync();
             if (response.Succeeded)
             {
-                _InventoryItemsList = response.Data.ToList();
+                _ItemsList = response.Data.ToList();
             }
             else
             {
@@ -115,6 +147,8 @@ namespace Forces.Client.Pages.InventryItemBridge
         private async Task SaveAsync()
         {
             AddEditInventoryItemBridgeModel.InventoryId = (int)converterForInventories(SelectedInventory);
+            AddEditInventoryItemBridgeModel.ItemId = ItemId;
+            AddEditInventoryItemBridgeModel.DateOfEnter= DateTime.Now;
             var response = await InventoryItemBridgeManager.SaveAsync(AddEditInventoryItemBridgeModel);
             if (response.Succeeded)
             {
@@ -151,7 +185,12 @@ namespace Forces.Client.Pages.InventryItemBridge
         {
             return _InventoryList.FirstOrDefault(s => s.Name == ss).Id;
         }
+        private int? converterForItems(string ss)
+        {
+            return _ItemsList.FirstOrDefault(s => s.ItemName == ss).Id;
+        }
 
+        
 
         private async Task LoadDataAsync()
         {

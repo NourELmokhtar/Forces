@@ -103,13 +103,13 @@ namespace Forces.Client.Pages.InventryItemBridge
                     parameters.Add(nameof(AddEditInventoryItemBridgeModal.AddEditInventoryItemBridgeModel), new AddEditInventoryItemBridgeCommand
                     {
                         InventoryId = _unitOfWork.Repository<Application.Models.Inventory>().GetAllAsync().Result.FirstOrDefault(x=>x.Name==_InventoryItemBridge.InventoryName).Id,
-                        InventoryItemId= _unitOfWork.Repository<Application.Models.InventoryItem>().GetAllAsync().Result.FirstOrDefault(x => x.ItemName == _InventoryItemBridge.InventoryName).Id,
+                        ItemId= _unitOfWork.Repository<Application.Models.Items>().GetAllAsync().Result.FirstOrDefault(x => x.ItemName == _InventoryItemBridge.InventoryName).Id,
                         DateOfEnter = _InventoryItemBridge.DateOfEnter,
 
                     });
                 }
             }
-            var options = new DialogOptions { CloseButton = true, MaxWidth = MaxWidth.ExtraLarge, FullWidth = true, DisableBackdropClick = true };
+            var options = new DialogOptions { CloseButton = true, FullScreen = true, MaxWidth = MaxWidth.ExtraLarge, FullWidth = true, DisableBackdropClick = true };
             var dialog = _dialogService.Show<AddEditInventoryItemBridgeModal>(id == 0 ? _localizer["Create"] : _localizer["Edit"], parameters, options);
             var result = await dialog.Result;
             if (!result.Cancelled)
@@ -125,7 +125,7 @@ namespace Forces.Client.Pages.InventryItemBridge
             {
                 {nameof(Shared.Dialogs.DeleteConfirmation.ContentText), string.Format(deleteContent, id)}
             };
-            var options = new DialogOptions { CloseButton = true, MaxWidth = MaxWidth.Small, FullWidth = true, DisableBackdropClick = true };
+            var options = new DialogOptions { CloseButton = true, FullScreen = true,MaxWidth = MaxWidth.Small, FullWidth = true, DisableBackdropClick = true };
             var dialog = _dialogService.Show<Shared.Dialogs.DeleteConfirmation>(_localizer["Delete"], parameters, options);
             var result = await dialog.Result;
             if (!result.Cancelled)

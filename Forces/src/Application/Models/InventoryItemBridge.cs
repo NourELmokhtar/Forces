@@ -15,11 +15,11 @@ namespace Forces.Application.Models
         public int InventoryId { get; set; }
 
         [ForeignKey("InventoryItem")]
-        public int InventoryItemId { get; set; }
+        public int ItemId { get; set; }
         
         public string? SerialNumber { get; set; }
         public DateTime DateOfEnter { get; set; }
-        public virtual InventoryItem InventoryItem { get; set; }
+        public virtual Items InventoryItem { get; set; }
         public virtual Inventory Inventory { get; set; }
     }
 

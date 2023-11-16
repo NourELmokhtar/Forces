@@ -1,0 +1,56 @@
+﻿@using Forces.Application.Enums;
+@using Forces.Application.Extensions;
+@using Forces.Application.Features.Inventory.Queries.GetAll;
+@using System;
+@using System.Collections.Generic;
+@using System.Linq;
+@inject Microsoft.Extensions.Localization.IStringLocalizer<InventorySerials> _localizer
+@inject IJSRuntime JSRuntime
+@code {
+    List<string> SerialNumbers =  Enumerable.Repeat("0",100000).ToList();
+    private async Task LogToConsole()
+    {
+
+        await JSRuntime.InvokeVoidAsync("console.log", SerialNumbers);
+        await JSRuntime.InvokeVoidAsync("console.log", _SerialsList.Where(x => x != "0"));
+    }
+}
+<EditForm Model="@_SerialsList" OnValidSubmit="SaveAsync">
+    <FluentValidationValidator @ref="_fluentValidationValidator" />
+    <MudDialog>
+
+        <DialogContent>
+            <MudGrid>
+
+
+                <MudItem xs="12" md="6">
+                    <MudGrid>
+                        <MudItem xs="12" md="6">
+
+                                @for (int i = 0; i < count; i++)
+                                {
+                                int currentIndex = i;
+                                    <MudTextField
+                                        type="text"
+                                @bind-Value="@SerialNumbers[currentIndex]" />
+                                }
+
+
+                        </MudItem>
+
+                    </MudGrid>
+                </MudItem>
+
+
+            </MudGrid>
+
+        </DialogContent>
+        <DialogActions>
+            <MudButton DisableElevation Variant="Variant.Filled" OnClick="Cancel">@_localizer["Cancel"]</MudButton>
+
+         </DialogActions>
+     </MudDialog>
+     <MudButton DisableElevation Variant="Variant.Filled" OnClick="SaveAsync">Save</MudButton>
+
+ </EditForm>
+ <MudButton DisableElevation Variant="Variant.Filled" OnClick="LogToConsole">Log to Console</MudButton>

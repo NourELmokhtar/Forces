@@ -42,7 +42,7 @@ namespace Forces.Application.Features.InventoryItemBridge.Queries.GetAll
                                {
                                    SerialNumber = item.SerialNumber,
                                    InventoryName = _unitOfWork.Repository<Models.Inventory>().GetAllAsync().Result.Where(y=>y.Id==item.InventoryId).FirstOrDefault().Name,//item.InventoryItem.ItemName,
-                                   InventoryItemName= _unitOfWork.Repository<Models.InventoryItem>().GetAllAsync().Result.Where(y => y.Id == item.InventoryItemId).FirstOrDefault().ItemName,
+                                   InventoryItemName= _unitOfWork.Repository<Models.InventoryItem>().GetAllAsync().Result.Where(y => y.Id == item.ItemId).FirstOrDefault().ItemName,
                                    DateOfEnter = item.DateOfEnter,
 
                                }

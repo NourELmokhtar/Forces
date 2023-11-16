@@ -19,7 +19,7 @@ namespace Forces.Application.Features.InventoryItemBridge.Commands.AddEdit
     {
         public int Id { get; set; }
         public int InventoryId {  get; set; }
-        public int InventoryItemId {  get; set; }
+        public int ItemId {  get; set; }
 
         public string? SerialNumber { get; set; }
         public DateTime DateOfEnter { get; set; }
@@ -52,7 +52,7 @@ namespace Forces.Application.Features.InventoryItemBridge.Commands.AddEdit
                     DateOfEnter = request.DateOfEnter,
                     InventoryId = request.InventoryId,
                     SerialNumber = request.SerialNumber,
-                    InventoryItemId = request.InventoryItemId,
+                    ItemId = request.ItemId,
                 };
                 await _unitOfWork.Repository<Application.Models.InventoryItemBridge>().AddAsync(InventoryItem);
                 await _unitOfWork.Commit(cancellationToken);
@@ -66,7 +66,7 @@ namespace Forces.Application.Features.InventoryItemBridge.Commands.AddEdit
                     DateOfEnter = request.DateOfEnter,
                     InventoryId = request.InventoryId,
                     SerialNumber = request.SerialNumber,
-                    InventoryItemId= request.InventoryItemId,
+                    ItemId= request.ItemId,
                 };
 
 

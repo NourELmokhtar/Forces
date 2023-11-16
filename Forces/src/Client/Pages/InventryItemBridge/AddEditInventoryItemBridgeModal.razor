@@ -1,4 +1,6 @@
-﻿@using MudBlazor
+﻿@using Forces.Application.Enums;
+@using Forces.Application.Features.Items.Queries.GetAll;
+@using MudBlazor
 @using MudBlazor.Utilities
 @inject IJSRuntime JSRuntime
 
@@ -7,7 +9,12 @@
 
     private async Task LogToConsole(){
 
-        await JSRuntime.InvokeVoidAsync("console.log", _InventoryItemsList);
+        await JSRuntime.InvokeVoidAsync("console.log", _ItemsList);
+    }
+
+    private async Task OpenDialog(GetAllItemsResponse Item)
+    {
+        InvokNewDialoge(@count,Item);
     }
 }
 
@@ -35,8 +42,9 @@
         <DialogContent>
             <MudGrid>
                 <MudItem xs="12" md="6">
-                    <MudTextField Required="true" Immediate="true" T="int" For="@(() => AddEditInventoryItemBridgeModel.Id)" @bind-Value="AddEditInventoryItemBridgeModel.Id" Label="@_localizer["InventoryItem Name"]" />
+                    <MudTextField Required="true" Immediate="true" T="int"  @bind-Value="count" Label="@_localizer["InventoryItem Name"]" />
                 </MudItem>
+                
                 
                 <MudItem xs="12" md="6">
                     <MudGrid>
@@ -56,23 +64,24 @@
 
                     </MudGrid>
                 </MudItem>
-
+                
+                
         
 
                 <MudItem xs="12" md="6">
-                        @if (_InventoryItemsList != null)
-                        {
-                            @for(int i = 0; i < _InventoryItemsList.Count; i++)
+                    @if (_ItemsList != null && _ItemsList.Count > 0)
+                    {
+                        @for (int i = 0; i < _ItemsList.Count; i++)
                             {
+                            int currentIndex = i;
 
-                                    <MudLabel>@_InventoryItemsList[i].ItemName</MudLabel>
+                            <MudLabel>@_ItemsList[i].ItemName</MudLabel>
 
-                                    <MudButton Variant="Variant.Outlined" OnClick="@(() => ItemClicked(_InventoryItemsList[i]))">
-                                    </MudButton>
-                            }
+                            <MudButton  Variant="Variant.Outlined" Color="Color.Secondary" OnClick="@(()=> OpenDialog(@_ItemsList[currentIndex]))">Add</MudButton>
                         }
-
+                    }
                 </MudItem>
+
 
             </MudGrid>
 

@@ -639,7 +639,7 @@ namespace Forces.Infrastructure.Migrations
                     b.Property<int>("InventoryId")
                         .HasColumnType("int");
 
-                    b.Property<int>("InventoryItemId")
+                    b.Property<int>("ItemId")
                         .HasColumnType("int");
 
                     b.Property<string>("LastModifiedBy")
@@ -655,7 +655,7 @@ namespace Forces.Infrastructure.Migrations
 
                     b.HasIndex("InventoryId");
 
-                    b.HasIndex("InventoryItemId");
+                    b.HasIndex("ItemId");
 
                     b.ToTable("InventoryItemBridge");
                 });
@@ -2850,9 +2850,9 @@ namespace Forces.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Forces.Application.Models.InventoryItem", "InventoryItem")
+                    b.HasOne("Forces.Application.Models.Items", "InventoryItem")
                         .WithMany()
-                        .HasForeignKey("InventoryItemId")
+                        .HasForeignKey("ItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

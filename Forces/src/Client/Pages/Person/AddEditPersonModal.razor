@@ -69,7 +69,7 @@
                 @if(BuildingName!=string.Empty && BuildingName != null)
                 {  
                     <MudItem xs="12" md="6">
-                        <MudSelect Label="Select Base" @bind-Value="RoomNumber">
+                        <MudSelect Label="Select Room" @bind-Value="RoomNumber">
                             @if (filteredRooms != null)
                             {
                                 @foreach (var item in filteredRooms)
