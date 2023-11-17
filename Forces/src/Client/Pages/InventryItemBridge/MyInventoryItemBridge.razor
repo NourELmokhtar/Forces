@@ -43,6 +43,8 @@ else
         </ColGroup>
         <HeaderContent>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoryItemBridgeResponse, object>(x => x.SerialNumber)">@_localizer["Serial Number"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoryItemBridgeResponse, object>(x => x.InventoryItemName)">@_localizer["Item Name"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllInventoryItemBridgeResponse, object>(x => x.InventoryName)">@_localizer["Inventory Name"]</MudTableSortLabel></MudTh>
 
             <MudTh Style="text-align:right">@_localizer["Actions"]</MudTh>
         </HeaderContent>
@@ -52,6 +54,12 @@ else
                 <MudTd DataLabel="Serial Number">
                     <MudHighlighter Text="@context.SerialNumber" HighlightedText="@_searchString" />
                 </MudTd>
+                <MudTd DataLabel="Serial Number">
+                    <MudHighlighter Text="@context.InventoryItemName" HighlightedText="@_searchString" />
+                </MudTd>
+            <MudTd DataLabel="Serial Number">
+                <MudHighlighter Text="@context.InventoryName" HighlightedText="@_searchString" />
+            </MudTd>
 
 
 

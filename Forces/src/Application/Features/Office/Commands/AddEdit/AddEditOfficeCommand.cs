@@ -21,6 +21,7 @@ namespace Forces.Application.Features.Office.Commands.AddEdit
         public string OfficeName { get; set; }
         public string OfficeCode { get; set; }
         public int BaseSectionId { get; set; }
+        public int BasesId { get; set; }
     }
 
     internal class AddEditOfficeCommandHandler : IRequestHandler<AddEditOfficeCommand, IResult<int>>
@@ -57,6 +58,7 @@ namespace Forces.Application.Features.Office.Commands.AddEdit
                         Id = request.Id,
                         Name = request.OfficeName,
                         BasesSectionsId = request.BaseSectionId,
+                        BasesId= request.BasesId,
                         
                     };
                     await _unitOfWork.Repository<Models.Office>().AddAsync(Office);

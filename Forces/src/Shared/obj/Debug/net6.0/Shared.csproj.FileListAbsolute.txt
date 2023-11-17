@@ -58,3 +58,15 @@ D:\ForcesNew\Forces\src\Shared\obj\Debug\net6.0\Forces.Shared.dll
 D:\ForcesNew\Forces\src\Shared\obj\Debug\net6.0\refint\Forces.Shared.dll
 D:\ForcesNew\Forces\src\Shared\obj\Debug\net6.0\Forces.Shared.pdb
 D:\ForcesNew\Forces\src\Shared\obj\Debug\net6.0\ref\Forces.Shared.dll
+E:\Forces_1611\Forces\Forces\src\Shared\bin\Debug\net6.0\Forces.Shared.deps.json
+E:\Forces_1611\Forces\Forces\src\Shared\bin\Debug\net6.0\Forces.Shared.dll
+E:\Forces_1611\Forces\Forces\src\Shared\bin\Debug\net6.0\Forces.Shared.pdb
+E:\Forces_1611\Forces\Forces\src\Shared\obj\Debug\net6.0\Shared.csproj.AssemblyReference.cache
+E:\Forces_1611\Forces\Forces\src\Shared\obj\Debug\net6.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+E:\Forces_1611\Forces\Forces\src\Shared\obj\Debug\net6.0\Shared.AssemblyInfoInputs.cache
+E:\Forces_1611\Forces\Forces\src\Shared\obj\Debug\net6.0\Shared.AssemblyInfo.cs
+E:\Forces_1611\Forces\Forces\src\Shared\obj\Debug\net6.0\Shared.csproj.CoreCompileInputs.cache
+E:\Forces_1611\Forces\Forces\src\Shared\obj\Debug\net6.0\Forces.Shared.dll
+E:\Forces_1611\Forces\Forces\src\Shared\obj\Debug\net6.0\refint\Forces.Shared.dll
+E:\Forces_1611\Forces\Forces\src\Shared\obj\Debug\net6.0\Forces.Shared.pdb
+E:\Forces_1611\Forces\Forces\src\Shared\obj\Debug\net6.0\ref\Forces.Shared.dll

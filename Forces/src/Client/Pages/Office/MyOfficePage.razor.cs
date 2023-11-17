@@ -4,6 +4,7 @@ using Forces.Application.Features.BaseSections.Queries.GetAll;
 using Forces.Application.Features.Forces.Queries.GetAll;
 using Forces.Application.Features.Office.Commands.AddEdit;
 using Forces.Application.Features.Office.Queries.GetAll;
+using Forces.Application.Interfaces.Repositories;
 using Forces.Client.Extensions;
 using Forces.Client.Infrastructure.Managers.BasicInformation.BaseSections;
 using Forces.Client.Infrastructure.Managers.BasicInformation.Forces;
@@ -25,6 +26,8 @@ namespace Forces.Client.Pages.Office
         [Inject] private IForceManager ForceManager { get; set; }
         [Inject] private IBaseSectionManager BaseSectionManager { get; set; }
         [CascadingParameter] private HubConnection HubConnection { get; set; }
+        private readonly IUnitOfWork<int> _unitOfWork;
+
         private List<GetAllOfficeResponse> _OfficesList = new();
         private List<GetAllBasesSectionsQueryResponse> _BaseSectionList = new();
         private GetAllOfficeResponse _Office = new();
@@ -126,8 +129,9 @@ namespace Forces.Client.Pages.Office
                     {
                         Id = _Office.Id,
                         OfficeName = _Office.OfficeName,
-                        BaseSectionId = _Office.BasesSectionsId,
-                       
+                        BaseSectionId = _unitOfWork.Repository<Application.Models.BasesSections>().GetAllAsync().Result.Where(y => y.SectionName == _Office.BasesSectionsName).FirstOrDefault().Id,
+                        BasesId = _unitOfWork.Repository<Application.Models.Bases>().GetAllAsync().Result.Where(y => y.BaseName == _Office.BasesName).FirstOrDefault().Id,
+                        
                     });
                 }
             }

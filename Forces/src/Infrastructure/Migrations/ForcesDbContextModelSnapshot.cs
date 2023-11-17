@@ -938,6 +938,9 @@ namespace Forces.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("BasesId")
+                        .HasColumnType("int");
+
                     b.Property<int>("BasesSectionsId")
                         .HasColumnType("int");
 
@@ -957,6 +960,8 @@ namespace Forces.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BasesId");
 
                     b.HasIndex("BasesSectionsId");
 
@@ -2906,11 +2911,19 @@ namespace Forces.Infrastructure.Migrations
 
             modelBuilder.Entity("Forces.Application.Models.Office", b =>
                 {
+                    b.HasOne("Forces.Application.Models.Bases", "Bases")
+                        .WithMany()
+                        .HasForeignKey("BasesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Forces.Application.Models.BasesSections", "BasesSections")
                         .WithMany("Offices")
                         .HasForeignKey("BasesSectionsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Bases");
 
                     b.Navigation("BasesSections");
                 });

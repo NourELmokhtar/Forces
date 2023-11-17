@@ -12,7 +12,10 @@ namespace Forces.Application.Models
     {
         [ForeignKey("BasesSections")]
         public int BasesSectionsId { get; set; }
+        [ForeignKey("Bases")]
+        public int BasesId { get; set; }
         public string Name { get; set; }
         public virtual BasesSections BasesSections { get; set; }
+        public virtual Bases Bases { get; set; }
     }
 }

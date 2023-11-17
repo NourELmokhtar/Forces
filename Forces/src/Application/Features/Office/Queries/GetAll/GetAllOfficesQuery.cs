@@ -36,6 +36,8 @@ namespace Forces.Application.Features.Office.Queries.GetAll
             var MappedOffices = Offices.Select(x => new GetAllOfficeResponse()
             {
                 OfficeName = x.Name,
+                BasesSectionsName = _unitOfWork.Repository<Models.BasesSections>().GetAllAsync().Result.Where(y => y.Id == x.BasesSectionsId).FirstOrDefault().SectionName,
+                BasesName = _unitOfWork.Repository<Models.Bases>().GetAllAsync().Result.Where(y => y.Id == x.BasesId).FirstOrDefault().BaseName,
                 Id = x.Id
             }).ToList();
             return await Result<List<GetAllOfficeResponse>>.SuccessAsync(MappedOffices);

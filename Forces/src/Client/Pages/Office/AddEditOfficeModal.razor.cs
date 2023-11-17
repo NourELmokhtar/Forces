@@ -23,6 +23,7 @@ using System.Security.Claims;
 using Forces.Client.Infrastructure.Managers.BasicInformation.Bases;
 using Forces.Application.Features.Bases.Queries.GetAll;
 using Forces.Client.Pages.Inventory;
+using DevExpress.Office.Utils;
 
 namespace Forces.Client.Pages.Office
 {
@@ -33,8 +34,13 @@ namespace Forces.Client.Pages.Office
 
         }
         [Inject] private IOfficeManager OfficeManager { get; set; }
-        [Inject] private IBaseSectionManager BasesManager { get; set; }
-        private List<GetAllBasesSectionsQueryResponse> _BaseList = new();
+        [Inject] private IBaseSectionManager BasesSectionsManager { get; set; }
+        private List<GetAllBasesSectionsQueryResponse> _BasesSectionsList = new();
+        private IEnumerable<GetAllBasesSectionsQueryResponse> filteredSections;
+        private string SectionName;
+
+        [Inject] private IBaseManager BasesManager { get; set; }
+        private List<GetAllBasesResponse> _BasesList = new();
 
         private List<GetAllForcesResponse> _ForceList = new();
         [Parameter] public AddEditOfficeCommand AddEditOfficeModel { get; set; } = new();
@@ -42,6 +48,7 @@ namespace Forces.Client.Pages.Office
         [CascadingParameter] private HubConnection HubConnection { get; set; }
         [Inject] private IForceManager ForceManager { get; set; }
         private string selectedBase;
+        private string OfficeCode;
 
         private bool _canCreateBaseSection;
         private bool _canEditBaseSection;
@@ -71,12 +78,29 @@ namespace Forces.Client.Pages.Office
             }
 
         }
+        private async Task GetBasesSectionsAsync()
+        {
+            var response = await BasesSectionsManager.GetAllAsync();
+            if (response.Succeeded)
+            {
+                _BasesSectionsList = response.Data.ToList();
+                filteredSections = _BasesSectionsList.Where(x => x.BaseId == converterForBases(selectedBase));
+            }
+            else
+            {
+                foreach (var message in response.Messages)
+                {
+                    _snackBar.Add(message, MudBlazor.Severity.Error);
+                }
+            }
+        }
+
         private async Task GetBasesAsync()
         {
             var response = await BasesManager.GetAllAsync();
             if (response.Succeeded)
             {
-                _BaseList = response.Data.ToList();
+                _BasesList = response.Data.ToList();
             }
             else
             {
@@ -89,7 +113,10 @@ namespace Forces.Client.Pages.Office
 
         private async Task SaveAsync()
         {
-            AddEditOfficeModel.BaseSectionId = (int)converterForBases(selectedBase);
+            AddEditOfficeModel.BaseSectionId = (int)converterForBasesSections(SectionName);
+            AddEditOfficeModel.BasesId = (int)converterForBases(selectedBase);
+            AddEditOfficeModel.OfficeCode = OfficeCode;
+
             var response = await OfficeManager.SaveAsync(AddEditOfficeModel);
             if (response.Succeeded)
             {
@@ -125,9 +152,13 @@ namespace Forces.Client.Pages.Office
         {
             return p => $"{_ForceList.FirstOrDefault(x => x.Id == p).ForceName} | {_ForceList.FirstOrDefault(x => x.Id == p).ForceCode}";
         }
+        private int? converterForBasesSections(string ss)
+        {
+            return _BasesSectionsList.FirstOrDefault(s => s.SectionName == ss).Id;
+        }
         private int? converterForBases(string ss)
         {
-            return _BaseList.FirstOrDefault(s => s.SectionName == ss).Id;
+            return _BasesList.FirstOrDefault(s => s.BaseName == ss).Id;
         }
 
 
@@ -135,7 +166,7 @@ namespace Forces.Client.Pages.Office
         {
             await GetBasesAsync();
             await GetForcesAsync();
-
+            await GetBasesSectionsAsync();
             await Task.CompletedTask;
         }
     }

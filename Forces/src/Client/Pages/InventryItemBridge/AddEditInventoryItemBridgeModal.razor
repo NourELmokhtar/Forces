@@ -14,6 +14,12 @@
 
     private async Task OpenDialog(GetAllItemsResponse Item)
     {
+        if (count == 0 || SelectedInventory == null)
+        {
+            await JSRuntime.InvokeVoidAsync("alert", "Please input at least 1 in the text field or select an item.");
+            return;
+        }
+
         InvokNewDialoge(@count,Item);
     }
 }
@@ -61,7 +67,7 @@
                             </MudSelect>
 
                         </MudItem>
-
+                        
                     </MudGrid>
                 </MudItem>
                 
@@ -72,32 +78,38 @@
                     @if (_ItemsList != null && _ItemsList.Count > 0)
                     {
                         @for (int i = 0; i < _ItemsList.Count; i++)
-                            {
+                        {
                             int currentIndex = i;
 
-                            <MudLabel>@_ItemsList[i].ItemName</MudLabel>
+                            <div style="display: inline-block; margin-bottom: 10px;margin-left: 20px;">
+                                <MudButton Variant="Variant.Outlined" Color="Color.Secondary"
+                                   Style="margin-top: 5px;"
+                                   OnClick="@(()=> OpenDialog(@_ItemsList[currentIndex]))">
+                                    Add (@_ItemsList[currentIndex].ItemName)
+                                </MudButton>
+                            </div>
 
-                            <MudButton  Variant="Variant.Outlined" Color="Color.Secondary" OnClick="@(()=> OpenDialog(@_ItemsList[currentIndex]))">Add</MudButton>
+                            @if ((i + 1) % 12 == 0 && i != _ItemsList.Count - 1)
+                            {
+                                <br />
+                            }
                         }
                     }
+                    else
+                    {
+                        <p>No items available</p>
+                    }
                 </MudItem>
+
+
 
 
             </MudGrid>
 
         </DialogContent>
         <DialogActions>
-            <MudButton DisableElevation Variant="Variant.Filled" OnClick="Cancel">@_localizer["Cancel"]</MudButton>
-             @if (AddEditInventoryItemBridgeModel.Id != 0)
-            {
-                <MudButton DisableElevation Variant="Variant.Filled" ButtonType="ButtonType.Submit" Disabled="@(!Validated)" Color="Color.Secondary">@_localizer["Update"]</MudButton>
-            }
-            else
-            {
-                <MudButton DisableElevation Variant="Variant.Filled" ButtonType="ButtonType.Submit" Disabled="@(!Validated)" Color="Color.Success">@_localizer["Save"]</MudButton>
-            }
+            
         </DialogActions>
     </MudDialog>
 </EditForm>
-            <MudButton DisableElevation Variant="Variant.Filled" OnClick="LogToConsole">Log to Console</MudButton>
 

@@ -11,6 +11,7 @@ namespace Forces.Application.Features.Office.Queries.GetAll
         public int Id { get; set; }
         public string OfficeName { get; set; }
       
-        public int BasesSectionsId { get; set; }
+        public string BasesSectionsName { get; set; }
+        public string BasesName { get; set; }
     }
 }

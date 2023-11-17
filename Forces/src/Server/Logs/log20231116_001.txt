@@ -1,0 +1,351 @@
+2023-11-16 19:13:20.719 +02:00 [ERR] Failed executing DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Office] ADD CONSTRAINT [FK_Office_Bases_BasesId] FOREIGN KEY ([BasesId]) REFERENCES [Bases] ([Id]) ON DELETE CASCADE;
+2023-11-16 19:13:54.741 +02:00 [ERR] Failed executing DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Office] ADD CONSTRAINT [FK_Office_Bases_BasesId] FOREIGN KEY ([BasesId]) REFERENCES [Bases] ([Id]) ON DELETE CASCADE;
+2023-11-16 19:15:21.076 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-11-16 19:15:21.158 +02:00 [INF] Now listening on: https://localhost:5001
+2023-11-16 19:15:21.162 +02:00 [INF] Now listening on: http://localhost:5000
+2023-11-16 19:15:21.163 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-16 19:15:21.164 +02:00 [INF] Hosting environment: Development
+2023-11-16 19:15:21.164 +02:00 [INF] Content root path: E:\Forces_1611\Forces\Forces\src\Server
+2023-11-16 19:15:49.966 +02:00 [ERR] Execution CountersAggregator is in the Failed state now due to an exception, execution will be retried no more than in 00:00:25
+System.Data.SqlClient.SqlException (0x80131904): Query processor could not produce a query plan because of the hints defined in this query. Resubmit the query without specifying any hints and without using SET FORCEPLAN.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader)
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at Hangfire.SqlServer.CountersAggregator.<>c__DisplayClass6_0.<Execute>b__0(DbConnection connection)
+   at Hangfire.SqlServer.SqlServerStorage.<>c__DisplayClass35_0.<UseConnection>b__0(DbConnection connection)
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func)
+   at Hangfire.SqlServer.CountersAggregator.Execute(CancellationToken cancellationToken)
+   at Hangfire.Processing.BackgroundExecution.Run(Action`2 callback, Object state)
+ClientConnectionId:ebe5f34a-6748-4f37-a631-da02af5dd030
+Error Number:8622,State:1,Class:16
+2023-11-16 19:16:52.680 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-11-16 19:16:52.755 +02:00 [INF] Now listening on: https://localhost:5001
+2023-11-16 19:16:52.758 +02:00 [INF] Now listening on: http://localhost:5000
+2023-11-16 19:16:52.760 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-16 19:16:52.760 +02:00 [INF] Hosting environment: Development
+2023-11-16 19:16:52.761 +02:00 [INF] Content root path: E:\Forces_1611\Forces\Forces\src\Server
+2023-11-16 19:17:21.439 +02:00 [ERR] Execution CountersAggregator is in the Failed state now due to an exception, execution will be retried no more than in 00:00:25
+System.Data.SqlClient.SqlException (0x80131904): Query processor could not produce a query plan because of the hints defined in this query. Resubmit the query without specifying any hints and without using SET FORCEPLAN.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader)
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at Hangfire.SqlServer.CountersAggregator.<>c__DisplayClass6_0.<Execute>b__0(DbConnection connection)
+   at Hangfire.SqlServer.SqlServerStorage.<>c__DisplayClass35_0.<UseConnection>b__0(DbConnection connection)
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func)
+   at Hangfire.SqlServer.CountersAggregator.Execute(CancellationToken cancellationToken)
+   at Hangfire.Processing.BackgroundExecution.Run(Action`2 callback, Object state)
+ClientConnectionId:c6337ef2-3ddf-4cb4-82ee-f8b7ae2b4f8f
+Error Number:8622,State:1,Class:16
+2023-11-16 19:18:11.728 +02:00 [ERR] Failed executing DbCommand (14ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Office] ([BasesId], [BasesSectionsId], [CreatedBy], [CreatedOn], [LastModifiedBy], [LastModifiedOn], [Name])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [Office]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-11-16 19:18:11.745 +02:00 [ERR] An exception occurred in the database while saving changes for context type 'Forces.Infrastructure.Contexts.ForcesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Office_Bases_BasesId". The conflict occurred in database "Forces", table "dbo.Bases", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:f1dd0f2f-46ea-4230-aa24-a1954b24fed3
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Office_Bases_BasesId". The conflict occurred in database "Forces", table "dbo.Bases", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:f1dd0f2f-46ea-4230-aa24-a1954b24fed3
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-11-16 19:19:18.890 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-11-16 19:19:19.028 +02:00 [INF] Now listening on: https://localhost:5001
+2023-11-16 19:19:19.033 +02:00 [INF] Now listening on: http://localhost:5000
+2023-11-16 19:19:19.036 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-16 19:19:19.036 +02:00 [INF] Hosting environment: Development
+2023-11-16 19:19:19.036 +02:00 [INF] Content root path: E:\Forces_1611\Forces\Forces\src\Server
+2023-11-16 19:19:47.342 +02:00 [ERR] Execution CountersAggregator is in the Failed state now due to an exception, execution will be retried no more than in 00:00:25
+System.Data.SqlClient.SqlException (0x80131904): Query processor could not produce a query plan because of the hints defined in this query. Resubmit the query without specifying any hints and without using SET FORCEPLAN.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader)
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   at Hangfire.SqlServer.CountersAggregator.<>c__DisplayClass6_0.<Execute>b__0(DbConnection connection)
+   at Hangfire.SqlServer.SqlServerStorage.<>c__DisplayClass35_0.<UseConnection>b__0(DbConnection connection)
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func)
+   at Hangfire.SqlServer.CountersAggregator.Execute(CancellationToken cancellationToken)
+   at Hangfire.Processing.BackgroundExecution.Run(Action`2 callback, Object state)
+ClientConnectionId:51638067-9846-448c-8731-2e651e8a0d8b
+Error Number:8622,State:1,Class:16
+2023-11-16 19:20:39.332 +02:00 [ERR] Failed executing DbCommand (32ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Office] ([BasesId], [BasesSectionsId], [CreatedBy], [CreatedOn], [LastModifiedBy], [LastModifiedOn], [Name])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [Office]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-11-16 19:20:39.366 +02:00 [ERR] An exception occurred in the database while saving changes for context type 'Forces.Infrastructure.Contexts.ForcesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Office_Bases_BasesId". The conflict occurred in database "Forces", table "dbo.Bases", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:2c58c2c8-0137-4b30-acae-115b5ac9abb4
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Office_Bases_BasesId". The conflict occurred in database "Forces", table "dbo.Bases", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:2c58c2c8-0137-4b30-acae-115b5ac9abb4
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-11-16 19:23:17.189 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-11-16 19:23:17.278 +02:00 [INF] Now listening on: https://localhost:5001
+2023-11-16 19:23:17.282 +02:00 [INF] Now listening on: http://localhost:5000
+2023-11-16 19:23:17.284 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-16 19:23:17.284 +02:00 [INF] Hosting environment: Development
+2023-11-16 19:23:17.288 +02:00 [INF] Content root path: E:\Forces_1611\Forces\Forces\src\Server
+2023-11-16 19:23:45.946 +02:00 [ERR] Execution CountersAggregator is in the Failed state now due to an exception, execution will be retried no more than in 00:00:25
+System.Data.SqlClient.SqlException (0x80131904): Query processor could not produce a query plan because of the hints defined in this query. Resubmit the query without specifying any hints and without using SET FORCEPLAN.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader)
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at Hangfire.SqlServer.CountersAggregator.<>c__DisplayClass6_0.<Execute>b__0(DbConnection connection)
+   at Hangfire.SqlServer.SqlServerStorage.<>c__DisplayClass35_0.<UseConnection>b__0(DbConnection connection)
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func)
+   at Hangfire.SqlServer.CountersAggregator.Execute(CancellationToken cancellationToken)
+   at Hangfire.Processing.BackgroundExecution.Run(Action`2 callback, Object state)
+ClientConnectionId:0bff6de0-229b-4785-86b5-1b3bda62d10b
+Error Number:8622,State:1,Class:16
+2023-11-16 19:24:59.322 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-11-16 19:24:59.432 +02:00 [INF] Now listening on: https://localhost:5001
+2023-11-16 19:24:59.435 +02:00 [INF] Now listening on: http://localhost:5000
+2023-11-16 19:24:59.437 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-16 19:24:59.437 +02:00 [INF] Hosting environment: Development
+2023-11-16 19:24:59.438 +02:00 [INF] Content root path: E:\Forces_1611\Forces\Forces\src\Server
+2023-11-16 19:25:27.911 +02:00 [ERR] Execution CountersAggregator is in the Failed state now due to an exception, execution will be retried no more than in 00:00:25
+System.Data.SqlClient.SqlException (0x80131904): Query processor could not produce a query plan because of the hints defined in this query. Resubmit the query without specifying any hints and without using SET FORCEPLAN.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader)
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at Hangfire.SqlServer.CountersAggregator.<>c__DisplayClass6_0.<Execute>b__0(DbConnection connection)
+   at Hangfire.SqlServer.SqlServerStorage.<>c__DisplayClass35_0.<UseConnection>b__0(DbConnection connection)
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func)
+   at Hangfire.SqlServer.CountersAggregator.Execute(CancellationToken cancellationToken)
+   at Hangfire.Processing.BackgroundExecution.Run(Action`2 callback, Object state)
+ClientConnectionId:76e9b6cd-83c4-4b35-8243-6ef1139474b6
+Error Number:8622,State:1,Class:16
+2023-11-16 19:27:31.383 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-11-16 19:27:31.483 +02:00 [INF] Now listening on: https://localhost:5001
+2023-11-16 19:27:31.486 +02:00 [INF] Now listening on: http://localhost:5000
+2023-11-16 19:27:31.488 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-16 19:27:31.488 +02:00 [INF] Hosting environment: Development
+2023-11-16 19:27:31.488 +02:00 [INF] Content root path: E:\Forces_1611\Forces\Forces\src\Server
+2023-11-16 19:28:00.136 +02:00 [ERR] Execution CountersAggregator is in the Failed state now due to an exception, execution will be retried no more than in 00:00:25
+System.Data.SqlClient.SqlException (0x80131904): Query processor could not produce a query plan because of the hints defined in this query. Resubmit the query without specifying any hints and without using SET FORCEPLAN.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader)
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at Hangfire.SqlServer.CountersAggregator.<>c__DisplayClass6_0.<Execute>b__0(DbConnection connection)
+   at Hangfire.SqlServer.SqlServerStorage.<>c__DisplayClass35_0.<UseConnection>b__0(DbConnection connection)
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func)
+   at Hangfire.SqlServer.CountersAggregator.Execute(CancellationToken cancellationToken)
+   at Hangfire.Processing.BackgroundExecution.Run(Action`2 callback, Object state)
+ClientConnectionId:717e832c-e591-4655-b1cd-a7216e5a4300
+Error Number:8622,State:1,Class:16
+2023-11-16 19:32:36.139 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-11-16 19:32:36.247 +02:00 [INF] Now listening on: https://localhost:5001
+2023-11-16 19:32:36.251 +02:00 [INF] Now listening on: http://localhost:5000
+2023-11-16 19:32:36.253 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-16 19:32:36.254 +02:00 [INF] Hosting environment: Development
+2023-11-16 19:32:36.255 +02:00 [INF] Content root path: E:\Forces_1611\Forces\Forces\src\Server
+2023-11-16 19:33:04.771 +02:00 [ERR] Execution CountersAggregator is in the Failed state now due to an exception, execution will be retried no more than in 00:00:25
+System.Data.SqlClient.SqlException (0x80131904): Query processor could not produce a query plan because of the hints defined in this query. Resubmit the query without specifying any hints and without using SET FORCEPLAN.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader)
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at Hangfire.SqlServer.CountersAggregator.<>c__DisplayClass6_0.<Execute>b__0(DbConnection connection)
+   at Hangfire.SqlServer.SqlServerStorage.<>c__DisplayClass35_0.<UseConnection>b__0(DbConnection connection)
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func)
+   at Hangfire.SqlServer.CountersAggregator.Execute(CancellationToken cancellationToken)
+   at Hangfire.Processing.BackgroundExecution.Run(Action`2 callback, Object state)
+ClientConnectionId:e9d5f3ba-3cdc-446a-94be-c0dae2f54e7f
+Error Number:8622,State:1,Class:16
+2023-11-16 19:34:33.201 +02:00 [WRN] Stopping the server due to DomainUnload or ProcessExit event...
+2023-11-16 19:34:33.201 +02:00 [WRN] Server mahmoud-emad:25156:6ee5238e caught shutdown signal...
+2023-11-16 19:34:33.202 +02:00 [FTL] Execution loop CountersAggregator:bf209073 was unable to wait for '00:00:49' delay due to an exception. Execution will be stopped.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Hangfire.Processing.TaskExtensions.WaitOne(WaitHandle waitHandle, TimeSpan timeout, CancellationToken token)
+   at Hangfire.Processing.BackgroundExecution.HandleDelay(Guid executionId, TimeSpan delay)
+2023-11-16 19:34:33.203 +02:00 [WRN] Server mahmoud-emad:25156:6ee5238e stopped non-gracefully due to ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler. Outstanding work on those dispatchers could be aborted, and there can be delays in background processing. This server instance will be incorrectly shown as active for a while. To avoid non-graceful shutdowns, investigate what prevents from stopping gracefully and add CancellationToken support for those methods.
+2023-11-16 21:06:29.300 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-11-16 21:06:29.417 +02:00 [INF] Now listening on: https://localhost:5001
+2023-11-16 21:06:29.421 +02:00 [INF] Now listening on: http://localhost:5000
+2023-11-16 21:06:29.424 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-16 21:06:29.424 +02:00 [INF] Hosting environment: Development
+2023-11-16 21:06:29.425 +02:00 [INF] Content root path: E:\Forces_1611\Forces\Forces\src\Server
+2023-11-16 21:06:55.025 +02:00 [ERR] Execution CountersAggregator is in the Failed state now due to an exception, execution will be retried no more than in 00:00:25
+System.Data.SqlClient.SqlException (0x80131904): Query processor could not produce a query plan because of the hints defined in this query. Resubmit the query without specifying any hints and without using SET FORCEPLAN.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader)
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at Hangfire.SqlServer.CountersAggregator.<>c__DisplayClass6_0.<Execute>b__0(DbConnection connection)
+   at Hangfire.SqlServer.SqlServerStorage.<>c__DisplayClass35_0.<UseConnection>b__0(DbConnection connection)
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[T](DbConnection dedicatedConnection, Func`2 func)
+   at Hangfire.SqlServer.CountersAggregator.Execute(CancellationToken cancellationToken)
+   at Hangfire.Processing.BackgroundExecution.Run(Action`2 callback, Object state)
+ClientConnectionId:9e2beb81-cc14-486b-8d5f-59a24a757079
+Error Number:8622,State:1,Class:16
+2023-11-16 21:29:52.026 +02:00 [WRN] Stopping the server due to DomainUnload or ProcessExit event...
+2023-11-16 21:29:52.027 +02:00 [WRN] Server mahmoud-emad:1792:2b39b224 caught shutdown signal...
+2023-11-16 21:29:52.027 +02:00 [FTL] Execution loop CountersAggregator:a57b6a05 was unable to wait for '00:04:16' delay due to an exception. Execution will be stopped.
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at Hangfire.Processing.TaskExtensions.WaitOne(WaitHandle waitHandle, TimeSpan timeout, CancellationToken token)
+   at Hangfire.Processing.BackgroundExecution.HandleDelay(Guid executionId, TimeSpan delay)
+2023-11-16 21:29:52.028 +02:00 [WRN] Server mahmoud-emad:1792:2b39b224 stopped non-gracefully due to CountersAggregator. Outstanding work on those dispatchers could be aborted, and there can be delays in background processing. This server instance will be incorrectly shown as active for a while. To avoid non-graceful shutdowns, investigate what prevents from stopping gracefully and add CancellationToken support for those methods.

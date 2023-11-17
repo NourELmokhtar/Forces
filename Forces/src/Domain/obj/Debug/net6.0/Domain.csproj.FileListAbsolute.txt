@@ -57,3 +57,15 @@ D:\ForcesNew\Forces\src\Domain\obj\Debug\net6.0\Forces.Domain.dll
 D:\ForcesNew\Forces\src\Domain\obj\Debug\net6.0\refint\Forces.Domain.dll
 D:\ForcesNew\Forces\src\Domain\obj\Debug\net6.0\Forces.Domain.pdb
 D:\ForcesNew\Forces\src\Domain\obj\Debug\net6.0\ref\Forces.Domain.dll
+E:\Forces_1611\Forces\Forces\src\Domain\bin\Debug\net6.0\Forces.Domain.deps.json
+E:\Forces_1611\Forces\Forces\src\Domain\bin\Debug\net6.0\Forces.Domain.dll
+E:\Forces_1611\Forces\Forces\src\Domain\bin\Debug\net6.0\Forces.Domain.pdb
+E:\Forces_1611\Forces\Forces\src\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+E:\Forces_1611\Forces\Forces\src\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Forces_1611\Forces\Forces\src\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+E:\Forces_1611\Forces\Forces\src\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+E:\Forces_1611\Forces\Forces\src\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+E:\Forces_1611\Forces\Forces\src\Domain\obj\Debug\net6.0\Forces.Domain.dll
+E:\Forces_1611\Forces\Forces\src\Domain\obj\Debug\net6.0\refint\Forces.Domain.dll
+E:\Forces_1611\Forces\Forces\src\Domain\obj\Debug\net6.0\Forces.Domain.pdb
+E:\Forces_1611\Forces\Forces\src\Domain\obj\Debug\net6.0\ref\Forces.Domain.dll

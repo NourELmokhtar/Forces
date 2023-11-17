@@ -37,19 +37,17 @@
                     <MudTextField Required="true" Immediate="true" T="string" For="@(() => AddEditOfficeModel.OfficeName)" @bind-Value="AddEditOfficeModel.OfficeName" Label="@_localizer["Office Name"]" />
                 </MudItem>
                 
-                <MudItem xs="12" md="6">
-
-                </MudItem>
+               
 
             </MudGrid>
             <MudGrid>
                 <MudItem xs="12" md="6">
-                    <MudSelect Label="Select Section" @bind-Value="selectedBase">
-                        @if (_BaseList != null)
+                    <MudSelect Label="Select Base" @bind-Value="selectedBase">
+                        @if (_BasesList != null)
                         {
-                            @foreach (var item in _BaseList)
+                            @foreach (var item in _BasesList)
                             {
-                                <MudSelectItem Value="@item.SectionName">@item.SectionName</MudSelectItem>
+                                <MudSelectItem Value="@item.BaseName">@item.BaseName</MudSelectItem>
                             }
                         }
                     </MudSelect>
@@ -57,6 +55,23 @@
                 </MudItem>
 
             </MudGrid>
+            @if ((selectedBase != "" && selectedBase != null))
+            {
+                <MudItem xs="12" md="6">
+                    <MudSelect Label="Select Section Name" @bind-Value="SectionName">
+                        @if (filteredSections != null)
+                        {
+                            @for (int i = 0; i < filteredSections.Count(); i++)
+                            {
+                                <MudSelectItem Value="@filteredSections.ElementAt(i).SectionName"></MudSelectItem>
+                            }
+
+                        }
+                    </MudSelect>
+
+                </MudItem>
+
+            }
         </DialogContent>
         <DialogActions>
             <MudButton DisableElevation Variant="Variant.Filled" OnClick="Cancel">@_localizer["Cancel"]</MudButton>
@@ -71,4 +86,4 @@
         </DialogActions>
     </MudDialog>
 </EditForm>
-<MudButton DisableElevation Variant="Variant.Filled" OnClick="LogToConsole">Log to Console</MudButton>
+

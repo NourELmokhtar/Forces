@@ -40,9 +40,9 @@ namespace Forces.Application.Features.InventoryItemBridge.Queries.GetAll
 
                                select new GetAllInventoryItemBridgeResponse()
                                {
-                                   SerialNumber = item.SerialNumber,
+                                   SerialNumber = item.SerialNumber ?? "Without Serial (C)",
                                    InventoryName = _unitOfWork.Repository<Models.Inventory>().GetAllAsync().Result.Where(y=>y.Id==item.InventoryId).FirstOrDefault().Name,//item.InventoryItem.ItemName,
-                                   InventoryItemName= _unitOfWork.Repository<Models.InventoryItem>().GetAllAsync().Result.Where(y => y.Id == item.ItemId).FirstOrDefault().ItemName,
+                                   InventoryItemName= _unitOfWork.Repository<Models.Items>().GetAllAsync().Result.Where(y => y.Id == item.ItemId).FirstOrDefault().ItemName,
                                    DateOfEnter = item.DateOfEnter,
 
                                }
