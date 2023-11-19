@@ -24,6 +24,7 @@ namespace Forces.Application.Features.Person.Commands.AddEdit
         public string Phone { get; set; }
         public string OfficePhone { get; set; }
         public string Section { get; set; }
+        public string Rank { get; set; }   
 
     }
     internal class AddEditPersonCommandHandler : IRequestHandler<AddEditPersonCommand, IResult<int>>
@@ -58,19 +59,28 @@ namespace Forces.Application.Features.Person.Commands.AddEdit
                 }
                 else
                 {
-                    Models.Person Person = new Models.Person()
+                    var room = _unitOfWork.Repository<Models.Room>().Entities.FirstOrDefaultAsync(_ => _.Id == request.RoomId).Result;
+                    if (room.Size <= room.Persons.Count)
                     {
-                        Id = request.Id,
-                        Name = request.Name,
-                        RoomId = request.RoomId,
-                        NationalNumber = request.NationalNumber,
-                        Phone = request.Phone,
-                        OfficePhone = request.OfficePhone,
-                        Section = request.Section
-                    };
-                    await _unitOfWork.Repository<Models.Person>().AddAsync(Person);
-                    await _unitOfWork.Commit(cancellationToken);
-                    return await Result<int>.SuccessAsync(Person.Id, _localizer["Person Added Successfuly!"]);
+                        return await Result<int>.FailAsync(_localizer["The Room Is Full!"]);
+                    }
+                    else
+                    {
+                        Models.Person Person = new Models.Person()
+                        {
+                            Id = request.Id,
+                            Name = request.Name,
+                            RoomId = request.RoomId,
+                            NationalNumber = request.NationalNumber,
+                            Phone = request.Phone,
+                            OfficePhone = request.OfficePhone,
+                            Rank = request.Rank,
+                            Section = request.Section
+                        };
+                        await _unitOfWork.Repository<Models.Person>().AddAsync(Person);
+                        await _unitOfWork.Commit(cancellationToken);
+                        return await Result<int>.SuccessAsync(Person.Id, _localizer["Person Added Successfuly!"]);
+                    }
                 }
             }
             else
@@ -82,14 +92,19 @@ namespace Forces.Application.Features.Person.Commands.AddEdit
                 }
                 else
                 {
-                    var ExistnameOffice = await _unitOfWork.Repository<Models.Person>().Entities.FirstOrDefaultAsync(x => x.Name == request.Name && x.Id != request.Id);
-                    if (ExistnameOffice != null)
+                    var ExistnamePerson = await _unitOfWork.Repository<Models.Person>().Entities.FirstOrDefaultAsync(x => x.Name == request.Name && x.Id != request.Id);
+                    
+                    if (ExistnamePerson != null)
                     {
                         return await Result<int>.FailAsync(_localizer["This Person Is Already Exist!"]);
                     }
                     else
                     {
                         ExistPerson.Name = request.Name;
+                        ExistPerson.OfficePhone = request.OfficePhone;
+                        ExistPerson.Rank = request.Rank;
+                        ExistPerson.Phone = request.Phone;
+                        ExistPerson.RoomId = request.RoomId;
                         await _unitOfWork.Repository<Models.Person>().UpdateAsync(ExistPerson);
                         await _unitOfWork.Commit(cancellationToken);
                         return await Result<int>.SuccessAsync(ExistPerson.Id, _localizer["Person Updated Successfuly!"]);

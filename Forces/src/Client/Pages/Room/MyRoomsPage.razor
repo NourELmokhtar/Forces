@@ -46,6 +46,7 @@ else
         <HeaderContent>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllRoomsResponse, object>(x => x.Id)">@_localizer["Id"]</MudTableSortLabel></MudTh>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllRoomsResponse, object>(x => x.RoomNumber)">@_localizer["Room Number"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllRoomsResponse, object>(x => x.Size)">@_localizer["Room Size"]</MudTableSortLabel></MudTh>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllRoomsResponse, object>(x => x.BuildingName)">@_localizer["Building Name"]</MudTableSortLabel></MudTh>
             <MudTh Style="text-align:right">@_localizer["Actions"]</MudTh>
         </HeaderContent>
@@ -56,6 +57,8 @@ else
                 <MudTd DataLabel="Id">@context.Id</MudTd>
                 <MudTd DataLabel="Room Number">
                     <MudHighlighter Text="@context.RoomNumber.ToString()" HighlightedText="@_searchString" />
+                </MudTd><MudTd DataLabel="Room Size">
+                    <MudHighlighter Text="@context.Size.ToString()" HighlightedText="@_searchString" />
                 </MudTd>
                 <MudTd DataLabel="Building Id">@context.BuildingName</MudTd>
                 <MudTd DataLabel="Actions" Style="text-align: right">

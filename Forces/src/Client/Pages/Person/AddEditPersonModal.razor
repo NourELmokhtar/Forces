@@ -46,6 +46,9 @@
                 <MudItem xs="12" md="6">
                     <MudTextField Required="true" Immediate="true" T="string" For="@(() => AddEditPersonModel.OfficePhone)" @bind-Value="AddEditPersonModel.OfficePhone" Label="@_localizer["Office Phone"]" />
 
+                </MudItem><MudItem xs="12" md="6">
+                    <MudTextField Required="true" Immediate="true" T="string" For="@(() => AddEditPersonModel.Rank)" @bind-Value="AddEditPersonModel.Rank" Label="@_localizer["Rank"]" />
+
                 </MudItem>
                 <MudItem xs="12" md="6">
                     <MudTextField Required="true" Immediate="true" T="string" For="@(() => AddEditPersonModel.Section)" @bind-Value="AddEditPersonModel.Section" Label="@_localizer["Section"]" />

@@ -19,6 +19,8 @@ namespace Forces.Application.Features.Room.Commands.AddEdit
     {
         public int Id { get; set; }
         public int RoomNumber { get; set; }
+        public int Size { get; set; }
+
         public int BuildingId { get; set; }
     }
 
@@ -59,6 +61,7 @@ namespace Forces.Application.Features.Room.Commands.AddEdit
                     {
                         RoomNumber = request.RoomNumber,
                         BuildingId = request.BuildingId,
+                        Size= request.Size,
                     };
                     await _unitOfWork.Repository<Models.Room>().AddAsync(Room);
                     await _unitOfWork.Commit(cancellationToken);

@@ -15,6 +15,7 @@ namespace Forces.Application.Models
         public string Section { get; set; }
         public string Phone { get; set; }
         public string OfficePhone { get; set; }
+        public string Rank { get; set; }
 
         [ForeignKey("Room")]
         public int RoomId { get; set; }

@@ -99,7 +99,7 @@ namespace Forces.Client.Pages.Person
 
         private async Task SaveAsync()
         {
-            AddEditPersonModel.RoomId = (int)converterForRooms(BuildingName);
+            AddEditPersonModel.RoomId = (int)converterForRooms();
             var response = await PersonManager.SaveAsync(AddEditPersonModel);
             if (response.Succeeded)
             {
@@ -139,7 +139,7 @@ namespace Forces.Client.Pages.Person
         {
             return _BuildingList.FirstOrDefault(s => s.BuildingName == ss).Id;
         }
-        private int? converterForRooms(string ss)
+        private int? converterForRooms()
         {
             return _RoomList.FirstOrDefault(s => s.RoomNumber == RoomNumber).Id;
         }

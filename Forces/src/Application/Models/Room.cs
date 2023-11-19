@@ -13,6 +13,7 @@ namespace Forces.Application.Models
         public int RoomNumber { get; set; }
         [ForeignKey("BuildingId")]
         public int BuildingId { get; set; }
+        public int Size { get; set; }
         public virtual Building Building { get; set; }
         public virtual ICollection<Person> Persons { get; set; }
     }

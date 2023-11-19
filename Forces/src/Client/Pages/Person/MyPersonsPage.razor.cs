@@ -137,6 +137,7 @@ namespace Forces.Client.Pages.Person
                         OfficePhone = _Person.OfficePhone,
                         Phone = _Person.Phone,
                         Section = _Person.Section,
+                        Rank= _Person.Rank,
 
                     });
                 }

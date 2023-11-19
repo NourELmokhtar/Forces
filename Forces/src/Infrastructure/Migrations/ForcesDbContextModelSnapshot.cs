@@ -1000,6 +1000,9 @@ namespace Forces.Infrastructure.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Rank")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("RoomId")
                         .HasColumnType("int");
 
@@ -1416,6 +1419,9 @@ namespace Forces.Infrastructure.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("RoomNumber")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Size")
                         .HasColumnType("int");
 
                     b.HasKey("Id");

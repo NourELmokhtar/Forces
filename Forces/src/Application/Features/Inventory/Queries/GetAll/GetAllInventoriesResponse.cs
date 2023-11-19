@@ -13,6 +13,7 @@ namespace Forces.Application.Features.Inventory.Queries.GetAll
         public int? RoomName { get; set; }
         public string? HouseName { get; set; }
         public string? BaseSectionName { get; set; }
+        public string? BaseName { get; set; }
 
     }
 }

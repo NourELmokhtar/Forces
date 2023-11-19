@@ -55,6 +55,27 @@ namespace Forces.Application.Features.Inventory.Queries.GetAll
                     .Where(y => y.Id == x.RoomId)
                     .FirstOrDefault()?.RoomNumber
                 : null,
+                BaseName = x.BaseSectionId != null
+                ? _unitOfWork.Repository<Models.Bases>().GetAllAsync().Result
+                    .Where(y => y.Id == _unitOfWork.Repository<Models.BasesSections>().GetAllAsync().Result
+                    .Where(y => y.Id == x.BaseSectionId)
+                    .FirstOrDefault()?.BaseId)
+                    .FirstOrDefault()?.BaseName
+                : x.HouseId != null
+                ? _unitOfWork.Repository<Models.Bases>().GetAllAsync().Result
+                    .Where(y => y.Id == _unitOfWork.Repository<Models.House>().GetAllAsync().Result
+                    .Where(y => y.Id == x.HouseId)
+                    .FirstOrDefault()?.BaseId)
+                    .FirstOrDefault()?.BaseName:
+                    x.RoomId != null
+                ? _unitOfWork.Repository<Models.Bases>().GetAllAsync().Result
+                    .Where(y => y.Id == _unitOfWork.Repository<Models.Building>().GetAllAsync().Result
+                    .Where(y => y.Id == _unitOfWork.Repository<Models.Room>().GetAllAsync().Result
+                    .Where(y => y.Id == x.RoomId)
+                    .FirstOrDefault()?.BuildingId)
+                    .FirstOrDefault()?.BaseId)
+                    .FirstOrDefault()?.BaseName:null,
+
 
             }).ToList();
             return await Result<List<GetAllInventoriesResponse>>.SuccessAsync(MappedInventory);

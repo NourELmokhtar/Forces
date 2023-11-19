@@ -15,6 +15,7 @@ namespace Forces.Application.Features.Person.Queries.GetAll
         public int RoomNumber { get; set; }
         public string BuildingName { get; set; }
         public string BaseName { get; set; }
+        public string Rank { get; set; }    
         public string OfficePhone { get; set; }
         public string Phone { get; set; }
         public string Section { get; set; }

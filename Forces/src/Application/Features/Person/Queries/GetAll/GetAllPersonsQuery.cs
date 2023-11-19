@@ -46,6 +46,7 @@ namespace Forces.Application.Features.Person.Queries.GetAll
                 OfficePhone = x.OfficePhone,
                 Phone = x.Phone,
                 Section = x.Section,
+                Rank= x.Rank,
                 RoomNumber = _unitOfWork.Repository<Models.Room>().GetAllAsync().Result.Where(y => y.Id == x.RoomId).FirstOrDefault().RoomNumber,
                 BuildingName = _unitOfWork.Repository<Models.Building>().GetAllAsync().Result.Where(y => y.Id == (
                 _unitOfWork.Repository<Models.Room>().GetAllAsync().Result.Where(y => y.Id == x.RoomId).FirstOrDefault().BuildingId)).FirstOrDefault().BuildingName,
