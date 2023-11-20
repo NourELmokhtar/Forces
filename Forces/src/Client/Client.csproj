@@ -10,6 +10,7 @@
 	  <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
+    <Content Remove="Pages\Content\BaseDashboards.razor" />
     <Content Remove="Shared\Components\BlazorHeroLogo.razor" />
   </ItemGroup>
 	<ItemGroup>
@@ -66,6 +67,7 @@
     <_ContentIncludedByDefault Remove="Shared\Components\BlazorHeroLogo.razor" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Pages\Content\BaseDashboards.razor" />
     <None Include="Shared\Components\BlazorHeroLogo.razor" />
   </ItemGroup>
   <ItemGroup>

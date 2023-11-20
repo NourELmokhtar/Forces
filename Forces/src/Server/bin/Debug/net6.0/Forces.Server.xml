@@ -516,6 +516,12 @@
             <param name="Id"></param>
             <returns>Status 200 OK</returns>
         </member>
+        <member name="M:Forces.Server.Controllers.v1.BaseDashboardController.GetDataAsync(System.Int32)">
+            <summary>
+            Get BaseDashboard Data
+            </summary>
+            <returns>Status 200 OK </returns>
+        </member>
         <member name="M:Forces.Server.Controllers.v1.BasicInformations.BasesController.Post(Forces.Application.Features.Bases.Commands.AddEdit.AddEditBaseCommand)">
             <summary>
             Create/Update a Base With Permission Create Bases
