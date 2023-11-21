@@ -7,7 +7,41 @@
 @using Microsoft.AspNetCore.Authorization;
 @using MudBlazor;
 @using static System.Net.Mime.MediaTypeNames;
+@inject IJSRuntime JSRuntime
 
+@code {
+
+    private async Task LogToConsole()
+    {
+        await JSRuntime.InvokeVoidAsync("console.log", _BasesList);
+    }
+
+    public async Task GetBaseData()
+    {
+        var BaseId = converterForBases(SelectedBase);
+        var response = await BaseDashboardManager.GetDataAsync((int)BaseId);
+        if (response.Succeeded)
+        {
+            BasesSectionsCount = response.Data.BasesSectionsCount;
+            HouseCount = response.Data.HouseCount;
+            RoomCount = response.Data.RoomCount;
+            PersonCount = response.Data.PersonCount;
+            BuildingCount = response.Data.BuildingCount;
+            InventoryCount = response.Data.InventoryCount;
+            InventoryItemCount = response.Data.InventoryItemCount;
+            OfficeCount = response.Data.OfficeCount;
+
+
+        }
+        else
+        {
+            foreach (var message in response.Messages)
+            {
+                _snackBar.Add(message, (MudBlazor.Severity)Severity.Error);
+            }
+        }
+    }
+}
 <HeroTitle Title="@_localizer["Dashboard"]" Description="@_localizer["Realtime Updates & Insights"]" />
 @if (!_loaded)
 {
@@ -20,41 +54,53 @@ else
             <h1>(@item.ToString() =>@((int)item) )</h1>
         }
         <h1>@userType.ToString()</h1>*@
+    <MudItem xs="12" md="6">
+        <MudSelect Label="Select Base Name" @onchange="GetBaseData" @bind-Value="SelectedBase">
+            @if (_BasesList != null)
+            {
+                @for (int i = 0; i < _BasesList.Count; i++)
+                {
+                    <MudSelectItem Value="@_BasesList[i].BaseName"></MudSelectItem>
+                }
+            }
+        </MudSelect>
+    </MudItem>
+
     <MudGrid>
 
-        
-            <MudItem xs="12" sm="6" md="3">
-                <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:100px;">
-                    <MudIcon Icon="@Icons.Filled.Castle" Color="Color.Primary" Class="mx-4" Style="width:54px; height:54px;"></MudIcon>
-                    <div>
-                        <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-n1">@_localizer["Inventories"]</MudText>
-                        <MudText Typo="Typo.h5">@InventoryCount</MudText>
-                    </div>
-                </MudPaper>
-            </MudItem>
-        
-        
-            <MudItem xs="12" sm="6" md="3">
-                <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:100px;">
-                    <MudIcon Icon="@Icons.Filled.AccountBalance" Color="Color.Secondary" Class="mx-4" Style="width:54px; height:54px;"></MudIcon>
-                    <div>
-                        <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-n1">@_localizer["Bases Sections"]</MudText>
-                        <MudText @bind-Value="@BasesSectionsCount" Typo="Typo.h5">@BasesSectionsCount</MudText>
-                    </div>
-                </MudPaper>
-            </MudItem>
-        
-        
-            <MudItem xs="12" sm="6" md="3">
-                <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:100px;">
-                    <MudIcon Icon="@Icons.Filled.AccountTree" Color="Color.Secondary" Class="mx-4" Style="width:54px; height:54px;"></MudIcon>
-                    <div>
-                        <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-n1">@_localizer["Inventory Items"]</MudText>
+
+        <MudItem xs="12" sm="6" md="3">
+            <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:100px;">
+                <MudIcon Icon="@Icons.Filled.Castle" Color="Color.Primary" Class="mx-4" Style="width:54px; height:54px;"></MudIcon>
+                <div>
+                    <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-n1">@_localizer["Inventories"]</MudText>
+                    <MudText Typo="Typo.h5">@InventoryCount</MudText>
+                </div>
+            </MudPaper>
+        </MudItem>
+
+
+        <MudItem xs="12" sm="6" md="3">
+            <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:100px;">
+                <MudIcon Icon="@Icons.Filled.AccountBalance" Color="Color.Secondary" Class="mx-4" Style="width:54px; height:54px;"></MudIcon>
+                <div>
+                    <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-n1">@_localizer["Bases Sections"]</MudText>
+                    <MudText @bind-Value="@BasesSectionsCount" Typo="Typo.h5">@BasesSectionsCount</MudText>
+                </div>
+            </MudPaper>
+        </MudItem>
+
+
+        <MudItem xs="12" sm="6" md="3">
+            <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:100px;">
+                <MudIcon Icon="@Icons.Filled.AccountTree" Color="Color.Secondary" Class="mx-4" Style="width:54px; height:54px;"></MudIcon>
+                <div>
+                    <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-n1">@_localizer["Inventory Items"]</MudText>
                     <MudText @bind-Value="@InventoryItemCount" Typo="Typo.h5">@InventoryItemCount</MudText>
-                    </div>
-                </MudPaper>
-            </MudItem>
-        
+                </div>
+            </MudPaper>
+        </MudItem>
+
 
 
         <MudItem xs="12" sm="6" md="3">
@@ -102,18 +148,18 @@ else
                 </div>
             </MudPaper>
         </MudItem>
-       
-            <MudItem xs="12" sm="6" md="3">
-                <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:100px;">
-                    <MudIcon Icon="@Icons.Filled.Airlines" Color="Color.Warning" Class="mx-4" Style="width:54px; height:54px;"></MudIcon>
-                    <div>
-                        <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-n1">@_localizer["Houses"]</MudText>
-                        <MudText Typo="Typo.h5">@HouseCount</MudText>
-                    </div>
-                </MudPaper>
-            </MudItem>
-        
-      
+
+        <MudItem xs="12" sm="6" md="3">
+            <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:100px;">
+                <MudIcon Icon="@Icons.Filled.Airlines" Color="Color.Warning" Class="mx-4" Style="width:54px; height:54px;"></MudIcon>
+                <div>
+                    <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-n1">@_localizer["Houses"]</MudText>
+                    <MudText Typo="Typo.h5">@HouseCount</MudText>
+                </div>
+            </MudPaper>
+        </MudItem>
+
+
 
     </MudGrid>
     <MudGrid>

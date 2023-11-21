@@ -33,6 +33,13 @@
             @_localizer["MPR Dashboard"]
         </MudNavLink>
 
+
+    }
+    @if(_canViewBaseDashboards)
+    {
+        <MudNavLink Href="/Basedashboard" Icon="@Icons.Material.Outlined.DashboardCustomize">
+            @_localizer["Bases Dashboard"]
+        </MudNavLink>
     }
     @if (_canViewVoteCodeDashboard)
     {
@@ -304,6 +311,7 @@
     private bool _canViewRooms;
     private bool _canViewOffices;
     private bool _canViewInventoryItems;
+    private bool _canViewBaseDashboards;
 
 
     protected override async Task OnParametersSetAsync()
@@ -311,6 +319,7 @@
         _authenticationStateProviderUser = await _stateProvider.GetAuthenticationStateProviderUserAsync();
         _canViewHangfire = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Hangfire.View)).Succeeded;
         _canViewDashboards = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Dashboards.View)).Succeeded;
+        _canViewBaseDashboards = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.BaseDashboards.View)).Succeeded;
         _canViewDocuments = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Documents.View)).Succeeded;
         _canViewDocumentTypes = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.DocumentTypes.View)).Succeeded;
         _canViewAuditTrails = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.AuditTrails.View)).Succeeded;

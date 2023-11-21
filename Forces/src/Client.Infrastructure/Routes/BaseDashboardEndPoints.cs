@@ -8,9 +8,10 @@ namespace Forces.Client.Infrastructure.Routes
 {
     public class BaseDashboardEndPoints
     {
-        public static string GetDataEndpoint(int baseId)
+        public static string GetDataEndpoint(int BaseId)
         {
-            return $"api/v1/Basedashboard/?BaseId={baseId}";
+            return $"api/v1/BaseDashboard/BaseId?BaseId={BaseId}";
+            
         }
     }
 }
