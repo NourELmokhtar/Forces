@@ -49,22 +49,28 @@
 }
 else
 {
-    @*@foreach (var item in Enum.GetValues(typeof(UserType)))
+    <MudGrid Style="margin-bottom:20px">
+
+            <MudItem xs="12" md="4">
+                <MudSelect Label="Select Base Name" @bind-Value="SelectedBase">
+                    @if (_BasesList != null)
+                    {
+                        @for (int i = 0; i < _BasesList.Count; i++)
+                        {
+                            <MudSelectItem Value="@_BasesList[i].BaseName"></MudSelectItem>
+                        }
+                    }
+                </MudSelect>
+            </MudItem>
+        @if(SelectedBase!=null && SelectedBase != "")
         {
-            <h1>(@item.ToString() =>@((int)item) )</h1>
+        <MudItem xs="2" md="3" Style="margin-top:5px">
+                <MudButton  @onclick="GetBaseData">Get Data</MudButton>
+            </MudItem>
+
+            
         }
-        <h1>@userType.ToString()</h1>*@
-    <MudItem xs="12" md="6">
-        <MudSelect Label="Select Base Name" @onchange="GetBaseData" @bind-Value="SelectedBase">
-            @if (_BasesList != null)
-            {
-                @for (int i = 0; i < _BasesList.Count; i++)
-                {
-                    <MudSelectItem Value="@_BasesList[i].BaseName"></MudSelectItem>
-                }
-            }
-        </MudSelect>
-    </MudItem>
+    </MudGrid>
 
     <MudGrid>
 

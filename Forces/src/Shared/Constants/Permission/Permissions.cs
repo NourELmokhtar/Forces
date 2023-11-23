@@ -183,6 +183,10 @@ namespace Forces.Shared.Constants.Permission
         public static class BaseDashboards
         {
             public const string View = "Permissions.BaseDashboards.View";
+        } 
+        public static class InventoryDashboards
+        {
+            public const string View = "Permissions.InventoryDashboards.View";
         }
 
         public static class Hangfire

@@ -41,6 +41,12 @@
             @_localizer["Bases Dashboard"]
         </MudNavLink>
     }
+    @if(_canViewInventoryDashboards)
+    {
+        <MudNavLink Href="/Inventorydashboard" Icon="@Icons.Material.Outlined.Inventory2">
+            @_localizer["Inventory Dashboard"]
+        </MudNavLink>
+    }
     @if (_canViewVoteCodeDashboard)
     {
         <MudNavLink Href="/vcodedashboard" Icon="@Icons.Material.Outlined.Dashboard">
@@ -312,6 +318,7 @@
     private bool _canViewOffices;
     private bool _canViewInventoryItems;
     private bool _canViewBaseDashboards;
+    private bool _canViewInventoryDashboards;
 
 
     protected override async Task OnParametersSetAsync()
@@ -354,6 +361,7 @@
         _canViewRooms = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Rooms.View)).Succeeded;
         _canViewOffices = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Office.View)).Succeeded;
         _canViewInventoryItems = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.InventoryItems.View)).Succeeded;
+        _canViewInventoryDashboards = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.InventoryDashboards.View)).Succeeded;
 
     }
 }

@@ -100,6 +100,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFxIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Forces_1611/Forces/Forces/src/Client/Pages/Content/InventoryDashboards.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFxJbnZlbnRvcnlEYXNoYm9hcmRzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Forces_1611/Forces/Forces/src/Client/Pages/Content/VoteCodeDashboard.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFxWb3RlQ29kZURhc2hib2FyZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

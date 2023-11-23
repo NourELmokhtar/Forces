@@ -41,8 +41,8 @@ namespace Forces.Client.Pages.Content
         {
             //await LoadDataAsync();
             await GetBasesAsync();
-            SelectedBase = "SEEB";
-            await GetBaseData();
+            /*SelectedBase = "SEEB";
+            await GetBaseData();*/
         
             _loaded = true;
         }

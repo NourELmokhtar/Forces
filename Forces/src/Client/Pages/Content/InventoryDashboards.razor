@@ -1,0 +1,255 @@
+﻿@page "/Inventorydashboard"
+@attribute [Authorize(Policy = Permissions.InventoryDashboards.View)]
+
+@inject Microsoft.Extensions.Localization.IStringLocalizer<InventoryDashboards> _localizer
+@using Forces.Application.Enums;
+@using Forces.Client.Pages.Content;
+@using Forces.Shared.Constants.Permission;
+@using Microsoft.AspNetCore.Authorization;
+@using MudBlazor;
+@using static System.Net.Mime.MediaTypeNames;
+@inject IJSRuntime JSRuntime
+
+@code {
+    private async Task LogToConsole()
+    {
+        await JSRuntime.InvokeVoidAsync("console.log", _InventorysList);
+    }
+
+    public async Task GetInventoryData()
+    {
+        int invId =(int)converterForInventorys(SelectedInventory);
+        response = await InventoryDashboardManager.GetDataAsync(invId);
+        if (response.Succeeded)
+        {
+            InventoryName = response.Data.InventoryName;
+            HouseName = response.Data.HouseName;
+            RoomNumber = response.Data.RoomNumber;
+            BaseName = response.Data.BaseName;
+            BaseSectionName = response.Data.BaseSectionName;
+            BuildingName = response.Data.BuildingName;
+            Item = response.Data.Item;
+            Person = response.Data.Persons;
+
+        }
+        else
+        {
+            foreach (var message in response.Messages)
+            {
+                _snackBar.Add(message, (MudBlazor.Severity)Severity.Error);
+            }
+        }
+    }
+}
+<HeroTitle Title="@_localizer["Dashboard"]" Description="@_localizer["Realtime Updates & Insights"]" />
+@if (!_loaded)
+{
+    <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+}
+else
+{
+    <MudGrid Style="margin-bottom:20px">
+
+        <MudItem xs="12" md="4">
+            <MudSelect Label="Select Inventory Name" @bind-Value="SelectedInventory">
+                @if (_InventorysList != null)
+                {
+                    @for (int i = 0; i < _InventorysList.Count; i++)
+                    {
+                        <MudSelectItem Value="@_InventorysList[i].Name"></MudSelectItem>
+                    }
+                }
+            </MudSelect>
+        </MudItem>
+        @if (SelectedInventory != null && SelectedInventory != "")
+        {
+            <MudItem xs="2" md="3" Style="margin-top:5px">
+                <MudButton @onclick="GetInventoryData">Get Data</MudButton>
+            </MudItem>
+
+
+        }
+    </MudGrid>
+
+    <MudGrid>
+
+        @if (@BaseName != null && BaseName != "")
+        {
+            <MudItem xs="12" sm="6" md="3">
+                <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:100px;">
+                    <MudIcon Icon="@Icons.Filled.Castle" Color="Color.Primary" Class="mx-4" Style="width:54px; height:54px;"></MudIcon>
+                    <div>
+                        <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-n1">@_localizer["Base Name"]</MudText>
+                        <MudText Typo="Typo.h5">@BaseName</MudText>
+                    </div>
+                </MudPaper>
+            </MudItem>
+            
+        }
+
+        @if (@BaseSectionName != null && BaseSectionName != "")
+        {
+            <MudItem xs="12" sm="6" md="3">
+                <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:100px;">
+                <MudIcon Icon="@Icons.Filled.AccountBalance" Color="Color.Secondary" Class="mx-4" Style="width:54px; height:54px;"></MudIcon>
+                <div>
+                    <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-n1">@_localizer["Section Name"]</MudText>
+                    <MudText Typo="Typo.h5">@BaseSectionName</MudText>
+                </div>
+            </MudPaper>
+        </MudItem>
+        }
+
+        @if (@BuildingName != null && BuildingName!="")
+        {
+            <MudItem xs="12" sm="6" md="3">
+                <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:100px;">
+                <MudIcon Icon="@Icons.Filled.AccountTree" Color="Color.Secondary" Class="mx-4" Style="width:54px; height:54px;"></MudIcon>
+                <div>
+                    <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-n1">@_localizer["Building Name"]</MudText>
+                    <MudText Typo="Typo.h5">@BuildingName</MudText>
+                </div>
+            </MudPaper>
+        </MudItem>
+        }
+
+        @if (@RoomNumber != null && RoomNumber != 0)
+        {
+            <MudItem xs="12" sm="6" md="3">
+                <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:100px;">
+                <MudIcon Icon="@Icons.Material.Filled.AttachFile" Color="Color.Primary" Class="mx-4" Style="width:54px; height:54px;"></MudIcon>
+                <div>
+                    <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-n1">@_localizer["Room Number"]</MudText>
+                    <MudText Typo="Typo.h5">@RoomNumber</MudText>
+                </div>
+            </MudPaper>
+        </MudItem>
+        }
+
+        @if (@HouseName != null && HouseName != "")
+        {
+        <MudItem xs="12" sm="6" md="3">
+            <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:100px;">
+                <MudIcon Icon="@Icons.Material.Filled.FileCopy" Color="Color.Secondary" Class="mx-4" Style="width:54px; height:54px;"></MudIcon>
+                <div>
+                    <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-n1">@_localizer["House Name"]</MudText>
+                    <MudText Typo="Typo.h5">@HouseName</MudText>
+                </div>
+            </MudPaper>
+        </MudItem>
+        }
+
+        @if (@InventoryName != null)
+        {
+            <MudItem xs="12" sm="6" md="3">
+                <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:100px;">
+                <MudIcon Icon="@Icons.Material.Filled.Face" Color="Color.Success" Class="mx-4" Style="width:54px; height:54px;"></MudIcon>
+                <div>
+                    <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-n1">@_localizer["Inventory Name"]</MudText>
+                    <MudText Typo="Typo.h5">@InventoryName</MudText>
+                </div>
+            </MudPaper>
+        </MudItem>
+        }
+
+
+
+    </MudGrid>
+
+
+
+    
+
+    <MudGrid>
+
+        @if (Item != null)
+        {
+            <MudItem xs="12" class="text-center"> 
+                <MudLabel Class="typography-h5 font-weight-bold mb-4">Items</MudLabel>
+            </MudItem>
+
+            @for (int i = 0; i < Item.Count; i++)
+            {
+                var currentItem = Item[i];
+
+                <MudItem xs="6" sm="12" md="12">
+                    <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:auto;">
+                        <MudIcon Icon="@Icons.Filled.Details" Color="Color.Secondary" Class="mx-4" Style="width:54px; height:54px;"></MudIcon>
+                        <div>
+                            <MudText Typo="Typo.subtitle1" Style="margin-bottom:20px; font-weight:900; font-size:15px" Class="mud-text-secondary mb-n1">@_localizer["Item Details"]</MudText>
+                    
+                            <MudText Typo="Typo.h5">Item Name : @currentItem.ItemName</MudText>
+
+                            <MudText Typo="Typo.h5">Item Code : @currentItem.ItemCode</MudText>
+
+                            <MudText Typo="Typo.h5">Item Class : @currentItem.ItemClass</MudText>
+
+                            <MudText Typo="Typo.h5">Item Serial : @currentItem.ItemSerial</MudText>
+
+                            <MudText Typo="Typo.h5">Item NSN : @currentItem.ItemNSN</MudText>
+                        </div>
+                    </MudPaper>
+                </MudItem>
+            }
+        }
+
+
+        
+        
+
+        
+
+
+
+    </MudGrid>
+
+
+     <MudGrid>
+
+        @if (Person != null)
+        {
+            <MudItem xs="12" class="text-center"> 
+                <MudLabel Class="typography-h5 font-weight-bold mb-4">Persons</MudLabel>
+            </MudItem>
+
+            @for (int i = 0; i < Person.Count; i++)
+            {
+                var currentItem = Person[i];
+
+                <MudItem xs="6" sm="12" md="12">
+                    <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:auto;">
+                        <MudIcon Icon="@Icons.Filled.Person" Color="Color.Secondary" Class="mx-4" Style="width:40px; height:40px;"></MudIcon>
+                        <div>
+                            <MudText Typo="Typo.subtitle1" Style="margin-bottom:20px; font-weight:900; font-size:15px" Class="mud-text-secondary mb-n1">@_localizer["Person Details"]</MudText>
+                    
+                            <MudText Typo="Typo.h5">Person Name : @currentItem.Name</MudText>
+
+                            <MudText Typo="Typo.h5">Person NationalNumber : @currentItem.NationalNumber</MudText>
+
+                            <MudText Typo="Typo.h5">Person Section : @currentItem.Section</MudText>
+
+                            <MudText Typo="Typo.h5">Person Phone : @currentItem.Phone</MudText>
+
+                            <MudText Typo="Typo.h5">Person OfficePhone : @currentItem.OfficePhone</MudText>
+
+                            <MudText Typo="Typo.h5">Person Rank : @currentItem.Rank</MudText>
+
+                            <MudText Typo="Typo.h5">Person BuildingName : @currentItem.BuildingName</MudText>
+
+                            <MudText Typo="Typo.h5">Person RoomNumber : @currentItem.RoomNumber</MudText>
+                        </div>
+                    </MudPaper>
+                </MudItem>
+            }
+        }
+
+
+        
+        
+
+        
+
+
+
+    </MudGrid>
+}

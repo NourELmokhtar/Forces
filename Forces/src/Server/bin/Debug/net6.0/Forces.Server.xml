@@ -845,6 +845,12 @@
             </summary>
             <returns>Status 200 OK</returns>
         </member>
+        <member name="M:Forces.Server.Controllers.v1.InventoryDashboardController.GetDataAsync(System.Int32)">
+            <summary>
+            Get InventoryDashboard Data
+            </summary>
+            <returns>Status 200 OK </returns>
+        </member>
         <member name="M:Forces.Server.Controllers.v1.InventoryItem.InventoryItemController.Post(Forces.Application.Features.InventoryInventoryItem.Commands.AddEdit.AddEditInventoryItemCommand)">
             <summary>
             Add/Edit a InventoryItem
