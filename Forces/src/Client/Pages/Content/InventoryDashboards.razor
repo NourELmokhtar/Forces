@@ -51,7 +51,7 @@ else
     <MudGrid Style="margin-bottom:20px">
 
         <MudItem xs="12" md="4">
-            <MudSelect Label="Select Inventory Name" @bind-Value="SelectedInventory">
+            <MudSelect class="custom-select" Label="Select Inventory Name" @bind-Value="SelectedInventory">
                 @if (_InventorysList != null)
                 {
                     @for (int i = 0; i < _InventorysList.Count; i++)
@@ -63,8 +63,8 @@ else
         </MudItem>
         @if (SelectedInventory != null && SelectedInventory != "")
         {
-            <MudItem xs="2" md="3" Style="margin-top:5px">
-                <MudButton @onclick="GetInventoryData">Get Data</MudButton>
+            <MudItem xs="2" md="2" Style="margin-top:5px">
+                <MudButton class="custom-button" @onclick="GetInventoryData">Get Data</MudButton>
             </MudItem>
 
 
@@ -162,31 +162,31 @@ else
 
     <MudGrid>
 
-        @if (Item != null)
+        @if (Item != null && Item.Count != 0)
         {
-            <MudItem xs="12" class="text-center"> 
-                <MudLabel Class="typography-h5 font-weight-bold mb-4">Items</MudLabel>
+            <MudItem xs="12" class="text-center">
+                <MudText Typo="Typo.h4">Items</MudText>
             </MudItem>
 
             @for (int i = 0; i < Item.Count; i++)
             {
                 var currentItem = Item[i];
 
-                <MudItem xs="6" sm="12" md="12">
+                <MudItem xs="6" sm="12" md="4">
                     <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:auto;">
-                        <MudIcon Icon="@Icons.Filled.Details" Color="Color.Secondary" Class="mx-4" Style="width:54px; height:54px;"></MudIcon>
+                        <MudIcon Icon="@Icons.Filled.Details" Color="Color.Secondary" Class="mx-4" Style="width:40px; height:40px;"></MudIcon>
                         <div>
-                            <MudText Typo="Typo.subtitle1" Style="margin-bottom:20px; font-weight:900; font-size:15px" Class="mud-text-secondary mb-n1">@_localizer["Item Details"]</MudText>
-                    
-                            <MudText Typo="Typo.h5">Item Name : @currentItem.ItemName</MudText>
+@*                            <MudText Typo="Typo.h4" Class="mud-text-secondary mb-n1">@_localizer["Item Details"]</MudText>
+*@                    
+                            <MudText>Item Name : @currentItem.ItemName</MudText>
 
-                            <MudText Typo="Typo.h5">Item Code : @currentItem.ItemCode</MudText>
+                            <MudText>Item Code : @currentItem.ItemCode</MudText>
 
-                            <MudText Typo="Typo.h5">Item Class : @currentItem.ItemClass</MudText>
+                            <MudText>Item Class : @currentItem.ItemClass</MudText>
 
-                            <MudText Typo="Typo.h5">Item Serial : @currentItem.ItemSerial</MudText>
+                            <MudText>Item Serial : @currentItem.ItemSerial</MudText>
 
-                            <MudText Typo="Typo.h5">Item NSN : @currentItem.ItemNSN</MudText>
+                            <MudText>Item NSN : @currentItem.ItemNSN</MudText>
                         </div>
                     </MudPaper>
                 </MudItem>
@@ -206,37 +206,37 @@ else
 
      <MudGrid>
 
-        @if (Person != null)
+        @if (Person != null && Person.Count != 0)
         {
-            <MudItem xs="12" class="text-center"> 
-                <MudLabel Class="typography-h5 font-weight-bold mb-4">Persons</MudLabel>
+            <MudItem xs="12" class="text-center">
+                <MudText Typo="Typo.h4">Persons</MudText>
             </MudItem>
 
             @for (int i = 0; i < Person.Count; i++)
             {
                 var currentItem = Person[i];
 
-                <MudItem xs="6" sm="12" md="12">
+                <MudItem xs="6" sm="12" md="4">
                     <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:auto;">
                         <MudIcon Icon="@Icons.Filled.Person" Color="Color.Secondary" Class="mx-4" Style="width:40px; height:40px;"></MudIcon>
                         <div>
-                            <MudText Typo="Typo.subtitle1" Style="margin-bottom:20px; font-weight:900; font-size:15px" Class="mud-text-secondary mb-n1">@_localizer["Person Details"]</MudText>
-                    
-                            <MudText Typo="Typo.h5">Person Name : @currentItem.Name</MudText>
+@*                            <MudText Typo="Typo.h4" Style="margin-bottom:50px;" Class="mud-text-secondary mb-n1">@_localizer["Person Details"]</MudText>
+*@                    
+                            <MudText >Person Name : @currentItem.Name</MudText>
 
-                            <MudText Typo="Typo.h5">Person NationalNumber : @currentItem.NationalNumber</MudText>
+                            <MudText >Person NationalNumber : @currentItem.NationalNumber</MudText>
 
-                            <MudText Typo="Typo.h5">Person Section : @currentItem.Section</MudText>
+                            <MudText >Person Section : @currentItem.Section</MudText>
 
-                            <MudText Typo="Typo.h5">Person Phone : @currentItem.Phone</MudText>
+                            <MudText >Person Phone : @currentItem.Phone</MudText>
 
-                            <MudText Typo="Typo.h5">Person OfficePhone : @currentItem.OfficePhone</MudText>
+                            <MudText >Person OfficePhone : @currentItem.OfficePhone</MudText>
 
-                            <MudText Typo="Typo.h5">Person Rank : @currentItem.Rank</MudText>
+                            <MudText >Person Rank : @currentItem.Rank</MudText>
 
-                            <MudText Typo="Typo.h5">Person BuildingName : @currentItem.BuildingName</MudText>
+                            <MudText >Person BuildingName : @currentItem.BuildingName</MudText>
 
-                            <MudText Typo="Typo.h5">Person RoomNumber : @currentItem.RoomNumber</MudText>
+                            <MudText >Person RoomNumber : @currentItem.RoomNumber</MudText>
                         </div>
                     </MudPaper>
                 </MudItem>
@@ -253,3 +253,30 @@ else
 
     </MudGrid>
 }
+<style>
+    
+    .custom-button {
+        background-color: cornflowerblue;
+        height: 60px; 
+        width: 100%;
+        color:white;
+    }
+
+    .custom-select {
+        
+        width: 100%;
+    }
+
+
+    .mud-select-item {
+        background-color: #f5f5f5;
+        color: #333;
+        padding: 8px 12px;
+    }
+
+    .mud-popover-paper {
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+    }
+</style>

@@ -64,8 +64,8 @@ else
             </MudItem>
         @if(SelectedBase!=null && SelectedBase != "")
         {
-        <MudItem xs="2" md="3" Style="margin-top:5px">
-                <MudButton  @onclick="GetBaseData">Get Data</MudButton>
+        <MudItem xs="2" md="2" Style="margin-top:5px">
+                <MudButton class="custom-button" @onclick="GetBaseData">Get Data</MudButton>
             </MudItem>
 
             
@@ -168,15 +168,13 @@ else
 
 
     </MudGrid>
-    <MudGrid>
-        <MudItem xs="12" sm="8">
-            <MudPaper Elevation="25" Class="pa-4" Style="height:400px;">
-            </MudPaper>
-        </MudItem>
-        <MudItem xs="12" sm="4">
-            <MudPaper Elevation="25" Class="pa-4" Style="height:400px;">
-                @_localizer["Charts comming soon ish..."]
-            </MudPaper>
-        </MudItem>
-    </MudGrid>
+    
 }
+<style>
+    .custom-button {
+        background-color: cornflowerblue;
+        height: 60px;
+        width: 100%;
+        color: white;
+    }
+</style>
