@@ -42,7 +42,7 @@ namespace Forces.Application.Features.Person.Queries.GetBySpecifics
                 Id = x.Id,
                 Name = x.Name,
                 NationalNumber = x.NationalNumber,
-                RoomId = x.RoomId,
+                RoomId = (int)x.RoomId,
                 OfficePhone = x.OfficePhone,
                 Phone = x.Phone,
                 Section = x.Section,

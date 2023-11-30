@@ -49,6 +49,7 @@ else
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllPersonsResponse, object>(x => x.NationalNumber)">@_localizer["National Number"]</MudTableSortLabel></MudTh>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllPersonsResponse, object>(x => x.RoomNumber)">@_localizer["Room Number"]</MudTableSortLabel></MudTh>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllPersonsResponse, object>(x => x.BuildingName)">@_localizer["Building Name"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllPersonsResponse, object>(x => x.HouseName)">@_localizer["House Name"]</MudTableSortLabel></MudTh>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllPersonsResponse, object>(x => x.BaseName)">@_localizer["Base Name"]</MudTableSortLabel></MudTh>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllPersonsResponse, object>(x => x.Phone)">@_localizer["Phone"]</MudTableSortLabel></MudTh>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllPersonsResponse, object>(x => x.Rank)">@_localizer["Rank"]</MudTableSortLabel></MudTh>
@@ -67,6 +68,7 @@ else
                 <MudTd DataLabel="NationalNumber">@context.NationalNumber</MudTd>
                 <MudTd DataLabel="RoomNumber">@context.RoomNumber</MudTd>
                 <MudTd DataLabel="BuildingName">@context.BuildingName</MudTd>
+                <MudTd DataLabel="HouseName">@context.HouseName</MudTd>
                 <MudTd DataLabel="BaseName">@context.BaseName</MudTd>
                 <MudTd DataLabel="Phone">@context.Phone</MudTd>
                 <MudTd DataLabel="Rank">@context.Rank</MudTd>

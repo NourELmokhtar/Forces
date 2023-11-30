@@ -18,7 +18,9 @@ namespace Forces.Application.Models
         public int BaseId { get; set; }
         [ForeignKey("BaseId")]
         public virtual Bases Base { get; set; }
-    }
+        public virtual ICollection<Person> Persons { get; set; }
 
     }
+
+}
 

@@ -40,6 +40,7 @@ namespace Forces.Application.Features.InventoryDashboard.GetData
         public string Section { get; set; }
         public int RoomNumber { get; set; }
         public string BuildingName { get; set; }
+        public string HouseName { get; set; }
         public string Phone { get; set; }
         public string OfficePhone { get; set; }
         public string Rank { get; set; }

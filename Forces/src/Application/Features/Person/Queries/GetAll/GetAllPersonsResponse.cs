@@ -11,8 +11,10 @@ namespace Forces.Application.Features.Person.Queries.GetAll
         public int Id { get; set; }
         public string Name { get; set; }
         public string NationalNumber { get; set; }
-        public int RoomId { get; set; }
-        public int RoomNumber { get; set; }
+        public int? RoomId { get; set; }
+        public int? HouseId { get; set; }
+        public int? RoomNumber { get; set; }
+        public string? HouseName { get; set; }
         public string BuildingName { get; set; }
         public string BaseName { get; set; }
         public string Rank { get; set; }    

@@ -18,7 +18,10 @@ namespace Forces.Application.Models
         public string Rank { get; set; }
 
         [ForeignKey("Room")]
-        public int RoomId { get; set; }
-        public virtual Room Room { get; set; }
+        public int? RoomId { get; set; }
+        public virtual Room? Room { get; set; }
+        [ForeignKey("House")]
+        public int? HouseId { get; set; }
+        public virtual House? House { get; set; }
     }
 }

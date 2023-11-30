@@ -57,6 +57,20 @@
 
             </MudGrid>
             <MudGrid>
+
+                <MudItem xs="12" md="6">
+                    <MudSelect Label="Select Type" @bind-Value="selectedType">
+
+                        @foreach (var item in dropdownItems)
+                        {
+                            <MudSelectItem Value="@item">@item</MudSelectItem>
+                        }
+                    </MudSelect>
+
+                </MudItem>
+                @if(selectedType == "Room")
+                {
+                    
                 <MudItem xs="12" md="6">
                     <MudSelect Label="Select Building" @bind-Value="BuildingName" @onchange="GetRoomsAsync">
                         @if (_BuildingList != null)
@@ -85,6 +99,22 @@
                     </MudItem>
                 }
 
+                }
+                @if(selectedType == "House")
+                {
+                    <MudItem xs="12" md="6">
+                        <MudSelect Label="Select House" @bind-Value="selectedHouse">
+                            @if (_HouseList != null)
+                            {
+                                @foreach (var item in _HouseList)
+                                {
+                                    <MudSelectItem Value="@item.HouseName">@item.HouseName</MudSelectItem>
+                                }
+                            }
+                        </MudSelect>
+
+                    </MudItem>
+                }
             </MudGrid>
         </DialogContent>
         <DialogActions>

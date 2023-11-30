@@ -20,7 +20,8 @@ namespace Forces.Application.Features.Person.Commands.AddEdit
         public int Id { get; set; }
         public string Name { get; set; }
         public string NationalNumber { get; set; }
-        public int RoomId { get; set; }
+        public int? RoomId { get; set; }
+        public int? HouseId { get; set; }
         public string Phone { get; set; }
         public string OfficePhone { get; set; }
         public string Section { get; set; }
@@ -50,7 +51,7 @@ namespace Forces.Application.Features.Person.Commands.AddEdit
                 var ExistPerson = await _unitOfWork.Repository<Models.Person>().Entities.FirstOrDefaultAsync(
                     (x => (x.Name == request.Name 
                     && x.NationalNumber == request.NationalNumber 
-                    && x.RoomId == request.RoomId
+                    && (x.RoomId == request.RoomId || x.HouseId== request.HouseId)
                     )));
 
                 if (ExistPerson != null)
@@ -60,7 +61,7 @@ namespace Forces.Application.Features.Person.Commands.AddEdit
                 else
                 {
                     var room = _unitOfWork.Repository<Models.Room>().Entities.FirstOrDefaultAsync(_ => _.Id == request.RoomId).Result;
-                    if (room.Size <= room.Persons.Count)
+                    if (room != null && room.Size <= room.Persons.Count)
                     {
                         return await Result<int>.FailAsync(_localizer["The Room Is Full!"]);
                     }
@@ -71,6 +72,7 @@ namespace Forces.Application.Features.Person.Commands.AddEdit
                             Id = request.Id,
                             Name = request.Name,
                             RoomId = request.RoomId,
+                            HouseId = request.HouseId,
                             NationalNumber = request.NationalNumber,
                             Phone = request.Phone,
                             OfficePhone = request.OfficePhone,

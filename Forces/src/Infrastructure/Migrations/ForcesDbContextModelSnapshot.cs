@@ -987,6 +987,9 @@ namespace Forces.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("HouseId")
+                        .HasColumnType("int");
+
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
@@ -1008,13 +1011,15 @@ namespace Forces.Infrastructure.Migrations
                     b.Property<string>("Rank")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RoomId")
+                    b.Property<int?>("RoomId")
                         .HasColumnType("int");
 
                     b.Property<string>("Section")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("HouseId");
 
                     b.HasIndex("RoomId");
 
@@ -2947,11 +2952,15 @@ namespace Forces.Infrastructure.Migrations
 
             modelBuilder.Entity("Forces.Application.Models.Person", b =>
                 {
+                    b.HasOne("Forces.Application.Models.House", "House")
+                        .WithMany("Persons")
+                        .HasForeignKey("HouseId");
+
                     b.HasOne("Forces.Application.Models.Room", "Room")
                         .WithMany("Persons")
-                        .HasForeignKey("RoomId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("RoomId");
+
+                    b.Navigation("House");
 
                     b.Navigation("Room");
                 });
@@ -3395,6 +3404,11 @@ namespace Forces.Infrastructure.Migrations
             modelBuilder.Entity("Forces.Application.Models.Forces", b =>
                 {
                     b.Navigation("Bases");
+                });
+
+            modelBuilder.Entity("Forces.Application.Models.House", b =>
+                {
+                    b.Navigation("Persons");
                 });
 
             modelBuilder.Entity("Forces.Application.Models.Inventory", b =>

@@ -125,7 +125,22 @@ namespace Forces.Application.Features.InventoryDashboard.GetData
                     Rank = x.Rank,
                     RoomNumber = x.Room.RoomNumber,
                     Section = x.Section,
-                }).ToList():null,
+                }).ToList():
+                Inventory.HouseId != null ? _unitOfWork.Repository<Models.Person>().Entities.Include(x => x.House)
+                .Where(y => _unitOfWork.Repository<Models.Inventory>().Entities
+                .Where(x => x.HouseId == y.HouseId).OrderBy(x=>x.Id).LastOrDefault().Id == Inventory.Id)
+                .Select(x =>
+                new PersonData
+                {
+                    HouseName = x.House.HouseName,
+                    Name = x.Name,
+                    NationalNumber = x.NationalNumber,
+                    OfficePhone = x.OfficePhone,
+                    Phone = x.Phone,
+                    Rank = x.Rank,
+                    Section = x.Section,
+                }).ToList():
+                null,
 
             };
 

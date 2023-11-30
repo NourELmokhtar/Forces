@@ -43,15 +43,19 @@ namespace Forces.Application.Features.Person.Queries.GetAll
                 Name = x.Name,
                 NationalNumber = x.NationalNumber,
                 RoomId = x.RoomId,
+                HouseId = x.HouseId,
                 OfficePhone = x.OfficePhone,
                 Phone = x.Phone,
                 Section = x.Section,
                 Rank= x.Rank,
-                RoomNumber = _unitOfWork.Repository<Models.Room>().GetAllAsync().Result.Where(y => y.Id == x.RoomId).FirstOrDefault().RoomNumber,
-                BuildingName = _unitOfWork.Repository<Models.Building>().GetAllAsync().Result.Where(y => y.Id == (
-                _unitOfWork.Repository<Models.Room>().GetAllAsync().Result.Where(y => y.Id == x.RoomId).FirstOrDefault().BuildingId)).FirstOrDefault().BuildingName,
-                BaseName = _unitOfWork.Repository<Models.Bases>().GetAllAsync().Result.Where(k => k.Id == _unitOfWork.Repository<Models.Building>().GetAllAsync().Result.Where(r => r.Id == (
-                _unitOfWork.Repository<Models.Room>().GetAllAsync().Result.Where(y => y.Id == x.RoomId).FirstOrDefault().BuildingId)).FirstOrDefault().BaseId).FirstOrDefault().BaseName
+                RoomNumber = x.RoomId != null? _unitOfWork.Repository<Models.Room>().GetAllAsync().Result.Where(y => y.Id == x.RoomId).FirstOrDefault().RoomNumber:null,
+                HouseName = x.HouseId !=null ? _unitOfWork.Repository<Models.House>().GetAllAsync().Result.Where(y => y.Id == x.HouseId).FirstOrDefault().HouseName : null,
+                BuildingName = x.RoomId != null ? _unitOfWork.Repository<Models.Building>().GetAllAsync().Result.Where(y => y.Id == (
+                _unitOfWork.Repository<Models.Room>().GetAllAsync().Result.Where(y => y.Id == x.RoomId).FirstOrDefault().BuildingId)).FirstOrDefault().BuildingName : null,
+                BaseName = x.RoomId != null ? _unitOfWork.Repository<Models.Bases>().GetAllAsync().Result.Where(k => k.Id == _unitOfWork.Repository<Models.Building>().GetAllAsync().Result.Where(r => r.Id == (
+                _unitOfWork.Repository<Models.Room>().GetAllAsync().Result.Where(y => y.Id == x.RoomId).FirstOrDefault().BuildingId)).FirstOrDefault().BaseId).FirstOrDefault().BaseName:x.HouseId!=null ?
+                _unitOfWork.Repository<Models.Bases>().GetAllAsync().Result.Where(k => k.Id == _unitOfWork.Repository<Models.House>().GetAllAsync().Result.Where(r => r.Id == x.HouseId).FirstOrDefault().BaseId).FirstOrDefault().BaseName :null 
+
 
 
             }).ToList();
