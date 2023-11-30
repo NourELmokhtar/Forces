@@ -32,6 +32,8 @@ namespace Forces.Client.Pages.Content
         public int HouseCount { get; set; }
         public int ForcesCount { get; set; }
         public int BasesSectionsCount { get; set; }
+        public int EmptyRoomsCount { get; set; }
+        public int FullRoomsCount { get; set; }
 
         private readonly string[] _dataEnterBarChartXAxisLabels = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
         private readonly List<ChartSeries> _dataEnterBarChartSeries = new();

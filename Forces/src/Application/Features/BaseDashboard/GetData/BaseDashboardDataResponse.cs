@@ -16,5 +16,7 @@ namespace Forces.Application.Features.BaseDashboard.GetData
         public int RoomCount { get; set; }
         public int PersonCount { get; set; }
         public int OfficeCount { get; set; }
+        public int FullRoomsCount { get; set; }
+        public int EmptyRoomsCount { get; set; }
     }
 }

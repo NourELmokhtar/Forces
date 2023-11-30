@@ -30,7 +30,8 @@
             InventoryCount = response.Data.InventoryCount;
             InventoryItemCount = response.Data.InventoryItemCount;
             OfficeCount = response.Data.OfficeCount;
-
+            EmptyRoomsCount = response.Data.EmptyRoomsCount;
+            FullRoomsCount = response.Data.FullRoomsCount;
 
         }
         else
@@ -161,6 +162,26 @@ else
                 <div>
                     <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-n1">@_localizer["Houses"]</MudText>
                     <MudText Typo="Typo.h5">@HouseCount</MudText>
+                </div>
+            </MudPaper>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="3">
+            <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:100px;">
+                <MudIcon Icon="@Icons.Filled.BatteryFull" Color="Color.Success" Class="mx-4" Style="width:54px; height:54px;"></MudIcon>
+                <div>
+                    <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-n1">@_localizer["Full Rooms"]</MudText>
+                    <MudText Typo="Typo.h5">@FullRoomsCount</MudText>
+                </div>
+            </MudPaper>
+        </MudItem>
+
+        <MudItem xs="12" sm="6" md="3">
+            <MudPaper Elevation="25" Class="d-flex flex-row pt-6 pb-4" Style="height:100px;">
+                <MudIcon Icon="@Icons.Filled.EventAvailable" Color="Color.Secondary" Class="mx-4" Style="width:54px; height:54px;"></MudIcon>
+                <div>
+                    <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-n1">@_localizer["Available Rooms"]</MudText>
+                    <MudText Typo="Typo.h5">@EmptyRoomsCount</MudText>
                 </div>
             </MudPaper>
         </MudItem>

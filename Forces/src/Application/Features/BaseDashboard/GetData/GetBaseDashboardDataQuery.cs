@@ -94,7 +94,15 @@ namespace Forces.Application.Features.BaseDashboards.Queries.GetData
                 RoomCount = await _unitOfWork.Repository<Models.Room>().Entities
                 .Include(x=>x.Building)
                 .Where(x=>x.Building.BaseId==query.BaseId).CountAsync(cancellationToken),
-                
+
+                FullRoomsCount = await _unitOfWork.Repository<Models.Room>().Entities
+                .Include(x => x.Building)
+                .Where(x => x.Building.BaseId == query.BaseId && x.Size == x.Persons.Count).CountAsync(cancellationToken),
+
+                EmptyRoomsCount = await _unitOfWork.Repository<Models.Room>().Entities
+                .Include(x => x.Building)
+                .Where(x => x.Building.BaseId == query.BaseId && x.Size != x.Persons.Count).CountAsync(cancellationToken),
+
             };
 
             var selectedYear = DateTime.Now.Year;
