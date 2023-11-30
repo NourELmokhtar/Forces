@@ -40,6 +40,11 @@ namespace Forces.Application.Features.Inventory.Queries.GetAll
             {
                 Name = x.Name,
                 Id = x.Id,
+                PersonName = x.PersonId != null
+                ? _unitOfWork.Repository<Models.Person>().GetAllAsync().Result
+                    .Where(y => y.Id == x.PersonId)
+                    .FirstOrDefault()?.Name
+                : null,
                 BaseSectionName = x.BaseSectionId != null
                 ? _unitOfWork.Repository<Models.BasesSections>().GetAllAsync().Result
                     .Where(y => y.Id == x.BaseSectionId)

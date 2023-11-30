@@ -91,19 +91,27 @@ namespace Forces.Application.Features.InventoryDashboard.GetData
                 _unitOfWork.Repository<Models.Room>().GetAllAsync().Result.Where(y => y.Id == Inventory.RoomId).FirstOrDefault().BuildingId)).FirstOrDefault().BuildingName : "",
 
 
-                Item = _unitOfWork.Repository<Models.InventoryItemBridge>().Entities.Include(x => x.InventoryItem)
+                Item = _unitOfWork.Repository<Models.InventoryItemBridge>()
+                .Entities
+                .Include(x => x.InventoryItem)
                 .Where(y => y.InventoryId == Inventory.Id)
-                .Select(x => 
-                new ItemsData { 
-                    ItemClass = x.InventoryItem.ItemClass.ToString(),
+                .GroupBy(x => new {
                     ItemCode = x.InventoryItem.ItemCode,
-                    ItemName = x.InventoryItem.ItemName,
-                    ItemNSN = x.InventoryItem.ItemNsn,
-                    ItemSerial = x.SerialNumber!=null ? x.SerialNumber : "",
-                }).ToList(),
+                    ItemName = x.InventoryItem.ItemName
+                })
+                .Select(group => new ItemsData
+                {
+                    ItemClass = group.First().InventoryItem.ItemClass.ToString(),
+                    ItemCode = group.Key.ItemCode,
+                    ItemName = group.Key.ItemName,
+                    ItemNSN = group.First().InventoryItem.ItemNsn,
+                    ItemSerial = group.Select(item => item.SerialNumber).Where(serial => serial != null).ToList(),
+                    Quantity = group.Count() 
+                })
+                .ToList(),
 
 
-                Persons = Inventory.RoomId != null ? _unitOfWork.Repository<Models.Person>().Entities.Include(x => x.Room).ThenInclude(x=>x.Building)
+            Persons = Inventory.RoomId != null ? _unitOfWork.Repository<Models.Person>().Entities.Include(x => x.Room).ThenInclude(x=>x.Building)
                 .Where(y => _unitOfWork.Repository<Models.Inventory>().Entities
                 .Where(x => x.RoomId == y.RoomId).FirstOrDefault().Id == Inventory.Id)
                 .Select(x =>

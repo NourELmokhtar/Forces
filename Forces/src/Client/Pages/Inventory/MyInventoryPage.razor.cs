@@ -132,6 +132,7 @@ namespace Forces.Client.Pages.Inventory
                         BaseSectionId = _unitOfWork.Repository<Application.Models.BasesSections>().GetAllAsync().Result.Where(y => y.SectionName == _Inventory.BaseSectionName).FirstOrDefault().Id,
                         HouseId = _unitOfWork.Repository<Application.Models.House>().GetAllAsync().Result.Where(y => y.HouseName == _Inventory.HouseName).FirstOrDefault().Id,
                         RoomId = _unitOfWork.Repository<Application.Models.Room>().GetAllAsync().Result.Where(y => y.RoomNumber == _Inventory.RoomName).FirstOrDefault().Id,
+                        PersonId = _unitOfWork.Repository<Application.Models.Person>().GetAllAsync().Result.Where(y => y.Name == _Inventory.PersonName).FirstOrDefault().Id,
                     }); ;
                 }
             }

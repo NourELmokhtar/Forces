@@ -23,6 +23,7 @@ namespace Forces.Application.Features.Inventory.Commands.AddEdit
         public int? BaseSectionId { get; set; }
         public int? HouseId { get; set; }
         public int? RoomId { get; set; }
+        public int? PersonId { get; set; }
     }
     internal class AddEditInventoryCommandHandler : IRequestHandler<AddEditInventoryCommand, IResult<int>>
     {
@@ -62,6 +63,7 @@ namespace Forces.Application.Features.Inventory.Commands.AddEdit
                         RoomId= request.RoomId,
                         HouseId= request.HouseId,
                         BaseSectionId= request.BaseSectionId,
+                        PersonId= request.PersonId,
                     };
                     await _unitOfWork.Repository<Models.Inventory>().AddAsync(Inventory);
                     await _unitOfWork.Commit(cancellationToken);

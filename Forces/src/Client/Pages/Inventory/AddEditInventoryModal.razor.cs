@@ -5,6 +5,7 @@ using Forces.Application.Features.Building.Queries.GetAll;
 using Forces.Application.Features.Forces.Queries.GetAll;
 using Forces.Application.Features.House.Queries.GetAll;
 using Forces.Application.Features.Inventory.Commands.AddEdit;
+using Forces.Application.Features.Person.Queries.GetAll;
 using Forces.Application.Features.Room.Queries.GetAll;
 using Forces.Client.Extensions;
 using Forces.Client.Infrastructure.Managers.BasicInformation.BaseSections;
@@ -12,6 +13,7 @@ using Forces.Client.Infrastructure.Managers.BasicInformation.Forces;
 using Forces.Client.Infrastructure.Managers.Building;
 using Forces.Client.Infrastructure.Managers.House;
 using Forces.Client.Infrastructure.Managers.Inventory;
+using Forces.Client.Infrastructure.Managers.Person;
 using Forces.Client.Infrastructure.Managers.Room;
 using Forces.Shared.Constants.Application;
 using Forces.Shared.Constants.Permission;
@@ -39,6 +41,9 @@ namespace Forces.Client.Pages.Inventory
         [Inject] private IBuildingManager BuildingManager { get; set; }
         private List<GetAllBuildingsResponse> _BuildingList = new();
 
+        [Inject] private IPersonManager PersonManager { get; set; }
+        private List<GetAllPersonsResponse> _PersonList = new();
+
         [Inject] private IRoomManager RoomManager { get; set; }
         private List<GetAllRoomsResponse> _RoomList = new();
         private List<GetAllRoomsResponse> _UsedRoomList = new();
@@ -54,6 +59,7 @@ namespace Forces.Client.Pages.Inventory
         private string BaseSectionName;
         private string HouseName;
         private string BuildingName;
+        private string PersonName;
         private int RoomNumber = 0;
         private bool _canCreateBaseSection;
         private bool _canEditBaseSection;
@@ -147,6 +153,21 @@ namespace Forces.Client.Pages.Inventory
                 }
             }
         }
+        private async Task GetPersonAsync()
+        {
+            var response = await PersonManager.GetAllAsync();
+            if (response.Succeeded)
+            {
+                _PersonList = response.Data.ToList();
+            }
+            else
+            {
+                foreach (var message in response.Messages)
+                {
+                    _snackBar.Add(message, MudBlazor.Severity.Error);
+                }
+            }
+        }
 
         private async Task SaveAsync()
         {
@@ -161,6 +182,10 @@ namespace Forces.Client.Pages.Inventory
             else if(selectedDropdownItem == "BasesSections")
             {
                 AddEditInventoryModel.BaseSectionId = converterForSections(BaseSectionName);
+            }
+            if (PersonName!="" && PersonName!=String.Empty )
+            {
+                AddEditInventoryModel.PersonId = converterForPersons(PersonName);
             }
             var response = await InventoryManager.SaveAsync(AddEditInventoryModel);
             if (response.Succeeded)
@@ -213,13 +238,17 @@ namespace Forces.Client.Pages.Inventory
         {
             return _RoomList.FirstOrDefault(s => s.RoomNumber == RoomNumber).Id;
         }
+        private int? converterForPersons(string ss)
+        {
+            return _PersonList.FirstOrDefault(s => s.Name == ss).Id;
+        }
         private async Task LoadDataAsync()
         {
             await GetBasesAsync();
             await GetBuildingsAsync();
             await GetHousesAsync();
             await GetRoomsAsync();
-
+            await GetPersonAsync();
             
             await GetForcesAsync();
             

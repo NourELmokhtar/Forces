@@ -130,7 +130,7 @@ namespace Forces.Client.Pages.Building
                         Id = _Building.Id,
                         BuildingName = _Building.BuildingName,
                         BuildingCode = _Building.BuildingCode,
-                        BaseId = _unitOfWork.Repository<Application.Models.Bases>().GetAllAsync().Result.Where(y => y.BaseName == _Building.BaseName).FirstOrDefault().Id,
+                        //BaseId = _unitOfWork.Repository<Application.Models.Bases>().GetAllAsync().Result.Where(y => y.BaseName == _Building.BaseName).FirstOrDefault().Id,
 
                     });
                 }

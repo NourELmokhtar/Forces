@@ -540,6 +540,9 @@ namespace Forces.Infrastructure.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("PersonId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("RoomId")
                         .HasColumnType("int");
 
@@ -548,6 +551,8 @@ namespace Forces.Infrastructure.Migrations
                     b.HasIndex("BaseSectionId");
 
                     b.HasIndex("HouseId");
+
+                    b.HasIndex("PersonId");
 
                     b.HasIndex("RoomId");
 
@@ -2825,6 +2830,10 @@ namespace Forces.Infrastructure.Migrations
                         .WithMany()
                         .HasForeignKey("HouseId");
 
+                    b.HasOne("Forces.Application.Models.Person", "Person")
+                        .WithMany()
+                        .HasForeignKey("PersonId");
+
                     b.HasOne("Forces.Application.Models.Room", "Room")
                         .WithMany()
                         .HasForeignKey("RoomId");
@@ -2832,6 +2841,8 @@ namespace Forces.Infrastructure.Migrations
                     b.Navigation("BaseSection");
 
                     b.Navigation("House");
+
+                    b.Navigation("Person");
 
                     b.Navigation("Room");
                 });

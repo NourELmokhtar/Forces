@@ -25,7 +25,7 @@ namespace Forces.Client.Pages.Room
         private List<GetAllBuildingsResponse> _BuildingList = new();
 
         private List<GetAllForcesResponse> _ForceList = new();
-        [Parameter] public AddEditRoomCommand AddEditRoomModel { get; set; } = new();
+        [Parameter] public AddEditRoomCommand AddEditRoomModel { get; set; }
         [CascadingParameter] private MudDialogInstance MudDialog { get; set; }
         [CascadingParameter] private HubConnection HubConnection { get; set; }
         [Inject] private IForceManager ForceManager { get; set; }

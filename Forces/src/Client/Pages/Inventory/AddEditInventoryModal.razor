@@ -130,6 +130,19 @@
                 </MudItem>
 
             }
+                <MudItem xs="12" md="6">
+                    <MudSelect Label="Select Responsible Person" @bind-Value="PersonName">
+                        @if (_PersonList != null)
+                        {
+                            @for (int i = 0; i < _PersonList.Count(); i++)
+                            {
+                                <MudSelectItem Value="@_PersonList.ElementAt(i).Name"></MudSelectItem>
+                            }
+
+                        }
+                    </MudSelect>
+
+                </MudItem>
             </MudGrid>
         </DialogContent>
         <DialogActions>

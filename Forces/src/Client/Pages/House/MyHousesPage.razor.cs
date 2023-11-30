@@ -130,7 +130,7 @@ namespace Forces.Client.Pages.House
                         Id = _House.Id,
                         HouseName = _House.HouseName,
                         HouseCode = _House.HouseCode,
-                        BaseId = _unitOfWork.Repository<Application.Models.Bases>().GetAllAsync().Result.Where(y => y.BaseName == _House.BaseName).FirstOrDefault().Id,
+                        //BaseId = _unitOfWork.Repository<Application.Models.Bases>().GetAllAsync().Result.Where(y => y.BaseName == _House.BaseName).FirstOrDefault().Id,
                     });
                 }
             }

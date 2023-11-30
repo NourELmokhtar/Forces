@@ -14,6 +14,7 @@ namespace Forces.Application.Features.Inventory.Queries.GetAll
         public string? HouseName { get; set; }
         public string? BaseSectionName { get; set; }
         public string? BaseName { get; set; }
+        public string? PersonName { get; set; }
 
     }
 }

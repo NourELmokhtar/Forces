@@ -28,7 +28,9 @@ namespace Forces.Application.Features.InventoryDashboard.GetData
         public string ItemNSN { get; set; }
         public string ItemClass { get; set; }
         public string ItemCode { get; set; }
-        public string ItemSerial { get; set; }
+        public List<string> ItemSerial { get; set; }
+        public int? Quantity { get; set; }
+
     }
 
     public class PersonData

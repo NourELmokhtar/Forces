@@ -133,8 +133,8 @@ namespace Forces.Client.Pages.Room
                     {
                         Id = _Room.Id,
                         RoomNumber = _Room.RoomNumber,
-                        BuildingId = _unitOfWork.Repository<Application.Models.Building>().GetAllAsync().Result.Where(y => y.BuildingName == _Room.BuildingName).FirstOrDefault().Id,
-
+                        //BuildingId = _unitOfWork.Repository<Application.Models.Building>().GetAllAsync().Result.Where(y => y.BuildingName == _Room.BuildingName).FirstOrDefault().Id,
+                        Size = _Room.Size,
                     });
                 }
             }
