@@ -21,7 +21,7 @@ namespace Forces.Application.Features.Room.Commands.AddEdit
         public int RoomNumber { get; set; }
         public int Size { get; set; }
 
-        public int BuildingId { get; set; }
+        public int? BuildingId { get; set; }
     }
 
     internal class AddEditRoomCommandHandler : IRequestHandler<AddEditRoomCommand, IResult<int>>
@@ -85,6 +85,10 @@ namespace Forces.Application.Features.Room.Commands.AddEdit
                     else
                     {
                         ExistRoom.RoomNumber = request.RoomNumber;
+                        ExistRoom.Size = request.Size;
+                        ExistnameRoom.BuildingId = request.BuildingId;
+
+
                         await _unitOfWork.Repository<Models.Room>().UpdateAsync(ExistRoom);
                         await _unitOfWork.Commit(cancellationToken);
                         return await Result<int>.SuccessAsync(ExistRoom.Id, _localizer["Room Updated Successfuly!"]);

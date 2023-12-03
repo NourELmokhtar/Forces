@@ -22,7 +22,7 @@ else
     <MudTable Hover="true" Elevation="25" Items="_RoomsList" Dense="@_dense" Bordered="@_bordered" Striped="@_striped" Filter="new Func<GetAllRoomsResponse, bool>(Search)" @bind-Room="_Room">
         <ToolBarContent>
             <div class="justify-center mud-text-align-center">
-                @if (_canCreateBase)
+                @if (_canCreateRoom)
                 {
                     <MudButton DisableElevation Variant="Variant.Filled" Color="Color.Primary" OnClick="(() => InvokeModal())" StartIcon="@Icons.Material.Filled.Add" IconColor="Color.Surface">@_localizer["Create"]</MudButton>
                 }
@@ -30,7 +30,7 @@ else
 
              </div>
              <MudSpacer />
-             @if (_canSearchBase)
+             @if (_canSearchRoom)
             {
                 <MudTextField @bind-Value="_searchString" Immediate="true" Placeholder="@_localizer["Search for Rooms"]" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0 mb-3"></MudTextField>
             }
@@ -64,11 +64,11 @@ else
                 <MudTd DataLabel="Actions" Style="text-align: right">
 
                     <MudMenu Label="@_localizer["Actions"]" Variant="Variant.Filled" DisableElevation="true" EndIcon="@Icons.Filled.KeyboardArrowDown">
-                        @if (_canEditBase)
+                        @if (_canEditRoom)
                     {
                         <MudMenuItem @onclick="@(() => InvokeModal(@context.Id))">@_localizer["Edit"]</MudMenuItem>
                     }
-                    @if (_canDeleteBase)
+                    @if (_canDeleteRoom)
                     {
                         <MudMenuItem @onclick="@(() => Delete(@context.Id))">@_localizer["Delete"]</MudMenuItem>
                     }

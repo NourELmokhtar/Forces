@@ -91,7 +91,13 @@ else
             {
                 <MudTd DataLabel="Base Name">
                     <MudHighlighter Text="@context.BaseName.ToString()" HighlightedText="@_searchString" />
-            </MudTd>
+                </MudTd>
+            }
+            else
+            {
+                <MudTd DataLabel="Base Name">
+                    <MudHighlighter Text="" HighlightedText="@_searchString" />
+                </MudTd>
             }
             <MudTd DataLabel="Actions" Style="text-align: right">
 

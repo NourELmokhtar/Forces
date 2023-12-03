@@ -40,19 +40,19 @@ namespace Forces.Client.Pages.Room
         private bool _striped = true;
         private bool _bordered = false;
         private ClaimsPrincipal _currentUser;
-        private bool _canCreateBase;
-        private bool _canEditBase;
-        private bool _canDeleteBase;
-        private bool _canSearchBase;
+        private bool _canCreateRoom;
+        private bool _canEditRoom;
+        private bool _canDeleteRoom;
+        private bool _canSearchRoom;
         private bool _loaded;
         private List<GetAllForcesResponse> _ForceList = new();
         protected override async Task OnInitializedAsync()
         {
             _currentUser = await _authenticationManager.CurrentUser();
-            _canCreateBase = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Rooms.Create)).Succeeded;
-            _canEditBase = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Rooms.Edit)).Succeeded;
-            _canDeleteBase = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Rooms.Delete)).Succeeded;
-            _canSearchBase = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Rooms.Search)).Succeeded;
+            _canCreateRoom = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Rooms.Create)).Succeeded;
+            _canEditRoom = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Rooms.Edit)).Succeeded;
+            _canDeleteRoom = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Rooms.Delete)).Succeeded;
+            _canSearchRoom = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Rooms.Search)).Succeeded;
             await GetBuildingAsync();
             await GetForcesAsync();
             await GetRoomsAsync();
@@ -133,10 +133,20 @@ namespace Forces.Client.Pages.Room
                     {
                         Id = _Room.Id,
                         RoomNumber = _Room.RoomNumber,
-                        //BuildingId = _unitOfWork.Repository<Application.Models.Building>().GetAllAsync().Result.Where(y => y.BuildingName == _Room.BuildingName).FirstOrDefault().Id,
+                        BuildingId = _Room.BuildingId,//_unitOfWork.Repository<Application.Models.Building>().GetAllAsync().Result.Where(y => y.BuildingName == _Room.BuildingName).FirstOrDefault().Id,
                         Size = _Room.Size,
                     });
                 }
+            }
+            else
+            {
+                parameters.Add(nameof(AddEditRoomModal.AddEditRoomModel), new AddEditRoomCommand
+                {
+                    Id = 0,
+                    RoomNumber = 0,
+                    Size = 0,
+                });
+
             }
             var options = new DialogOptions { CloseButton = true, MaxWidth = MaxWidth.Small, FullWidth = true, DisableBackdropClick = true };
             var dialog = _dialogService.Show<AddEditRoomModal>(id == 0 ? _localizer["Create"] : _localizer["Edit"], parameters, options);

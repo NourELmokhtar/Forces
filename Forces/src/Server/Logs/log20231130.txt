@@ -1378,3 +1378,12 @@ System.Data.SqlClient.SqlException (0x80131904): Query processor could not produ
    at Hangfire.Processing.BackgroundExecution.Run(Action`2 callback, Object state)
 ClientConnectionId:b9bcd6b6-8ca5-4108-8cd4-2f97fcacd24c
 Error Number:8622,State:1,Class:16
+2023-11-30 19:44:28.814 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-11-30 19:44:29.145 +02:00 [INF] Now listening on: https://localhost:5001
+2023-11-30 19:44:29.156 +02:00 [INF] Now listening on: http://localhost:5000
+2023-11-30 19:44:29.162 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-30 19:44:29.163 +02:00 [INF] Hosting environment: Development
+2023-11-30 19:44:29.164 +02:00 [INF] Content root path: D:\Forces\Forces\src\Server
+2023-11-30 20:39:42.235 +02:00 [WRN] Server desktop-4bjfn1v:2192:b7ee21b6 was considered dead by other servers, restarting...
+2023-11-30 20:39:42.240 +02:00 [WRN] Server desktop-4bjfn1v:2192:b7ee21b6 stopped non-gracefully due to ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler. Outstanding work on those dispatchers could be aborted, and there can be delays in background processing. This server instance will be incorrectly shown as active for a while. To avoid non-graceful shutdowns, investigate what prevents from stopping gracefully and add CancellationToken support for those methods.

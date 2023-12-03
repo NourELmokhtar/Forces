@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7A3StOCL1t3Ks8aKR5EtYrfGTTNYBk1MLbKu6WoSih4VFzUujtyTRIzmepMIiifOJHLW0fLmzdIgEymcmtVpvg==",
+  "dgSpecHash": "LEBj6SL+n+hcPsR1whczoxHLsMSp92rgzRpQJbHok267QSoPTwhZLO5HIF8iD/0Uf0tBK1e6fKwUARBSgPZpUw==",
   "success": true,
-  "projectFilePath": "E:\\Forces_1611\\Forces\\Forces\\src\\Domain\\Domain.csproj",
+  "projectFilePath": "D:\\Forces\\Forces\\src\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

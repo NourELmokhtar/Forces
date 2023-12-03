@@ -68,6 +68,7 @@ namespace Forces.Client.Pages.Inventory
         private ClaimsPrincipal _currentUser;
         private IEnumerable<GetAllRoomsResponse> filteredRooms;
 
+
         private FluentValidationValidator _fluentValidationValidator;
         private bool Validated => _fluentValidationValidator.Validate(options => { options.IncludeAllRuleSets(); });
         public void Cancel()
@@ -92,10 +93,13 @@ namespace Forces.Client.Pages.Inventory
         }
         private async Task GetBasesAsync()
         {
+            var authenticatedUser = await _authenticationManager.CurrentUser();
+            var CurrentUserResponse = await _userManager.GetAsync(authenticatedUser.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var CurrentUser = CurrentUserResponse.Data;
             var response = await BaseSectionManager.GetAllAsync();
             if (response.Succeeded)
             {
-                _BaseSectionList = response.Data.ToList();
+                _BaseSectionList = response.Data.Where(s=>s.BaseId == CurrentUser.BaseId).ToList();
             }
             else
             {

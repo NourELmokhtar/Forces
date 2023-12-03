@@ -10,8 +10,8 @@ namespace Forces.Application.Features.Room.Queries.GetAll
     {
         public int Id { get; set; }
         public int RoomNumber { get; set; }
-        public string BuildingName { get; set; }
-        public int BuildingId { get; set; }
+        public string? BuildingName { get; set; }
+        public int? BuildingId { get; set; }
         public int Size { get; set; }
 
     }

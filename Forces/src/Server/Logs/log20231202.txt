@@ -1,0 +1,89 @@
+2023-12-02 22:31:17.301 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-12-02 22:31:17.571 +02:00 [INF] Now listening on: https://localhost:5001
+2023-12-02 22:31:17.577 +02:00 [INF] Now listening on: http://localhost:5000
+2023-12-02 22:31:17.584 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-12-02 22:31:17.585 +02:00 [INF] Hosting environment: Development
+2023-12-02 22:31:17.586 +02:00 [INF] Content root path: D:\Forces\Forces\src\Server
+2023-12-02 22:31:33.022 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_ContentType(StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Forces.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Forces\Forces\src\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-12-02 22:31:33.189 +02:00 [ERR] Connection id "0HMVJEMHIRU5J", Request id "0HMVJEMHIRU5J:00000009": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_ContentType(StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Forces.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Forces\Forces\src\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2023-12-02 22:31:33.993 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_ContentType(StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Forces.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Forces\Forces\src\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-12-02 22:31:33.994 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_ContentType(StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Forces.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Forces\Forces\src\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-12-02 22:31:33.995 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_ContentType(StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Forces.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Forces\Forces\src\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-12-02 22:31:33.997 +02:00 [ERR] Connection id "0HMVJEMHIRU5J", Request id "0HMVJEMHIRU5J:00000013": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_ContentType(StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Forces.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Forces\Forces\src\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2023-12-02 22:31:33.998 +02:00 [ERR] Connection id "0HMVJEMHIRU5J", Request id "0HMVJEMHIRU5J:00000011": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_ContentType(StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Forces.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Forces\Forces\src\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2023-12-02 22:31:33.999 +02:00 [ERR] Connection id "0HMVJEMHIRU5J", Request id "0HMVJEMHIRU5J:00000015": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_ContentType(StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Forces.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Forces\Forces\src\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2023-12-02 22:52:56.440 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-12-02 22:52:56.699 +02:00 [INF] Now listening on: https://localhost:5001
+2023-12-02 22:52:56.706 +02:00 [INF] Now listening on: http://localhost:5000
+2023-12-02 22:52:56.711 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-12-02 22:52:56.712 +02:00 [INF] Hosting environment: Development
+2023-12-02 22:52:56.714 +02:00 [INF] Content root path: D:\Forces\Forces\src\Server
+2023-12-02 23:04:22.392 +02:00 [INF] AspNetCoreThreadingTimerStoragesCleaner.StartCore
+
+2023-12-02 23:04:22.639 +02:00 [INF] Now listening on: https://localhost:5001
+2023-12-02 23:04:22.644 +02:00 [INF] Now listening on: http://localhost:5000
+2023-12-02 23:04:22.650 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-12-02 23:04:22.651 +02:00 [INF] Hosting environment: Development
+2023-12-02 23:04:22.652 +02:00 [INF] Content root path: D:\Forces\Forces\src\Server

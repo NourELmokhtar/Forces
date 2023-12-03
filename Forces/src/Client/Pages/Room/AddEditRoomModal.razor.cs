@@ -29,7 +29,7 @@ namespace Forces.Client.Pages.Room
         [CascadingParameter] private MudDialogInstance MudDialog { get; set; }
         [CascadingParameter] private HubConnection HubConnection { get; set; }
         [Inject] private IForceManager ForceManager { get; set; }
-        private string selectedBuilding;
+        private string selectedBuilding = "";
 
         private bool _canCreateBaseSection;
         private bool _canEditBaseSection;
@@ -77,6 +77,7 @@ namespace Forces.Client.Pages.Room
 
         private async Task SaveAsync()
         {
+            if (selectedBuilding != "") 
             AddEditRoomModel.BuildingId = (int)converterForBuildings(selectedBuilding);
             var response = await RoomManager.SaveAsync(AddEditRoomModel);
             if (response.Succeeded)
@@ -115,6 +116,7 @@ namespace Forces.Client.Pages.Room
         }
         private int? converterForBuildings(string ss)
         {
+
             return _BuildingList.FirstOrDefault(s => s.BuildingName == ss).Id;
         }
 
