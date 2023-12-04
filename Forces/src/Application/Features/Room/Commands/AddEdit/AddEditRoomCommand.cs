@@ -86,7 +86,7 @@ namespace Forces.Application.Features.Room.Commands.AddEdit
                     {
                         ExistRoom.RoomNumber = request.RoomNumber;
                         ExistRoom.Size = request.Size;
-                        ExistnameRoom.BuildingId = request.BuildingId;
+                        ExistRoom.BuildingId = request.BuildingId;
 
 
                         await _unitOfWork.Repository<Models.Room>().UpdateAsync(ExistRoom);
