@@ -1,4 +1,5 @@
-﻿using Forces.Application.Interfaces.Common;
+﻿using Forces.Application.Enums;
+using Forces.Application.Interfaces.Common;
 using Forces.Domain.Contracts;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace Forces.Application.Models
     { 
        public string HouseName { get; set; }
         public string HouseCode { get; set; }
+        public PersonRank? Rank { get; set; }
+
         public int BaseId { get; set; }
         [ForeignKey("BaseId")]
         public virtual Bases Base { get; set; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forces.Application.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace Forces.Application.Features.Person.Queries.GetAll
         public string? HouseName { get; set; }
         public string BuildingName { get; set; }
         public string BaseName { get; set; }
-        public string Rank { get; set; }    
+        public PersonRank? Rank { get; set; }    
         public string OfficePhone { get; set; }
         public string Phone { get; set; }
         public string Section { get; set; }

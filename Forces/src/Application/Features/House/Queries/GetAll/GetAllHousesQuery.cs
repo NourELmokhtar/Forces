@@ -40,6 +40,7 @@ namespace Forces.Application.Features.House.Queries.GetAll
                 HouseCode = x.HouseCode,
                 HouseName = x.HouseName,
                 BaseName = _unitOfWork.Repository<Models.Bases>().GetAllAsync().Result.Where(y => y.Id == x.BaseId).FirstOrDefault().BaseName,
+                Rank = x.Rank.ToString(),
 
             }).ToList();
             return await Result<List<GetAllHousesResponse>>.SuccessAsync(MappedHouseList);

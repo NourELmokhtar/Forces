@@ -31,4 +31,14 @@ namespace Forces.Application.Enums
 
 
     }
+
+    public enum PersonRank
+    {
+        [imagePath("00")][ArDescription("مقدم")] inspector = 0,
+        [imagePath("O1")][ArDescription("ملازم")] lutenent = 1,
+        [imagePath("O2")][ArDescription("عقيد")] Colonel = 2,
+        
+
+
+    }
 }

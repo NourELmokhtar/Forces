@@ -38,6 +38,7 @@ namespace Forces.Application.Features.Building.Queries.GetAll
                 Id = x.Id,
                 BuildingCode = x.BuildingCode,
                 BuildingName = x.BuildingName,
+                Rank = x.Rank.ToString(),
                 BaseName = _unitOfWork.Repository<Models.Bases>().GetAllAsync().Result.Where(y => y.Id == x.BaseId).FirstOrDefault().BaseName,
 
             }).ToList();

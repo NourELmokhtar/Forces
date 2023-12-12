@@ -187,15 +187,14 @@ namespace Forces.Client.Pages.Person
         private bool Search(GetAllPersonsResponse Base)
         {
             if (string.IsNullOrWhiteSpace(_searchString)) return true;
-            if (Base.Name.ToString()?.Contains(_searchString, StringComparison.OrdinalIgnoreCase) == true)
+            if (Base.Name.ToString()?.Contains(_searchString, StringComparison.OrdinalIgnoreCase) == true 
+                || Base.Id.ToString()?.Contains(_searchString, StringComparison.OrdinalIgnoreCase) == true
+                || Base.NationalNumber.ToString()?.Contains(_searchString, StringComparison.OrdinalIgnoreCase) == true
+                )
             {
                 return true;
             }
 
-            if (Base.Name.ToString().Contains(_searchString, StringComparison.OrdinalIgnoreCase) == true)
-            {
-                return true;
-            }
             return false;
         }
     }

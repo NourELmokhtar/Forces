@@ -308,6 +308,9 @@ namespace Forces.Infrastructure.Migrations
                     b.Property<DateTime?>("LastModifiedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("Rank")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("BaseId");
@@ -470,6 +473,9 @@ namespace Forces.Infrastructure.Migrations
 
                     b.Property<DateTime?>("LastModifiedOn")
                         .HasColumnType("datetime2");
+
+                    b.Property<int?>("Rank")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -1008,8 +1014,8 @@ namespace Forces.Infrastructure.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Rank")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("Rank")
+                        .HasColumnType("int");
 
                     b.Property<int?>("RoomId")
                         .HasColumnType("int");
@@ -1413,7 +1419,7 @@ namespace Forces.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("BuildingId")
+                    b.Property<int?>("BuildingId")
                         .HasColumnType("int");
 
                     b.Property<string>("CreatedBy")
@@ -3069,9 +3075,7 @@ namespace Forces.Infrastructure.Migrations
                 {
                     b.HasOne("Forces.Application.Models.Building", "Building")
                         .WithMany("Rooms")
-                        .HasForeignKey("BuildingId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BuildingId");
 
                     b.Navigation("Building");
                 });

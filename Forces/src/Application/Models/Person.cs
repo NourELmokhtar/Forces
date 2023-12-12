@@ -1,4 +1,5 @@
-﻿using Forces.Domain.Contracts;
+﻿using Forces.Application.Enums;
+using Forces.Domain.Contracts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -15,7 +16,7 @@ namespace Forces.Application.Models
         public string Section { get; set; }
         public string Phone { get; set; }
         public string OfficePhone { get; set; }
-        public string Rank { get; set; }
+        public PersonRank? Rank { get; set; }
 
         [ForeignKey("Room")]
         public int? RoomId { get; set; }

@@ -12,6 +12,7 @@ namespace Forces.Application.Features.Building.Queries.GetAll
         public int Id { get; set; }
         public string BuildingName { get; set; }
         public string BuildingCode { get; set; }
+        public string Rank { get; set; }
         public string BaseName { get; set; }
 
     }

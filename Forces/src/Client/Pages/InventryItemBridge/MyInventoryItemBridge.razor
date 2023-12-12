@@ -66,10 +66,10 @@ else
                 <MudTd DataLabel="Actions" Style="text-align: right">
 
                     <MudMenu Label="@_localizer["Actions"]" Variant="Variant.Filled" DisableElevation="true" EndIcon="@Icons.Filled.KeyboardArrowDown">
-                    @if (_canEditInventoryItemBridge)
+                    @*@if (_canEditInventoryItemBridge)
                     {
                         <MudMenuItem @onclick="@(() => InvokeModal(@context.Id))">@_localizer["Edit"]</MudMenuItem>
-                    }
+                    }*@
                     @if (_canDeleteInventoryItemBridge)
                     {
                         <MudMenuItem @onclick="@(() => Delete(@context.Id))">@_localizer["Delete"]</MudMenuItem>

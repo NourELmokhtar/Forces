@@ -6,6 +6,7 @@ using Forces.Application.Features.InventoryItem.Queries.GetAll;
 using Forces.Application.Features.InventoryItemBridge.Commands.AddEdit;
 using Forces.Application.Features.Items.Queries.GetAll;
 using Forces.Application.Features.MeasureUnits.Queries.GetAll;
+using Forces.Application.Features.Person.Queries.GetAll;
 using Forces.Application.Responses.VoteCodes;
 using Forces.Client.Extensions;
 using Forces.Client.Infrastructure.Managers.BasicInformation.Forces;
@@ -50,6 +51,7 @@ namespace Forces.Client.Pages.InventryItemBridge
 
         [Parameter] public AddEditInventoryItemBridgeCommand AddEditInventoryItemBridgeModel { get; set; } = new();
         public int count { get; set; }
+        private string _searchString = "";
         [CascadingParameter] private MudDialogInstance MudDialog { get; set; }
         [CascadingParameter] private HubConnection HubConnection { get; set; }
         [Inject] private IForceManager ForceManager { get; set; }
@@ -190,8 +192,14 @@ namespace Forces.Client.Pages.InventryItemBridge
             return _ItemsList.FirstOrDefault(s => s.ItemName == ss).Id;
         }
 
-        
 
+        private void Search()
+        {
+            GetInventoruItemsAsync();
+            _ItemsList = _ItemsList.Where(x => x.ItemName.ToString().Contains(_searchString) == true || x.ItemCode.ToString().Contains(_searchString)).ToList();
+
+           
+        }
         private async Task LoadDataAsync()
         {
             await GetInventoruItemsAsync();

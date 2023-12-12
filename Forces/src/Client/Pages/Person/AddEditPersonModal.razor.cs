@@ -19,6 +19,8 @@ using Forces.Client.Infrastructure.Managers.Room;
 using Forces.Application.Features.Room.Queries.GetAll;
 using Forces.Client.Infrastructure.Managers.House;
 using Forces.Application.Features.House.Queries.GetAll;
+using Forces.Client.Pages.Building;
+using Forces.Application.Enums;
 
 namespace Forces.Client.Pages.Person
 {
@@ -43,13 +45,14 @@ namespace Forces.Client.Pages.Person
         private int RoomNumber;
         private string selectedHouse;
         private string selectedType;
+        private string selectedRank;
         private bool _canCreateBaseSection;
         private bool _canEditBaseSection;
         private bool _canDeleteBaseSection;
         private bool _canSearchBaseSection;
         private ClaimsPrincipal _currentUser;
         private List<string> dropdownItems = new List<string> { "Room", "House"};
-
+        private List<string> RanksList = new List<string> { "inspector", "Colonel", "lutenent" };
         private FluentValidationValidator _fluentValidationValidator;
         private bool Validated => _fluentValidationValidator.Validate(options => { options.IncludeAllRuleSets(); });
         public void Cancel()
@@ -129,6 +132,21 @@ namespace Forces.Client.Pages.Person
             else if (selectedHouse!=null && selectedHouse!=string.Empty)
             {
                 AddEditPersonModel.HouseId = (int)converterForHouses();
+            }
+            if (selectedRank == "inspector")
+            {
+                AddEditPersonModel.Rank = PersonRank.inspector;
+
+            }
+            else if (selectedRank == "Colonel")
+            {
+                AddEditPersonModel.Rank = PersonRank.Colonel;
+
+            }
+            else if (selectedRank == "lutenent")
+            {
+                AddEditPersonModel.Rank = PersonRank.lutenent;
+
             }
             var response = await PersonManager.SaveAsync(AddEditPersonModel);
             if (response.Succeeded)

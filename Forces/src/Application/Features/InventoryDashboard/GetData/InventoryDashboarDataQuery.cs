@@ -122,7 +122,7 @@ namespace Forces.Application.Features.InventoryDashboard.GetData
                     NationalNumber = x.NationalNumber,
                     OfficePhone = x.OfficePhone,
                     Phone = x.Phone,
-                    Rank = x.Rank,
+                    Rank = x.Rank.ToString(),
                     RoomNumber = x.Room.RoomNumber,
                     Section = x.Section,
                 }).ToList():
@@ -137,7 +137,7 @@ namespace Forces.Application.Features.InventoryDashboard.GetData
                     NationalNumber = x.NationalNumber,
                     OfficePhone = x.OfficePhone,
                     Phone = x.Phone,
-                    Rank = x.Rank,
+                    Rank = x.Rank.ToString(),
                     Section = x.Section,
                 }).ToList():
                 null,

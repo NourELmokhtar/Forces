@@ -40,6 +40,18 @@
                     <MudTextField Required="true" Immediate="true" T="string" For="@(() => AddEditHouseModel.HouseCode)" @bind-Value="AddEditHouseModel.HouseCode" Label="@_localizer["House Code"]" />
                 </MudItem>
                 <MudItem xs="12" md="6">
+                    <MudSelect Label="Select Rank" @bind-Value="selectedRank">
+                        @if (RanksList != null)
+                        {
+                            @foreach (var item in RanksList)
+                            {
+                                <MudSelectItem Value="@item">@item</MudSelectItem>
+                            }
+                        }
+                    </MudSelect>
+
+                </MudItem>
+                <MudItem xs="12" md="6">
 
                 </MudItem>
 

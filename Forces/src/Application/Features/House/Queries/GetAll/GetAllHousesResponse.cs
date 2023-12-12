@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forces.Application.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace Forces.Application.Features.House.Queries.GetAll
         public int Id { get; set; }
         public string HouseName { get; set; }
         public string HouseCode { get; set; }
+        public string Rank { get; set; }
         public string BaseName { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Forces.Application.Enums;
 using Forces.Application.Features.Person.Commands.AddEdit;
 using Forces.Application.Interfaces.Repositories;
 using Forces.Application.Interfaces.Services;
@@ -25,7 +26,7 @@ namespace Forces.Application.Features.Person.Commands.AddEdit
         public string Phone { get; set; }
         public string OfficePhone { get; set; }
         public string Section { get; set; }
-        public string Rank { get; set; }   
+        public PersonRank? Rank { get; set; }   
 
     }
     internal class AddEditPersonCommandHandler : IRequestHandler<AddEditPersonCommand, IResult<int>>
@@ -107,6 +108,7 @@ namespace Forces.Application.Features.Person.Commands.AddEdit
                         ExistPerson.Rank = request.Rank;
                         ExistPerson.Phone = request.Phone;
                         ExistPerson.RoomId = request.RoomId;
+                        ExistPerson.Rank = request.Rank;
                         await _unitOfWork.Repository<Models.Person>().UpdateAsync(ExistPerson);
                         await _unitOfWork.Commit(cancellationToken);
                         return await Result<int>.SuccessAsync(ExistPerson.Id, _localizer["Person Updated Successfuly!"]);

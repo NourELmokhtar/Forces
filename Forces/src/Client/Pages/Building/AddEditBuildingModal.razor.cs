@@ -23,6 +23,8 @@ using System.Security.Claims;
 using Forces.Client.Infrastructure.Managers.BasicInformation.Bases;
 using Forces.Application.Features.Bases.Queries.GetAll;
 using Forces.Client.Pages.Inventory;
+using Forces.Client.Pages.House;
+using Forces.Application.Enums;
 
 namespace Forces.Client.Pages.Building
 {
@@ -38,11 +40,13 @@ namespace Forces.Client.Pages.Building
 
         private List<GetAllForcesResponse> _ForceList = new();
         [Parameter] public AddEditBuildingCommand AddEditBuildingModel { get; set; } = new();
+        private List<string> RanksList = new List<string> { "inspector", "Colonel", "lutenent" };
         [CascadingParameter] private MudDialogInstance MudDialog { get; set; }
         [CascadingParameter] private HubConnection HubConnection { get; set; }
         [Inject] private IForceManager ForceManager { get; set; }
         private string selectedBase;
- 
+        private string selectedRank;
+
         private bool _canCreateBaseSection;
         private bool _canEditBaseSection;
         private bool _canDeleteBaseSection;
@@ -90,6 +94,21 @@ namespace Forces.Client.Pages.Building
         private async Task SaveAsync()
         {
             AddEditBuildingModel.BaseId = (int)converterForBases(selectedBase);
+            if (selectedRank == "inspector")
+            {
+                AddEditBuildingModel.Rank = PersonRank.inspector;
+
+            }
+            else if (selectedRank == "Colonel")
+            {
+                AddEditBuildingModel.Rank = PersonRank.Colonel;
+
+            }
+            else if (selectedRank == "lutenent")
+            {
+                AddEditBuildingModel.Rank = PersonRank.lutenent;
+
+            }
             var response = await BuildingManager.SaveAsync(AddEditBuildingModel);
             if (response.Succeeded)
             {

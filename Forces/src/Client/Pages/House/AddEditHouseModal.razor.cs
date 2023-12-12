@@ -23,6 +23,7 @@ using System.Security.Claims;
 using Forces.Client.Infrastructure.Managers.BasicInformation.Bases;
 using Forces.Application.Features.Bases.Queries.GetAll;
 using Forces.Client.Pages.Inventory;
+using Forces.Application.Enums;
 
 namespace Forces.Client.Pages.House
 {
@@ -38,10 +39,13 @@ namespace Forces.Client.Pages.House
 
         private List<GetAllForcesResponse> _ForceList = new();
         [Parameter] public AddEditHouseCommand AddEditHouseModel { get; set; } = new();
+        private List<string> RanksList = new List<string> { "inspector", "Colonel", "lutenent" };
+
         [CascadingParameter] private MudDialogInstance MudDialog { get; set; }
         [CascadingParameter] private HubConnection HubConnection { get; set; }
         [Inject] private IForceManager ForceManager { get; set; }
         private string selectedBase;
+        private string selectedRank;
 
         private bool _canCreateBaseSection;
         private bool _canEditBaseSection;
@@ -89,7 +93,23 @@ namespace Forces.Client.Pages.House
 
         private async Task SaveAsync()
         {
+            PersonRank pR = new PersonRank();
             AddEditHouseModel.BaseId = (int)converterForBases(selectedBase);
+            if(selectedRank == "inspector")
+            {
+            AddEditHouseModel.Rank = PersonRank.inspector;
+
+            }
+            else if (selectedRank == "Colonel")
+            {
+                AddEditHouseModel.Rank = PersonRank.Colonel;
+
+            }
+            else if (selectedRank == "lutenent")
+            {
+                AddEditHouseModel.Rank = PersonRank.lutenent;
+
+            }
             var response = await HouseManager.SaveAsync(AddEditHouseModel);
             if (response.Succeeded)
             {

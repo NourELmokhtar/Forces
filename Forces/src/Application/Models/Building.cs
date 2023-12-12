@@ -1,4 +1,5 @@
-﻿using Forces.Application.Interfaces.Common;
+﻿using Forces.Application.Enums;
+using Forces.Application.Interfaces.Common;
 using Forces.Domain.Contracts;
 using Microsoft.Office.Interop.Outlook;
 using System;
@@ -18,6 +19,7 @@ namespace Forces.Application.Models
         }
         public string BuildingName { get; set; }
         public string BuildingCode { get; set; }
+        public PersonRank? Rank { get; set; }
         public int BaseId { get; set; }
         [ForeignKey("BaseId")]
         public virtual Bases Base { get; set; }

@@ -46,16 +46,28 @@
                 <MudItem xs="12" md="6">
                     <MudTextField Required="true" Immediate="true" T="string" For="@(() => AddEditPersonModel.OfficePhone)" @bind-Value="AddEditPersonModel.OfficePhone" Label="@_localizer["Office Phone"]" />
 
-                </MudItem><MudItem xs="12" md="6">
-                    <MudTextField Required="true" Immediate="true" T="string" For="@(() => AddEditPersonModel.Rank)" @bind-Value="AddEditPersonModel.Rank" Label="@_localizer["Rank"]" />
-
                 </MudItem>
+                
                 <MudItem xs="12" md="6">
                     <MudTextField Required="true" Immediate="true" T="string" For="@(() => AddEditPersonModel.Section)" @bind-Value="AddEditPersonModel.Section" Label="@_localizer["Section"]" />
 
                 </MudItem>
+                <MudItem xs="12" md="6">
+                    <MudSelect Label="Select Inventory Type" @bind-Value="selectedRank">
+                        @if (RanksList != null)
+                        {
+                            @foreach (var item in RanksList)
+                            {
+                                <MudSelectItem Value="@item">@item</MudSelectItem>
+                            }
+                        }
+                    </MudSelect>
+
+                </MudItem>
 
             </MudGrid>
+            
+
             <MudGrid>
 
                 <MudItem xs="12" md="6">
@@ -73,9 +85,9 @@
                     
                 <MudItem xs="12" md="6">
                     <MudSelect Label="Select Building" @bind-Value="BuildingName" @onchange="GetRoomsAsync">
-                        @if (_BuildingList != null)
+                        @if (_BuildingList != null && selectedRank!=String.Empty)
                         {
-                            @foreach (var item in _BuildingList)
+                                @foreach (var item in _BuildingList.Where(x => x.Rank.ToString() == selectedRank))
                             {
                                 <MudSelectItem Value="@item.BuildingName">@item.BuildingName</MudSelectItem>
                             }
@@ -104,9 +116,9 @@
                 {
                     <MudItem xs="12" md="6">
                         <MudSelect Label="Select House" @bind-Value="selectedHouse">
-                            @if (_HouseList != null)
+                            @if (_HouseList != null && selectedRank != String.Empty)
                             {
-                                @foreach (var item in _HouseList)
+                                @foreach (var item in _HouseList.Where(x => x.Rank.ToString() == selectedRank))
                                 {
                                     <MudSelectItem Value="@item.HouseName">@item.HouseName</MudSelectItem>
                                 }

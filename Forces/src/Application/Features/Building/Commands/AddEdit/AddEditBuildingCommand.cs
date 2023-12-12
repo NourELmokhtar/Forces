@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Forces.Application.Enums;
 using Forces.Application.Features.Building.Commands.AddEdit;
 using Forces.Application.Interfaces.Repositories;
 using Forces.Application.Interfaces.Services;
@@ -20,6 +21,7 @@ namespace Forces.Application.Features.Building.Commands.AddEdit
         public int Id { get; set; }
         public string BuildingName { get; set; }
         public string BuildingCode { get; set; }
+        public PersonRank Rank { get; set; }
         public int BaseId { get; set; }
     }
     internal class AddEditBuildingCommandHandler : IRequestHandler<AddEditBuildingCommand, IResult<int>>
@@ -57,6 +59,7 @@ namespace Forces.Application.Features.Building.Commands.AddEdit
                         BuildingName = request.BuildingName,
                         BaseId = request.BaseId,
                         BuildingCode = request.BuildingCode,
+                        Rank = request.Rank,
                     };
                     await _unitOfWork.Repository<Models.Building>().AddAsync(Building);
                     await _unitOfWork.Commit(cancellationToken);

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Forces.Application.Enums;
 using Forces.Application.Features.House.Commands.AddEdit;
 using Forces.Application.Interfaces.Repositories;
 using Forces.Application.Interfaces.Services;
@@ -20,6 +21,7 @@ namespace Forces.Application.Features.House.Commands.AddEdit
         public int Id { get; set; }
         public string HouseName { get; set; }
         public string HouseCode { get; set; }
+        public PersonRank Rank { get; set; }
         public int BaseId { get; set; }
     }
 
@@ -58,6 +60,7 @@ namespace Forces.Application.Features.House.Commands.AddEdit
                         HouseName = request.HouseName,
                         BaseId = request.BaseId,
                         HouseCode = request.HouseCode,
+                        Rank = request.Rank,
                     };
                     await _unitOfWork.Repository<Models.House>().AddAsync(House);
                     await _unitOfWork.Commit(cancellationToken);
