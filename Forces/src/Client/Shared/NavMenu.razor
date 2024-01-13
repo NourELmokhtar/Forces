@@ -119,7 +119,67 @@
             <MudNavLink Href="/identity/roles" Icon="@Icons.Material.Outlined.Person">@_localizer["Roles"]</MudNavLink>
         }
     }
-    @if (_canViewBases || _canViewBasesSections || _canViewForces || _canViewInventories)
+    @if (_canViewInventories)
+    {
+        <MudListSubheader Class
+        ="mt-2 mb-n2">@_localizer["Inventories Informations"]
+        </MudListSubheader>
+        @if (_canViewOffices)
+        {
+            <MudNavLink Href
+            ="/Office/MyOffice" Icon
+            ="@Icons.Filled.LocalPostOffice">
+                @_localizer["Offices"]
+            </MudNavLink>
+        }
+        @if (_canViewInventories)
+        {
+            <MudNavLink Href
+            ="/Inventory/MyInventory" Icon
+            ="@Icons.Filled.Inventory">
+                @_localizer["Inventory"]
+            </MudNavLink>
+        }
+        @if (_canViewInventoryItems)
+        {
+            <MudNavLink Href="/InventoryItemBridge/MyInventoryItemBridge" Icon="@Icons.Filled.Inventory">
+                @_localizer["Inventory Items"]
+            </MudNavLink>
+        }
+        @if (_canViewHouses)
+        {
+            <MudNavLink Href
+            ="/House/MyHouse" Icon
+            ="@Icons.Filled.Hotel">
+                @_localizer["Houses"]
+            </MudNavLink>
+        }
+        @if (_canViewPersons)
+        {
+            <MudNavLink Href
+            ="/Person/MyPerson" Icon
+            ="@Icons.Filled.People">
+                @_localizer["Person"]
+            </MudNavLink>
+        }
+        @if (_canViewBuildings)
+        {
+            <MudNavLink Href="/Building/MyBuilding" Icon="@Icons.Filled.House">
+                @_localizer["Buildings"]
+            </MudNavLink>
+        }
+        @if (_canViewRooms)
+        {
+            <MudNavLink Href
+            ="/Room/MyRoom" Icon
+            ="@Icons.Filled.Room">
+                @_localizer["Rooms"]
+            </MudNavLink>
+        }
+
+    }
+
+    @if (_canViewBases || _canViewBasesSections || _canViewForces)
     {
         <MudListSubheader Class="mt-2 mb-n2">@_localizer["Basic Informations"]</MudListSubheader>
         @if (_canViewForces)
@@ -136,48 +196,7 @@
         {
             <MudNavLink Href="/BasicInformations/BasesSections" Icon="@Icons.Filled.AccountTree">@_localizer["Bases Sections"]</MudNavLink>
         }
-        @if (_canViewOffices)
-        {
-            <MudNavLink Href="/Office/MyOffice" Icon="@Icons.Filled.LocalPostOffice">
-                @_localizer["Offices"]
-            </MudNavLink>
-        }
-        @if (_canViewInventories)
-        {
-            <MudNavLink Href="/Inventory/MyInventory" Icon="@Icons.Filled.Inventory">
-                @_localizer["Inventory"]
-                </MudNavLink>
-        }
-        @if (_canViewInventoryItems)
-        {
-            <MudNavLink Href="/InventoryItemBridge/MyInventoryItemBridge" Icon="@Icons.Filled.Inventory">
-                @_localizer["Inventory Items"]
-                </MudNavLink>
-        }
-        @if (_canViewHouses)
-        {
-            <MudNavLink Href="/House/MyHouse" Icon="@Icons.Filled.Hotel">
-                @_localizer["Houses"]
-            </MudNavLink>
-        }
-        @if (_canViewPersons)
-        {
-            <MudNavLink Href="/Person/MyPerson" Icon="@Icons.Filled.People">
-                @_localizer["Residents"]
-            </MudNavLink>
-        }
-        @if (_canViewBuildings)
-        {
-            <MudNavLink Href="/Building/MyBuilding" Icon="@Icons.Filled.House">
-                @_localizer["Buildings"]
-            </MudNavLink>
-        }
-        @if (_canViewRooms)
-        {
-            <MudNavLink Href="/Room/MyRoom" Icon="@Icons.Filled.Room">
-                @_localizer["Rooms"]
-            </MudNavLink>
-        }
+       
 
         <MudNavLink Href="/Vehicles" Icon="@Icons.Filled.CarRepair">
             @_localizer["Vehicles"]
@@ -319,6 +338,7 @@
     private bool _canViewInventoryItems;
     private bool _canViewBaseDashboards;
     private bool _canViewInventoryDashboards;
+    private bool _canViewVehicleDashboard;
 
 
     protected override async Task OnParametersSetAsync()
@@ -362,6 +382,7 @@
         _canViewOffices = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Office.View)).Succeeded;
         _canViewInventoryItems = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.InventoryItems.View)).Succeeded;
         _canViewInventoryDashboards = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.InventoryDashboards.View)).Succeeded;
+        _canViewBaseDashboards = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.VehicleDashboard.View)).Succeeded;
 
     }
 }

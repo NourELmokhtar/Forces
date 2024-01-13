@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\NourV\\Forces\\Forces\\src\\Server\\Server.csproj": {}
+    "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Server\\Server.csproj": {}
   },
   "projects": {
-    "E:\\NourV\\Forces\\Forces\\src\\Application\\Application.csproj": {
+    "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\NourV\\Forces\\Forces\\src\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Application\\Application.csproj",
         "projectName": "Forces.Application",
-        "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\20106\\.nuget\\packages\\",
-        "outputPath": "E:\\NourV\\Forces\\Forces\\src\\Application\\obj\\",
+        "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\OMEN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\20106\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\OMEN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -29,17 +29,18 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\DevExpress 23.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\NourV\\Forces\\Forces\\src\\Domain\\Domain.csproj": {
-                "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Domain\\Domain.csproj"
+              "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Domain\\Domain.csproj"
               },
-              "E:\\NourV\\Forces\\Forces\\src\\Shared\\Shared.csproj": {
-                "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Shared\\Shared.csproj"
+              "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Shared\\Shared.csproj"
               }
             }
           }
@@ -100,7 +101,7 @@
             },
             "System.Linq.Dynamic.Core": {
               "target": "Package",
-              "version": "[1.2.10, )"
+              "version": "[1.3.0, )"
             }
           },
           "imports": [
@@ -119,25 +120,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\NourV\\Forces\\Forces\\src\\Client.Infrastructure\\Client.Infrastructure.csproj": {
+    "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Client.Infrastructure\\Client.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\NourV\\Forces\\Forces\\src\\Client.Infrastructure\\Client.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Client.Infrastructure\\Client.Infrastructure.csproj",
         "projectName": "Forces.Client.Infrastructure",
-        "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Client.Infrastructure\\Client.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\20106\\.nuget\\packages\\",
-        "outputPath": "E:\\NourV\\Forces\\Forces\\src\\Client.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Client.Infrastructure\\Client.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\OMEN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Client.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\20106\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\OMEN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -148,17 +149,18 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\DevExpress 23.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\NourV\\Forces\\Forces\\src\\Application\\Application.csproj": {
-                "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Application\\Application.csproj"
+              "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Application\\Application.csproj"
               },
-              "E:\\NourV\\Forces\\Forces\\src\\Shared\\Shared.csproj": {
-                "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Shared\\Shared.csproj"
+              "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Shared\\Shared.csproj"
               }
             }
           }
@@ -218,25 +220,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\NourV\\Forces\\Forces\\src\\Client\\Client.csproj": {
+    "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\NourV\\Forces\\Forces\\src\\Client\\Client.csproj",
+        "projectUniqueName": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Client\\Client.csproj",
         "projectName": "Forces.Client",
-        "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Client\\Client.csproj",
-        "packagesPath": "C:\\Users\\20106\\.nuget\\packages\\",
-        "outputPath": "E:\\NourV\\Forces\\Forces\\src\\Client\\obj\\",
+        "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Client\\Client.csproj",
+        "packagesPath": "C:\\Users\\OMEN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\20106\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\OMEN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -247,20 +249,21 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\DevExpress 23.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\NourV\\Forces\\Forces\\src\\Client.Infrastructure\\Client.Infrastructure.csproj": {
-                "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Client.Infrastructure\\Client.Infrastructure.csproj"
+              "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Client.Infrastructure\\Client.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Client.Infrastructure\\Client.Infrastructure.csproj"
               },
-              "E:\\NourV\\Forces\\Forces\\src\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Infrastructure\\Infrastructure.csproj"
               },
-              "E:\\NourV\\Forces\\Forces\\src\\Shared\\Shared.csproj": {
-                "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Shared\\Shared.csproj"
+              "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Shared\\Shared.csproj"
               }
             }
           }
@@ -367,6 +370,24 @@
               "target": "Package",
               "version": "[6.0.19, )"
             },
+            "Microsoft.NET.ILLink.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.100-1.23211.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.100-1.23211.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.Sdk.WebAssembly.Pack": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )",
+              "autoReferenced": true
+            },
             "MudBlazor": {
               "target": "Package",
               "version": "[5.2.5, )"
@@ -400,7 +421,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -409,21 +430,21 @@
         }
       }
     },
-    "E:\\NourV\\Forces\\Forces\\src\\Domain\\Domain.csproj": {
+    "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\NourV\\Forces\\Forces\\src\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Domain\\Domain.csproj",
         "projectName": "Forces.Domain",
-        "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\20106\\.nuget\\packages\\",
-        "outputPath": "E:\\NourV\\Forces\\Forces\\src\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\OMEN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\20106\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\OMEN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -434,6 +455,7 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\DevExpress 23.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -467,25 +489,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\NourV\\Forces\\Forces\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj": {
+    "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\NourV\\Forces\\Forces\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj",
         "projectName": "Forces.Infrastructure.Shared",
-        "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj",
-        "packagesPath": "C:\\Users\\20106\\.nuget\\packages\\",
-        "outputPath": "E:\\NourV\\Forces\\Forces\\src\\Infrastructure.Shared\\obj\\",
+        "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj",
+        "packagesPath": "C:\\Users\\OMEN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Infrastructure.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\20106\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\OMEN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -496,14 +518,15 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\DevExpress 23.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\NourV\\Forces\\Forces\\src\\Application\\Application.csproj": {
-                "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Application\\Application.csproj"
+              "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Application\\Application.csproj"
               }
             }
           }
@@ -543,25 +566,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\NourV\\Forces\\Forces\\src\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\NourV\\Forces\\Forces\\src\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Forces.Infrastructure",
-        "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\20106\\.nuget\\packages\\",
-        "outputPath": "E:\\NourV\\Forces\\Forces\\src\\Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\OMEN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\20106\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\OMEN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -572,17 +595,18 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\DevExpress 23.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\NourV\\Forces\\Forces\\src\\Application\\Application.csproj": {
-                "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Application\\Application.csproj"
+              "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Application\\Application.csproj"
               },
-              "E:\\NourV\\Forces\\Forces\\src\\Shared\\Shared.csproj": {
-                "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Shared\\Shared.csproj"
+              "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Shared\\Shared.csproj"
               }
             }
           }
@@ -666,25 +690,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\NourV\\Forces\\Forces\\src\\Server\\Server.csproj": {
+    "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\NourV\\Forces\\Forces\\src\\Server\\Server.csproj",
+        "projectUniqueName": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Server\\Server.csproj",
         "projectName": "Forces.Server",
-        "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Server\\Server.csproj",
-        "packagesPath": "C:\\Users\\20106\\.nuget\\packages\\",
-        "outputPath": "E:\\NourV\\Forces\\Forces\\src\\Server\\obj\\",
+        "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Server\\Server.csproj",
+        "packagesPath": "C:\\Users\\OMEN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\20106\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\OMEN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -695,26 +719,27 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\DevExpress 23.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\NourV\\Forces\\Forces\\src\\Application\\Application.csproj": {
-                "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Application\\Application.csproj"
+              "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Application\\Application.csproj"
               },
-              "E:\\NourV\\Forces\\Forces\\src\\Client\\Client.csproj": {
-                "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Client\\Client.csproj"
+              "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Client\\Client.csproj": {
+                "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Client\\Client.csproj"
               },
-              "E:\\NourV\\Forces\\Forces\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj": {
-                "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj"
+              "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj": {
+                "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj"
               },
-              "E:\\NourV\\Forces\\Forces\\src\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Infrastructure\\Infrastructure.csproj"
               },
-              "E:\\NourV\\Forces\\Forces\\src\\Shared\\Shared.csproj": {
-                "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Shared\\Shared.csproj"
+              "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Shared\\Shared.csproj"
               }
             }
           }
@@ -829,25 +854,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\NourV\\Forces\\Forces\\src\\Shared\\Shared.csproj": {
+    "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\NourV\\Forces\\Forces\\src\\Shared\\Shared.csproj",
+        "projectUniqueName": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Shared\\Shared.csproj",
         "projectName": "Forces.Shared",
-        "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Shared\\Shared.csproj",
-        "packagesPath": "C:\\Users\\20106\\.nuget\\packages\\",
-        "outputPath": "E:\\NourV\\Forces\\Forces\\src\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\OMEN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\20106\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\OMEN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -858,6 +883,7 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\DevExpress 23.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -901,7 +927,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

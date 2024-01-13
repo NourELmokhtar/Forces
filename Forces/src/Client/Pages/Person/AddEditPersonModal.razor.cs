@@ -21,6 +21,7 @@ using Forces.Client.Infrastructure.Managers.House;
 using Forces.Application.Features.House.Queries.GetAll;
 using Forces.Client.Pages.Building;
 using Forces.Application.Enums;
+using Forces.Client.Pages.House;
 
 namespace Forces.Client.Pages.Person
 {
@@ -52,7 +53,7 @@ namespace Forces.Client.Pages.Person
         private bool _canSearchBaseSection;
         private ClaimsPrincipal _currentUser;
         private List<string> dropdownItems = new List<string> { "Room", "House"};
-        private List<string> RanksList = new List<string> { "inspector", "Colonel", "lutenent" };
+        private List<string> RanksList = new List<string> { "JUD", "SNCO", "OC", "OC1" };
         private FluentValidationValidator _fluentValidationValidator;
         private bool Validated => _fluentValidationValidator.Validate(options => { options.IncludeAllRuleSets(); });
         public void Cancel()
@@ -133,19 +134,24 @@ namespace Forces.Client.Pages.Person
             {
                 AddEditPersonModel.HouseId = (int)converterForHouses();
             }
-            if (selectedRank == "inspector")
+            if (selectedRank == "جنود")
             {
-                AddEditPersonModel.Rank = PersonRank.inspector;
+                AddEditPersonModel.Rank = PersonRank.JUD;
 
             }
-            else if (selectedRank == "Colonel")
+            else if (selectedRank == "ضباط الصف")
             {
-                AddEditPersonModel.Rank = PersonRank.Colonel;
+                AddEditPersonModel.Rank = PersonRank.SNCO;
 
             }
-            else if (selectedRank == "lutenent")
+            else if (selectedRank == "الضباط")
             {
-                AddEditPersonModel.Rank = PersonRank.lutenent;
+                AddEditPersonModel.Rank = PersonRank.OC;
+
+            }
+            else if (selectedRank == "كبار الضباط")
+            {
+                AddEditPersonModel.Rank = PersonRank.OC1;
 
             }
             var response = await PersonManager.SaveAsync(AddEditPersonModel);

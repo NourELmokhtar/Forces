@@ -24,6 +24,7 @@ using Forces.Client.Infrastructure.Managers.BasicInformation.Bases;
 using Forces.Application.Features.Bases.Queries.GetAll;
 using Forces.Client.Pages.Inventory;
 using Forces.Application.Enums;
+using Forces.Client.Pages.Building;
 
 namespace Forces.Client.Pages.House
 {
@@ -39,7 +40,7 @@ namespace Forces.Client.Pages.House
 
         private List<GetAllForcesResponse> _ForceList = new();
         [Parameter] public AddEditHouseCommand AddEditHouseModel { get; set; } = new();
-        private List<string> RanksList = new List<string> { "inspector", "Colonel", "lutenent" };
+        private List<string> RanksList = new List<string> { "JUD", "SNCO", "OC", "OC1" };
 
         [CascadingParameter] private MudDialogInstance MudDialog { get; set; }
         [CascadingParameter] private HubConnection HubConnection { get; set; }
@@ -95,19 +96,24 @@ namespace Forces.Client.Pages.House
         {
             PersonRank pR = new PersonRank();
             AddEditHouseModel.BaseId = (int)converterForBases(selectedBase);
-            if(selectedRank == "inspector")
+            if (selectedRank == "جنود")
             {
-            AddEditHouseModel.Rank = PersonRank.inspector;
+                AddEditHouseModel.Rank = PersonRank.JUD;
 
             }
-            else if (selectedRank == "Colonel")
+            else if (selectedRank == "ضباط الصف")
             {
-                AddEditHouseModel.Rank = PersonRank.Colonel;
+                AddEditHouseModel.Rank = PersonRank.SNCO;
 
             }
-            else if (selectedRank == "lutenent")
+            else if (selectedRank == "الضباط")
             {
-                AddEditHouseModel.Rank = PersonRank.lutenent;
+                AddEditHouseModel.Rank = PersonRank.OC;
+
+            }
+            else if (selectedRank == "كبار الضباط")
+            {
+                AddEditHouseModel.Rank = PersonRank.OC1;
 
             }
             var response = await HouseManager.SaveAsync(AddEditHouseModel);

@@ -32,7 +32,7 @@ namespace Forces.Infrastructure.Contexts
             // this.Database.EnsureCreated();
             _currentUserService = currentUserService;
             _dateTimeService = dateTimeService;
-           currentUser = base.Users.FirstOrDefault(x => x.Id == _currentUserService.UserId);
+            currentUser = base.Users.FirstOrDefault(x => x.Id == _currentUserService.UserId);
             _httpContextAccessor = httpContextAccessor;
         }
 

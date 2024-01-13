@@ -40,7 +40,7 @@ namespace Forces.Client.Pages.Building
 
         private List<GetAllForcesResponse> _ForceList = new();
         [Parameter] public AddEditBuildingCommand AddEditBuildingModel { get; set; } = new();
-        private List<string> RanksList = new List<string> { "inspector", "Colonel", "lutenent" };
+        private List<string> RanksList = new List<string> { "JUD", "SNCO", "OC", "OC1" };
         [CascadingParameter] private MudDialogInstance MudDialog { get; set; }
         [CascadingParameter] private HubConnection HubConnection { get; set; }
         [Inject] private IForceManager ForceManager { get; set; }
@@ -94,19 +94,24 @@ namespace Forces.Client.Pages.Building
         private async Task SaveAsync()
         {
             AddEditBuildingModel.BaseId = (int)converterForBases(selectedBase);
-            if (selectedRank == "inspector")
+            if (selectedRank == "جنود")
             {
-                AddEditBuildingModel.Rank = PersonRank.inspector;
+                AddEditBuildingModel.Rank = PersonRank.JUD;
 
             }
-            else if (selectedRank == "Colonel")
+            else if (selectedRank == "ضباط الصف")
             {
-                AddEditBuildingModel.Rank = PersonRank.Colonel;
+                AddEditBuildingModel.Rank = PersonRank.SNCO;
 
             }
-            else if (selectedRank == "lutenent")
+            else if (selectedRank == "الضباط")
             {
-                AddEditBuildingModel.Rank = PersonRank.lutenent;
+                AddEditBuildingModel.Rank = PersonRank.OC;
+
+            }
+            else if (selectedRank == "كبار الضباط")
+            {
+                AddEditBuildingModel.Rank = PersonRank.OC1;
 
             }
             var response = await BuildingManager.SaveAsync(AddEditBuildingModel);

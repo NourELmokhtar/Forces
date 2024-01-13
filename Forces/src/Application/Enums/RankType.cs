@@ -34,10 +34,10 @@ namespace Forces.Application.Enums
 
     public enum PersonRank
     {
-        [imagePath("00")][ArDescription("مقدم")] inspector = 0,
-        [imagePath("O1")][ArDescription("ملازم")] lutenent = 1,
-        [imagePath("O2")][ArDescription("عقيد")] Colonel = 2,
-        
+        [ArDescription("جنود")] JUD = 0,
+        [ArDescription("ضباط الصف")] SNCO  = 1,
+        [ArDescription("الضباط")] OC = 2,
+        [ArDescription("كبار الضباط")] OC1 = 3,
 
 
     }

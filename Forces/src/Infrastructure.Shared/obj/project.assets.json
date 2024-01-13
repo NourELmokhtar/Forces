@@ -1250,15 +1250,15 @@
           "lib/netstandard1.6/System.Linq.dll": {}
         }
       },
-      "System.Linq.Dynamic.Core/1.2.10": {
+      "System.Linq.Dynamic.Core/1.3.0": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp2.1/System.Linq.Dynamic.Core.dll": {
+          "lib/net6.0/System.Linq.Dynamic.Core.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp2.1/System.Linq.Dynamic.Core.dll": {
+          "lib/net6.0/System.Linq.Dynamic.Core.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -2061,7 +2061,7 @@
           "Microsoft.EntityFrameworkCore.Proxies": "6.0.19",
           "Microsoft.Office.Interop.Outlook": "15.0.4797.1004",
           "Newtonsoft.Json": "13.0.3",
-          "System.Linq.Dynamic.Core": "1.2.10"
+          "System.Linq.Dynamic.Core": "1.3.0"
         },
         "compile": {
           "bin/placeholder/Forces.Application.dll": {}
@@ -4483,10 +4483,10 @@
         "system.linq.nuspec"
       ]
     },
-    "System.Linq.Dynamic.Core/1.2.10": {
-      "sha512": "fS+z97NOfNuny6gkzHPSTIvjdWx7NcQuGB5H+h8uRpqJUm8BzhujJzl5LcfuwsTuBukxgdNiNsNUqZlV1hFiSw==",
+    "System.Linq.Dynamic.Core/1.3.0": {
+      "sha512": "WocaU/koGKDu/kiHGJCT6ocqqygQmD5B+9nCyA3nWbMywvPVRhtre1rTHCUNdoi6ZBnPOMvkqqx8oVkP1VCy3Q==",
       "type": "package",
-      "path": "system.linq.dynamic.core/1.2.10",
+      "path": "system.linq.dynamic.core/1.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4499,23 +4499,42 @@
         "lib/net45/System.Linq.Dynamic.Core.dll",
         "lib/net45/System.Linq.Dynamic.Core.pdb",
         "lib/net45/System.Linq.Dynamic.Core.xml",
+        "lib/net452/System.Linq.Dynamic.Core.dll",
+        "lib/net452/System.Linq.Dynamic.Core.pdb",
+        "lib/net452/System.Linq.Dynamic.Core.xml",
         "lib/net46/System.Linq.Dynamic.Core.dll",
         "lib/net46/System.Linq.Dynamic.Core.pdb",
         "lib/net46/System.Linq.Dynamic.Core.xml",
+        "lib/net5.0/System.Linq.Dynamic.Core.dll",
+        "lib/net5.0/System.Linq.Dynamic.Core.pdb",
+        "lib/net5.0/System.Linq.Dynamic.Core.xml",
+        "lib/net6.0/System.Linq.Dynamic.Core.dll",
+        "lib/net6.0/System.Linq.Dynamic.Core.pdb",
+        "lib/net6.0/System.Linq.Dynamic.Core.xml",
+        "lib/net7.0/System.Linq.Dynamic.Core.dll",
+        "lib/net7.0/System.Linq.Dynamic.Core.pdb",
+        "lib/net7.0/System.Linq.Dynamic.Core.xml",
         "lib/netcoreapp2.1/System.Linq.Dynamic.Core.dll",
         "lib/netcoreapp2.1/System.Linq.Dynamic.Core.pdb",
         "lib/netcoreapp2.1/System.Linq.Dynamic.Core.xml",
+        "lib/netcoreapp3.1/System.Linq.Dynamic.Core.dll",
+        "lib/netcoreapp3.1/System.Linq.Dynamic.Core.pdb",
+        "lib/netcoreapp3.1/System.Linq.Dynamic.Core.xml",
         "lib/netstandard1.3/System.Linq.Dynamic.Core.dll",
         "lib/netstandard1.3/System.Linq.Dynamic.Core.pdb",
         "lib/netstandard1.3/System.Linq.Dynamic.Core.xml",
         "lib/netstandard2.0/System.Linq.Dynamic.Core.dll",
         "lib/netstandard2.0/System.Linq.Dynamic.Core.pdb",
         "lib/netstandard2.0/System.Linq.Dynamic.Core.xml",
+        "lib/netstandard2.1/System.Linq.Dynamic.Core.dll",
+        "lib/netstandard2.1/System.Linq.Dynamic.Core.pdb",
+        "lib/netstandard2.1/System.Linq.Dynamic.Core.xml",
         "lib/uap10.0.10240/System.Linq.Dynamic.Core.dll",
         "lib/uap10.0.10240/System.Linq.Dynamic.Core.pdb",
         "lib/uap10.0.10240/System.Linq.Dynamic.Core.pri",
         "lib/uap10.0.10240/System.Linq.Dynamic.Core.xml",
-        "system.linq.dynamic.core.1.2.10.nupkg.sha512",
+        "logo.png",
+        "system.linq.dynamic.core.1.3.0.nupkg.sha512",
         "system.linq.dynamic.core.nuspec"
       ]
     },
@@ -6763,25 +6782,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\20106\\.nuget\\packages\\": {},
+    "C:\\Users\\OMEN\\.nuget\\packages\\": {},
     "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\NourV\\Forces\\Forces\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj",
       "projectName": "Forces.Infrastructure.Shared",
-      "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj",
-      "packagesPath": "C:\\Users\\20106\\.nuget\\packages\\",
-      "outputPath": "E:\\NourV\\Forces\\Forces\\src\\Infrastructure.Shared\\obj\\",
+      "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj",
+      "packagesPath": "C:\\Users\\OMEN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Infrastructure.Shared\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\20106\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\OMEN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -6792,14 +6811,15 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\DevExpress 23.1\\Components\\System\\Components\\Packages": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\NourV\\Forces\\Forces\\src\\Application\\Application.csproj": {
-              "projectPath": "E:\\NourV\\Forces\\Forces\\src\\Application\\Application.csproj"
+            "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\OMEN\\Documents\\GitHub\\last update for invo\\Forces\\Forces\\src\\Application\\Application.csproj"
             }
           }
         }
@@ -6839,7 +6859,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

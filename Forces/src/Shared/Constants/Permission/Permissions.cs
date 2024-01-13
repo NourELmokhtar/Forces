@@ -180,6 +180,10 @@ namespace Forces.Shared.Constants.Permission
         {
             public const string View = "Permissions.Dashboards.View";
         }
+        public static class VehicleDashboard
+        {
+            public const string View = "Permissions.VehicleDashboard.View";
+        }
         public static class BaseDashboards
         {
             public const string View = "Permissions.BaseDashboards.View";
